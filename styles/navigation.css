@@ -1,0 +1,52 @@
+/* 
+    File: styles/navigation.css
+    Created: 8/28/2012
+    Author: Marshall Farrier
+    Description:
+        navigation styles for codemelon2012
+*/
+
+#navigation {
+    position:fixed;
+    top:0;
+    height:32px;
+    background-color:#2f2f2f;
+    width:100%;
+    z-index:2;
+    opacity:0.9;
+}
+#navigation .outer-width-limiter {
+    height:100%;
+}
+#navigation table {
+    float:right;
+    height:100%;
+}
+#navigation tr {
+    height:100%;
+}
+#navigation td {  
+    position:relative;
+    line-height:100%;
+    padding-top:0.5em;
+}
+#navigation a {
+    text-decoration: none;
+    color:#afafaf;
+    font-family: 'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
+    font-size:10px;
+    letter-spacing: 1px;
+    padding:0em 2em;
+}
+#navigation a:hover {
+    color:#fff;
+}
+#navigation td.active-link {
+    background-color:#5f5f5f;
+}
+#navigation td.active-link a {
+    color:#bfbfbf;
+}
+#navigation td.active-link a:hover {
+    color:#bfbfbf;
+}

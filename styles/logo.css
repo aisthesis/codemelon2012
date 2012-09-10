@@ -1,0 +1,103 @@
+/* 
+    Site:   codemelon2012
+    Document   : logo
+    Created on : Aug 24, 2012, 7:35:18 PM
+    Author     : marshallfarrier
+    Description:
+        logo styling for codemelon2012
+    Colors:
+        brown melon skin: #D8B87D
+        green melon rind: #56732a
+        main unshaded melon orange: #f6911b
+*/
+#logo {
+    position:absolute;
+    width:100%;
+    top:16px;
+}
+#logo .outer-width-limiter {
+    position:relative;
+}
+#logo .wrapper {
+    position:inherit;
+    margin-left: 10%;
+    height:128px;
+    width:336px;
+}
+#logo div.melon {
+    position:absolute;
+    z-index:3;
+}
+#logo div.slice {
+    position:absolute;
+    z-index:4;
+}
+#logo div.logo-text {
+    position:absolute;
+}
+#logo h1 {
+    position:relative;
+    display:inline;
+    font-size: 36px;
+    font-family: 'Ubuntu', sans-serif;
+    z-index:5;
+}
+#logo div.logo-text h1:first-child {
+    color:#a2d04c;
+}
+#logo div.logo-text h1:nth-child(2) {
+    color:#f6911b;    
+}
+
+/*
+#logo {
+    overflow:hidden;
+    position:absolute;
+    width:100%;
+    height:192px;
+}
+#logo div {
+    position:inherit;
+}
+#logo .melon {
+    top:30px;
+    left:20%;
+    z-index:2;
+}
+#logo .slice {
+    top:100px;
+    left:20%;
+    z-index:4;
+}
+#logo img {
+    float:left;
+}
+#logo h1 {
+    display:inline;
+    font-size: 36px;
+    position:inherit;
+    z-index:3;
+    font-family: 'Ubuntu', sans-serif;
+}
+#logo .melon h1 {
+    color:#7dc411;
+    margin-left:1em;
+}
+#logo .slice h1 {
+    color:#f6911b;
+    margin-left:2em;
+}
+#logo .together h1 {
+    position:relative;
+}
+#logo .together {
+    top:-36px;
+    left:20%;
+}
+#logo .code-text {
+    color:#7dc411;
+}
+#logo .melon-text {
+    color:#f6911b;
+}
+*/
