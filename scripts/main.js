@@ -16,7 +16,7 @@ function codeMelonMain(activePage) {
     navigationMain(activePage);
     logoMain(activePage);
     /*
-     * This sometimes doesn't work properly in Chrome (overlap at the bottom is too big).
+     * The top of the gray footer is sometimes about 32px too high up on the page in Chrome.
      * This is presumably because the function is sometimes called asynchronously before
      * the rest of the page is set up. The call on resize is working fine.
      */
