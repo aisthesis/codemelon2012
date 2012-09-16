@@ -60,12 +60,6 @@ function logoMain() {
     );
 }
 
-
-function fadeLogo() {
-    $('#logo .melon h1').fadeOut(2000);
-    $('#logo .slice h1').fadeOut(2000, makeFullTitle);
-}
-
 function makeFullTitle() {
     $('#logo h1').remove();
     $('<div class=together><h1 class="code-text">code</h1><h1 class="melon-text">Melon</h1></div>')

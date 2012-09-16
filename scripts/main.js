@@ -15,4 +15,11 @@ function codeMelonMain(activePage) {
     }
     navigationMain(activePage);
     logoMain(activePage);
+    /*
+     * This sometimes doesn't work properly in Chrome (overlap at the bottom is too big).
+     * This is presumably because the function is sometimes called asynchronously before
+     * the rest of the page is set up. The call on resize is working fine.
+     */
+    backgroundMain();
+    $(window).resize(backgroundMain);
 }
