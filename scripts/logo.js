@@ -7,20 +7,24 @@
  *   logo JavaScript for codemelon2012
  */
 function logoMain(activePage) {
-    setFinalPositions();
-    activateHoverEffects();
+    var sliceFinalPosition = {
+        top:72,
+        left:72
+    };
+    var logoTextFinalPosition = {
+        top:28,
+        left:128
+    }
+    if (activePage == 'HOME') {
+        doFullLogoAnimation(sliceFinalPosition, logoTextFinalPosition);
+    }
+    else {     
+        $('#logo div.slice').css(sliceFinalPosition);
+        $('#logo div.logo-text').css(logoTextFinalPosition);    
+        activateHoverEffects();
+    }
 }
 
-function setFinalPositions() {
-    $('#logo div.slice').css({
-        'top' : '72px',
-        'left' : '72px'
-    });
-    $('#logo div.logo-text').css ({
-        'left' : '128px',
-        'top' : '28px'
-    });
-}
 function activateHoverEffects() {  
     $('#logo').css('overflow', 'visible');
     animateHover('#logo div.logo-text', {left : '+=64'}, {left : '-=64'});
@@ -45,29 +49,45 @@ function animateHover(elementName, targetMap, returnMap) {
         }
     });
 }
-/*
-function logoMain() { 
-    var logoWidth = $('#logo').width();
-    $('#logo .slice').css('left', '+=' + logoWidth * 0.9);
-    $('#logo .slice').stop().animate(
-        {left:(64 + logoWidth * 0.2)},
-        {queue:false, duration:4000, easing:'easeOutBack', complete: fadeLogo}
-    );
-    $('#logo .melon').css('left', '-=' + (logoWidth * 0.3));
-    $('#logo .melon').stop().animate(
-        {left:(logoWidth * 0.2)},
+
+function doFullLogoAnimation(sliceFinalPosition, logoTextFinalPosition) {
+    var windowWidth = $('body').width();
+    animateMelon(windowWidth);
+    animateSliceAndText(windowWidth, sliceFinalPosition, logoTextFinalPosition);
+}
+
+function animateMelon(windowWidth) {
+    var elementName = '#logo div.melon';
+    var originalLeft = $(elementName).position().left;
+    $(elementName).css('left', -0.2 * windowWidth);
+    $(elementName).stop().animate(
+        {left : originalLeft},
         {queue:false, duration:3000, easing:'easeOutElastic'}
     );
 }
 
-function makeFullTitle() {
-    $('#logo h1').remove();
-    $('<div class=together><h1 class="code-text">code</h1><h1 class="melon-text">Melon</h1></div>')
-        .appendTo('#logo');
-    $('#logo .together').css('left', '+=128px')
-    $('#logo .together').stop().animate(
-        {top:50},
+function animateLogoText(elementName, logoTextFinalPosition) {
+    $(elementName).stop().animate(
+        {top:logoTextFinalPosition.top},
         {duration:1000, easing:'easeOutBounce', complete: activateHoverEffects}
     );
 }
-*/
+
+function animateSliceAndText(windowWidth, sliceFinalPosition, logoTextFinalPosition) {
+    var sliceElementName = '#logo div.slice';
+    var textElementName = '#logo div.logo-text';
+    var originalLeft = $(sliceElementName).position().left + sliceFinalPosition.left;
+    // set text off screen to start
+    $(textElementName).css('left', logoTextFinalPosition.left);
+    $(textElementName).css('top', -64);
+    // set slice off screen and animate
+    $(sliceElementName).css('top', sliceFinalPosition.top);
+    $(sliceElementName).css('left', windowWidth);
+    $(sliceElementName).stop().animate(
+        {left : originalLeft},
+        {queue:false, duration:4000, easing:'easeOutBack', complete: function() {
+                animateLogoText(textElementName, logoTextFinalPosition);
+            }
+        }
+    );
+}
