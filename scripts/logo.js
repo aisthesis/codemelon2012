@@ -59,11 +59,12 @@ function doFullLogoAnimation(sliceFinalPosition, logoTextFinalPosition) {
 function animateMelon(windowWidth) {
     var elementName = '#logo div.melon';
     var originalLeft = $(elementName).position().left;
-    $(elementName).css('left', -0.2 * windowWidth);
-    $(elementName).stop().animate(
-        {left : originalLeft},
-        {queue:false, duration:3000, easing:'easeOutElastic'}
-    );
+    $(elementName).css('left', -0.3 * windowWidth);
+    setTimeout(function() {
+        $(elementName).stop().animate(
+            {left : originalLeft},
+            {queue:false, duration:5000, easing:'easeOutElastic'}
+        );}, 200);
 }
 
 function animateLogoText(elementName, logoTextFinalPosition) {
@@ -83,11 +84,12 @@ function animateSliceAndText(windowWidth, sliceFinalPosition, logoTextFinalPosit
     // set slice off screen and animate
     $(sliceElementName).css('top', sliceFinalPosition.top);
     $(sliceElementName).css('left', windowWidth);
-    $(sliceElementName).stop().animate(
-        {left : originalLeft},
-        {queue:false, duration:4000, easing:'easeOutBack', complete: function() {
-                animateLogoText(textElementName, logoTextFinalPosition);
+    setTimeout(function(){       
+        $(sliceElementName).stop().animate(
+            {left : originalLeft},
+            {queue:false, duration:4500, easing:'easeOutBack', complete: function() {
+                    animateLogoText(textElementName, logoTextFinalPosition);
+                }
             }
-        }
-    );
+        );}, 600);
 }
