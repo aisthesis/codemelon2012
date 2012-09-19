@@ -17,9 +17,6 @@
     font-size: 14px;
     padding:1.5em 3em;
 }
-#content > h1:first-child {
-    margin-top:96px;
-}
 #content h1 {
     font-size:36px;
 }

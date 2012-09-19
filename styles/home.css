@@ -1,0 +1,21 @@
+/* 
+    Document   : styles/home.css
+    Created on : 9/18/2012
+    Author     : Marshall Farrier
+    Description:
+        welcome page styles for codeMelon2012
+*/
+#content .wrapper {
+    padding-top:96px;
+}
+
+#main-content {       
+    -webkit-column-width: 288px;
+    -moz-column-width: 288px;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+}
+
+section {
+    display: inline-block;
+}

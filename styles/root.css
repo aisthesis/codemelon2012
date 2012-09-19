@@ -21,6 +21,7 @@ html {
 }
 .outer-width-limiter {
     width:90%;
-    margin:auto;   
+    margin:auto; 
+    max-width:1232px;
 }
 
