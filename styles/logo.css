@@ -49,55 +49,24 @@
     color:#f6911b;    
 }
 
-/*
-#logo {
+#logo div.banner-image {
+    word-wrap:break-word;
     overflow:hidden;
-    position:absolute;
-    width:100%;
-    height:192px;
+    margin-left:512px;
+    margin-top:-96px;
+    padding:5px 0px 0px 5px;
+    font-family:'Ubuntu', sans-serif;
+    font-size:10px;
+    height:72px;
+    background-color:#56732a;
+    color:#a2d04c;
+    box-shadow: 8px 8px 4px #1f1f1f;
+    border:4px solid;
+    border-radius:2px;
+    border-color:#D8B87D;
 }
-#logo div {
-    position:inherit;
+
+#logo div.banner-image p {
+    line-height:1;
+    letter-spacing:3px;
 }
-#logo .melon {
-    top:30px;
-    left:20%;
-    z-index:2;
-}
-#logo .slice {
-    top:100px;
-    left:20%;
-    z-index:4;
-}
-#logo img {
-    float:left;
-}
-#logo h1 {
-    display:inline;
-    font-size: 36px;
-    position:inherit;
-    z-index:3;
-    font-family: 'Ubuntu', sans-serif;
-}
-#logo .melon h1 {
-    color:#7dc411;
-    margin-left:1em;
-}
-#logo .slice h1 {
-    color:#f6911b;
-    margin-left:2em;
-}
-#logo .together h1 {
-    position:relative;
-}
-#logo .together {
-    top:-36px;
-    left:20%;
-}
-#logo .code-text {
-    color:#7dc411;
-}
-#logo .melon-text {
-    color:#f6911b;
-}
-*/
