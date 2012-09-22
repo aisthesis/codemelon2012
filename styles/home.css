@@ -5,9 +5,6 @@
     Description:
         welcome page styles for codeMelon2012
 */
-#content .wrapper {
-    padding-top:96px;
-}
 
 #main-content {       
     -webkit-column-width: 288px;

@@ -5,32 +5,24 @@
     Description:
         header styles for codemelon2012
 */
-
 #header {
-    min-height:256px;
+    position:relative;
+    min-height: 208px;
 }
-#header .outer-width-limiter { 
-    /* common width of .outer-width-limiter is
-    specified in root.css */
-    height:100%;
-}
-#header table {  
-    margin-top:32px;
-    height:100%;
+#header table {
     width:100%;
 }
 #header td {
     width:33%;
 }
+
 #header td div.outer {
     position:relative;
 }
 #header td .image-wrapper {
     position:absolute;
-    top:128px;
     left:50%;
-    margin-left: -120px; /* 1/2 width of element */
-    z-index:1;
+    margin-left:-120px;z-index:1;
     background-color:#fff;
     width:240px;
     height:200px;
