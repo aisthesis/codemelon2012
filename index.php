@@ -13,6 +13,7 @@ require_once 'templates/head.html';
 require_once 'templates/navigation.html';
 require_once 'templates/logo.html';
 require_once 'templates/header.html';
+require_once 'templates/content-sidebar.html';
 require_once 'content/home.html';
 require_once 'templates/lower-background.html';
 require_once 'templates/footer.html';

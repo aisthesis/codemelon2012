@@ -1,0 +1,42 @@
+/* 
+    Site: codemelon2012
+    Document: styles/logo-banner-image.css
+    Date: 9/21/2012
+    Author: Marshall Farrier
+    Description:
+        styling for the banner image in the logo section
+    Reference colors:
+        brown melon skin: #D8B87D
+        green melon rind: #56732a
+        main unshaded melon orange: #f6911b
+*/
+
+
+#logo div.banner-image {
+    word-wrap:break-word;
+    overflow:hidden;
+    margin-left:512px;
+    margin-top:-96px;
+    padding:5px 0px 0px 5px;
+    font-family:'Play', sans-serif;
+    font-size:12px;
+    height:72px;
+    /* this should look like the monitor in the Matrix */
+    border-color:#afafaf;
+    background-color:#1f1f1f;
+    color:#1A9D26;
+    box-shadow: 0 0 6px #1A9D26;
+    border-color:#1A9D26;
+    border-style:solid;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-right-width:1px;
+    border-left-width:1px;
+    border-radius:1px;
+}
+
+#logo div.banner-image p {
+    line-height:1.5;
+    letter-spacing:3px;
+    transform:rotate(270deg);
+}

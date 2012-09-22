@@ -1,6 +1,6 @@
 /* 
     Site:   codemelon2012
-    Document   : logo
+    Document   : styles/logo.css
     Created on : Aug 24, 2012, 7:35:18 PM
     Author     : marshallfarrier
     Description:
@@ -47,33 +47,4 @@
 }
 #logo div.logo-text h1:nth-child(2) {
     color:#f6911b;    
-}
-
-#logo div.banner-image {
-    word-wrap:break-word;
-    overflow:hidden;
-    margin-left:512px;
-    margin-top:-96px;
-    padding:5px 0px 0px 5px;
-    font-family:'Play', sans-serif;
-    font-size:12px;
-    height:72px;
-    /* this should look like the monitor in the Matrix */
-    border-color:#afafaf;
-    background-color:#3f3f3f;
-    color:#1A9D26;
-    box-shadow: 0 0 6px #1A9D26;
-    border-color:#1A9D26;
-    border-style:solid;
-    border-top-width:1px;
-    border-bottom-width:1px;
-    border-right-width:1px;
-    border-left-width:1px;
-    border-radius:1px;
-}
-
-#logo div.banner-image p {
-    line-height:1.5;
-    letter-spacing:3px;
-    transform:rotate(270deg);
 }

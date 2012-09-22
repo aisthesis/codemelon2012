@@ -1,0 +1,48 @@
+/* 
+    Document   : styles/content-sidebar.css
+    Created on : 9/21/2012
+    Author     : Marshall Farrier
+    Description:
+        welcome page sidebar styles for codeMelon2012
+        styles inspired by thenextweb.com
+*/
+
+#content-sidebar {
+    margin-right:25px;
+    width:100px;
+    float:left;
+    position:relative;
+    font-size:12px;
+    font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
+    font-weight:bold;
+}
+
+#content-sidebar h4 {
+    background-color:#f2f2f2;
+    border-bottom: 1px solid #e2e2e2;
+    border-top: 1px solid #e2e2e2;
+    cursor:pointer;
+    display:block;
+    margin-bottom:5px;
+    padding-left:4px;
+    padding-right:15px;
+    line-height:2.0em;
+}
+
+#content-sidebar li {
+    list-style:none outside none;
+    margin:0;
+    padding:0;
+}
+
+#content-sidebar li a {
+    padding-left:4px;
+    text-decoration:none;
+    color:#a9a9a9;
+    line-height:1.8em;
+}
+
+#content-sidebar li a:hover {
+    text-decoration: underline;
+}
+
