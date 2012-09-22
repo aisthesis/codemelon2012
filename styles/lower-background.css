@@ -7,7 +7,7 @@
 */
 #lower-background {
     position:absolute;
-    top:512px;
+    top:384px;
     background-color: #dfdfdf;
     width:100%;
     z-index:-1;

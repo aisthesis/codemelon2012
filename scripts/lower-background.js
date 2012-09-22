@@ -12,5 +12,6 @@ function backgroundMain() {
     var contentWrapperBottom = contentWrapperTop + $('#content-wrapper').height();
     var lowerBackgroundTop = $('#lower-background').position().top;
     var overlap = 16;
-    $('#lower-background').height(contentWrapperBottom - lowerBackgroundTop - overlap);
+    var contentWrapperMargin = 160;
+    $('#lower-background').height(contentWrapperBottom - lowerBackgroundTop - overlap + contentWrapperMargin);
 }

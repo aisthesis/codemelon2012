@@ -16,7 +16,7 @@
     word-wrap:break-word;
     overflow:hidden;
     margin-left:512px;
-    margin-top:-96px;
+    margin-top:-88px;
     padding:5px 0px 0px 5px;
     font-family:'Play', sans-serif;
     font-size:12px;
@@ -38,5 +38,4 @@
 #logo div.banner-image p {
     line-height:1.5;
     letter-spacing:3px;
-    transform:rotate(270deg);
 }
