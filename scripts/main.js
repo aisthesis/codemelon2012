@@ -22,4 +22,5 @@ function codeMelonMain(activePage) {
      */
     backgroundMain();
     $(window).resize(backgroundMain);
+    contentSidebarMain();
 }
