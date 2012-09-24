@@ -15,6 +15,10 @@ function contentSidebarMain() {
         $('#main-content section').hide();
         $('#main-content section.apps').show();
     });
+    $('#content-sidebar .credits a').click(function() {
+        $('#main-content section').hide();
+        $('#main-content section.credits').show();
+    });
     $('#content-sidebar .programming').click(function() {
         $('#main-content section').hide();
         $('#main-content section.programming').show();
