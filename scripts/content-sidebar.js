@@ -15,23 +15,23 @@ function contentSidebarMain() {
         $('#main-content section').hide();
         $('#main-content section.apps').show();
     });
-    $('#content-sidebar .credits a').click(function() {
-        $('#main-content section').hide();
-        $('#main-content section.credits').show();
-    });
-    $('#content-sidebar .programming').click(function() {
+    $('#content-sidebar .programming a').click(function() {
         $('#main-content section').hide();
         $('#main-content section.programming').show();
     });
-    $('#content-sidebar .robotics').click(function() {
+    $('#content-sidebar .robotics a').click(function() {
         $('#main-content section').hide();
         $('#main-content section.robotics').show();
     });
-    $('#content-sidebar .tutorials').click(function() {
+    $('#content-sidebar .site a').click(function() {
+        $('#main-content section').hide();
+        $('#main-content section.site').show();
+    });
+    $('#content-sidebar .tutorials a').click(function() {
         $('#main-content section').hide();
         $('#main-content section.tutorials').show();
     });
-    $('#content-sidebar .web').click(function() {
+    $('#content-sidebar .web a').click(function() {
         $('#main-content section').hide();
         $('#main-content section.web').show();
     });
