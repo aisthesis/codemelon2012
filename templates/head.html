@@ -34,7 +34,7 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
         <script type="text/javascript" src="scripts/common/navigation.js"></script>
         <script type="text/javascript" src="scripts/common/logo.js"></script>
-        <script type="text/javascript" src="scripts/common/content-sidebar.js"></script>
+        <?php common\includeSidebarCss($page); ?>
         <script type="text/javascript" src="scripts/common/lower-background.js"></script>
         <script type="text/javascript" src="scripts/common/main.js"></script>
         <script type="text/javascript" src=<?php common\javaScriptFile($page); ?>></script>
