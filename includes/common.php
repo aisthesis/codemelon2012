@@ -9,6 +9,6 @@ namespace common;
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
 function javaScriptFile($page) {
-    echo '"scripts/' . $page . '.js"';
+    echo '"scripts/content/' . $page . '.js"';
 }
 ?>
