@@ -9,6 +9,7 @@
  */
 $page = 'home';
 // necessary php includes
+require_once 'includes/common.php';
 require_once 'includes/navigation.php';
 
 require_once 'templates/head.html';
