@@ -1,7 +1,7 @@
 <?php
 namespace common {
 /*
- * @file common.php
+ * @file includes/common.php
  * @site codeMelon2012
  * @author Marshall Farrier
  * @date 09/25/2012
@@ -45,24 +45,5 @@ namespace common {
         }
     }
     
-    function includeContentHeader($page) {
-        // not included on pages: links
-        // take advantage of PHP's fallthrough logic in switch
-        switch ($page) {
-            case "home":
-            case "other pages using content header":
-                echo '<div id="header"><table><tr>';
-                echo '<td><div class="outer"><div class="image-wrapper">';
-                echo '<img width="240" height="200" src="images/RoboticArm.jpg" />';
-                echo '</div></div></td>';
-                echo '<td><div class="outer"><div class="image-wrapper">';
-                echo '<img width="240" height="200" src="images/JeffRowleyJaws2012.jpg" />';
-                echo '</div></div></td>';
-                echo '<td><div class="outer"><div class="image-wrapper">';
-                echo '<iframe width="240" height="200" src="http://www.youtube.com/embed/QmWD76jwjbQ" frameborder="0"></iframe>';
-                echo '</div></div></td>';
-                echo '</tr></table></div>';
-        }
-    }
 }
 ?>

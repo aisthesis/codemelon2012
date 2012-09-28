@@ -1,13 +1,10 @@
 /* 
- * @file styles/content/home.css
+ * @file styles/content/links.css
  * @date 9/18/2012
  * @author Marshall Farrier
- * @description special styles for codeMelon2012 home page
+ * @description special styles for codeMelon2012 links page
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 */
-#header {
-    min-height: 240px;   
-}
 
 #main-content {       
     -webkit-column-width: 288px;

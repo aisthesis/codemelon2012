@@ -7,18 +7,6 @@
         styling for the main content section
 */
 
-#main-content h1 {
-    font-size:36px;
-}
-#main-content h2 {
-    font-size:24px;
-}
-#main-content h3 {
-    font-size:18px;
-}
-#main-content h4 {
-    font-size:16px;
-}
 #main-content h5 {
     font-size:12px;
     font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
@@ -31,10 +19,6 @@
 #main-content h1,h2,h3 {
     font-weight: 800;
 }
-#main-content h1,h2 {
-    font-family:'Ubuntu', sans-serif;
-    color:#1f1f1f;
-}
 #main-content h3 {
     font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
 }
@@ -45,9 +29,6 @@
 #main-content p,li {
     font-size:12px;
     line-height:2em;
-}
-#main-content h1,h2,h3,h4,h5 {
-    line-height:1.5em;
 }
 #main-content a {    
     color:#17d;
