@@ -32,7 +32,7 @@ namespace content {
                 break;
             case "links":
                 echo '<div id="header">';
-                echo '<h2>Links to Additional Resources</h2>';
+                echo '<h2>Additional Resources</h2>';
                 echo '</div>';
         }
     }

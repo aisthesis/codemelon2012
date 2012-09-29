@@ -15,6 +15,10 @@
     -webkit-column-gap: 20px;
     -moz-column-gap: 20px;
 }
+#main-content h4 {
+    font-family:'Frutiger Neue W01 Book',Helvetica,Arial,sans-serif;
+    /* Univers is also a good option but requires a paid subscription */
+}
 
 section {
     display: inline-block;

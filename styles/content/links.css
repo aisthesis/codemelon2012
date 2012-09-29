@@ -7,12 +7,15 @@
 */
 
 #main-content {       
-    -webkit-column-width: 288px;
-    -moz-column-width: 288px;
+    -webkit-column-width: 248px;
+    -moz-column-width: 248px;
     -webkit-column-gap: 20px;
     -moz-column-gap: 20px;
 }
-
+#main-content h4 {
+    font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
+    color:#7f7f7f;
+}
 section {
     display: inline-block;
     width:100%;

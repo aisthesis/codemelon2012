@@ -20,9 +20,9 @@
     font-weight: 800;
 }
 #main-content h3 {
-    font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
+    /*font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;*/
 }
-#main-content h4, p,a,li {
+#main-content p,a,li {
     font-family:'Frutiger Neue W01 Book',Helvetica,Arial,sans-serif;
     /* Univers is also a good option but requires a paid subscription */
 }
