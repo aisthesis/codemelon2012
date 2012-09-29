@@ -9,6 +9,7 @@
         brown melon skin: #D8B87D
         green melon rind: #56732a
         main unshaded melon orange: #f6911b
+            appears as #f8a122 according to Sip
         shaded melon core: #be6f14
 */
 #logo {
@@ -47,5 +48,5 @@
     color:#a2d04c;
 }
 #logo div.logo-text h1:nth-child(2) {
-    color:#f6911b;    
+    color:#f8a122;    
 }

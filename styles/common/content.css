@@ -38,13 +38,21 @@
 #content h3 {
     font-size:20px;
     letter-spacing: 1px;
-    color:#cfcfcf;
+    background-color:#f2f2f2;
+    border-top:1px solid #dfdfdf;
+    border-bottom:1px solid #dfdfdf;
+    color:#a7a7a7;
+    font-family:'Cantata One', serif;
+    font-weight:700;
+    text-align: center;
+    width:100%;
 }
 #content h4 {
     font-size:16px;
 }
-#content h1,h2,h3 {
-    font-family:'Ubuntu', sans-serif;
+#content h1,h2 {
+    font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
+    font-weight:800;
 }
 #content h1,h2,h3,h4,h5 {
     line-height:1.5em;
