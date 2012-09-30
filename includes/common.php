@@ -1,5 +1,6 @@
 <?php
-namespace common;
+// namespaces unsupported in PHP 5.2, which is running on HostRocket
+// namespace common;
 /*
  * @file includes/common.php
  * @site codeMelon2012
@@ -8,7 +9,7 @@ namespace common;
  * @description common PHP functions
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
-function setAnimation($animate) {
+function common_setAnimation($animate) {
     echo '<script>';
     // create a global variable accessible to jQuery functions
     if ($animate) {
@@ -19,11 +20,11 @@ function setAnimation($animate) {
     }
     echo '</script>';
 }
-function javaScriptFile($page) {
+function common_javaScriptFile($page) {
     echo '"scripts/content/' . $page . '.js"';
 }
 
-function includeSidebarCss($page) {
+function common_includeSidebarCss($page) {
     // not included on pages: links
     // take advantage of PHP's fallthrough logic in switch
     switch ($page) {
@@ -33,7 +34,7 @@ function includeSidebarCss($page) {
     }
 }
 
-function includeBannerImage($page) {
+function common_includeBannerImage($page) {
     // not included on pages: links
     // take advantage of PHP's fallthrough logic in switch
     switch ($page) {

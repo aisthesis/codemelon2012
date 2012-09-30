@@ -1,5 +1,6 @@
 <?php
-namespace content;    
+// namespaces unsupported in PHP 5.2, which is running on HostRocket
+// namespace content;    
 /*
  * @file includes/content.php
  * @site codeMelon2012
@@ -8,11 +9,11 @@ namespace content;
  * @description PHP functions for linking specific page content
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
-function styling($page) {
+function content_styling($page) {
     echo '<link href="styles/content/' . $page . '.css" rel="stylesheet" type="text/css" />';
 }
 
-function includeContentHeader($page) {
+function content_includeHeader($page) {
     // not included on pages: links
     // take advantage of PHP's fallthrough logic in switch
     switch ($page) {

@@ -1,5 +1,6 @@
 <?php
-namespace navigation;
+// namespaces unsupported in PHP 5.2, which is running on HostRocket
+// namespace navigation;
 /*
  * @file navigation.php
  * @site codeMelon2012
@@ -8,7 +9,7 @@ namespace navigation;
  * @description functions used for navigation bar
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
-function home($page) {
+function navigation_home($page) {
     if ($page == 'home') {
         echo '"#"';
     }
@@ -16,10 +17,10 @@ function home($page) {
         echo '"index.php?animate=0"';
     }
 }
-function forum($page) {
+function navigation_forum($page) {
     echo '"#"';
 }
-function downloads($page) {
+function navigation_downloads($page) {
     if ($page == 'downloads') {
         echo '"#"';
     }
@@ -27,7 +28,7 @@ function downloads($page) {
         echo '"downloads.php?animate=0"';
     }   
 }
-function links($page) {
+function navigation_links($page) {
     if ($page == 'links') {
         echo '"#"';
     }
@@ -35,7 +36,7 @@ function links($page) {
         echo '"links.php?animate=0"';
     }   
 }
-function about($page) {
+function navigation_about($page) {
     if ($page == 'home') {
         echo '"#about"';
     }
