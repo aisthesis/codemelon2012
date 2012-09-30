@@ -8,6 +8,16 @@ namespace common {
  * @description common PHP functions
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
+    function setAnimation($animate) {
+        echo '<script>';
+        if ($animate) {
+            echo 'window.doAnimation = true;';
+        }
+        else {
+            echo 'window.doAnimation = false;';
+        }
+        echo '</script>';
+    }
     function javaScriptFile($page) {
         echo '"scripts/content/' . $page . '.js"';
     }

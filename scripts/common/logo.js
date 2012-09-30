@@ -15,7 +15,7 @@ function logoMain(activePage) {
         top:28,
         left:128
     }
-    if (activePage == 'HOME') {
+    if (window.doAnimation) {
         doFullLogoAnimation(sliceFinalPosition, logoTextFinalPosition);
     }
     else {     

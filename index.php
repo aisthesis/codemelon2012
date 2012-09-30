@@ -8,6 +8,10 @@
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
 $page = 'home';
+$animate = true;
+if (isset($_GET['animate'])) {
+    $animate = $_GET['animate'];
+}
 // necessary php includes
 require_once 'includes/common.php';
 require_once 'includes/navigation.php';

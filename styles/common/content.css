@@ -36,7 +36,7 @@
     letter-spacing: 2px;
 }
 #content h3 {
-    font-size:20px;
+    font-size:18px;
     letter-spacing: 1px;
     background-color:#f2f2f2;
     border-top:1px solid #dfdfdf;
@@ -46,9 +46,6 @@
     font-weight:700;
     text-align: center;
     width:100%;
-}
-#content h4 {
-    font-size:16px;
 }
 #content h1,h2 {
     font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;

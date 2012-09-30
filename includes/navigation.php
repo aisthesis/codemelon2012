@@ -13,7 +13,7 @@ function home($page) {
         echo '"#"';
     }
     else {
-        echo '"index.php"';
+        echo '"index.php?animate=0"';
     }
 }
 function forum($page) {
@@ -24,7 +24,7 @@ function downloads($page) {
         echo '"#"';
     }
     else {
-        echo '"downloads.php"';
+        echo '"downloads.php?animate=0"';
     }   
 }
 function links($page) {
@@ -32,7 +32,7 @@ function links($page) {
         echo '"#"';
     }
     else {
-        echo '"links.php"';
+        echo '"links.php?animate=0"';
     }   
 }
 function about($page) {
@@ -40,7 +40,7 @@ function about($page) {
         echo '"#about"';
     }
     else {
-        echo '"index.php#about"';
+        echo '"index.php?animate=0#about"';
     }
 }
 ?>
