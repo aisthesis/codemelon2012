@@ -12,8 +12,8 @@
 #main-content {       
     -webkit-column-width: 288px;
     -moz-column-width: 288px;
-    -webkit-column-gap: 20px;
-    -moz-column-gap: 20px;
+    -webkit-column-gap: 32px;
+    -moz-column-gap: 32px;
 }
 #main-content h4 {
     font-family:'Frutiger Neue W01 Book',Helvetica,Arial,sans-serif;

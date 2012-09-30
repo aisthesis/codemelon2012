@@ -8,9 +8,9 @@
 
 #main-content {       
     -webkit-column-width: 248px;
-    -moz-column-width: 248px;
-    -webkit-column-gap: 20px;
-    -moz-column-gap: 20px;
+    -moz-column-width: 256px;
+    -webkit-column-gap: 32px;
+    -moz-column-gap: 32px;
 }
 #main-content h4 {
     font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
