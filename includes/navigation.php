@@ -43,5 +43,12 @@ function navigation_about($page) {
     else {
         echo '"index.php?animate=0#about"';
     }
+}function navigation_terms($page) {
+    if ($page == 'home') {
+        echo '"#terms"';
+    }
+    else {
+        echo '"index.php?animate=0#terms"';
+    }
 }
 ?>

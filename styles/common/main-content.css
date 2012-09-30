@@ -13,7 +13,7 @@
     font-weight:bold;
     color:#7f7f7f;
 }
-#main-content h1,h2,h3,h4,h5 {
+#main-content h1,#main-content h2,#main-content h3,#main-content h4,#main-content h5 {
     margin-top:16px;
 }
 #main-content h1,h2,h3 {
@@ -22,11 +22,11 @@
 #main-content h4 {
     font-size:16px;
 }
-#main-content p,a,li {
+#main-content p,#main-content a,#main-content li {
     font-family:'Frutiger Neue W01 Book',Helvetica,Arial,sans-serif;
     /* Univers is also a good option but requires a paid subscription */
 }
-#main-content p,li {
+#main-content p,#main-content li {
     font-size:12px;
     line-height:2em;
 }

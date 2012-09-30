@@ -8,3 +8,18 @@
 #footer {
     height:128px;
 }
+#footer .wrapper {
+    font-family:'Frutiger Neue W01 Book',Helvetica,Arial,sans-serif;
+    font-size:12px;
+    margin:32px;
+}
+#footer p {
+    color:#9f9f9f;
+}
+#footer a {
+    text-decoration: none;
+    color:#f8a122;
+}
+#footer a:hover {
+    text-decoration: underline;
+}

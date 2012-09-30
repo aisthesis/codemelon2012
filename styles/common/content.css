@@ -47,13 +47,13 @@
     text-align: center;
     width:100%;
 }
-#content h1,h2 {
+#content h1,#content h2 {
     font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
     font-weight:800;
 }
-#content h1,h2,h3,h4,h5 {
+#content h1,#content h2,#content h3,#content h4,#content h5 {
     line-height:1.5em;
 }
-#content h1,h2 {
+#content h1,#content h2 {
     margin-bottom:0.5em;
 }
