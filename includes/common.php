@@ -10,6 +10,7 @@ namespace common {
  */
     function setAnimation($animate) {
         echo '<script>';
+        // create a global variable accessible to jQuery functions
         if ($animate) {
             echo 'window.doAnimation = true;';
         }
