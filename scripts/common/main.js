@@ -13,6 +13,7 @@ function codeMelonMain(activePage) {
     if (!$.support.boxModel) {
         window.location.replace("templates/no-boxmodel.html");
     }
+    //alert('hi');
     navigationMain(activePage);
     logoMain(activePage);
     /*

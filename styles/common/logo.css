@@ -26,16 +26,23 @@
     height:128px;
     width:336px;
 }
+/*
+without starting these elements hidden, Chrome sometimes flashes the position
+before jQuery has made the proper adjustment
+*/
 #logo div.melon {
     position:absolute;
     z-index:3;
+    visibility:hidden;
 }
 #logo div.slice {
     position:absolute;
     z-index:4;
+    visibility:hidden;
 }
 #logo div.logo-text {
     position:absolute;
+    visibility:hidden;
 }
 #logo h1 {
     position:relative;

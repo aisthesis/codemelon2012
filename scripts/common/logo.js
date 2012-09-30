@@ -18,9 +18,10 @@ function logoMain(activePage) {
     if (window.doAnimation) {
         doFullLogoAnimation(sliceFinalPosition, logoTextFinalPosition);
     }
-    else {     
-        $('#logo div.slice').css(sliceFinalPosition);
-        $('#logo div.logo-text').css(logoTextFinalPosition);    
+    else { 
+        $('#logo div.melon').css('visibility', 'visible');
+        $('#logo div.slice').css(sliceFinalPosition).css('visibility', 'visible');
+        $('#logo div.logo-text').css(logoTextFinalPosition).css('visibility', 'visible'); 
         activateHoverEffects();
     }
 }
@@ -59,7 +60,7 @@ function doFullLogoAnimation(sliceFinalPosition, logoTextFinalPosition) {
 function animateMelon(windowWidth) {
     var elementName = '#logo div.melon';
     var originalLeft = $(elementName).position().left;
-    $(elementName).css('left', -0.3 * windowWidth);
+    $(elementName).css('left', -0.3 * windowWidth).css('visibility', 'visible');
     setTimeout(function() {
         $(elementName).stop().animate(
             {left : originalLeft},
@@ -80,10 +81,10 @@ function animateSliceAndText(windowWidth, sliceFinalPosition, logoTextFinalPosit
     var originalLeft = $(sliceElementName).position().left + sliceFinalPosition.left;
     // set text off screen to start
     $(textElementName).css('left', logoTextFinalPosition.left);
-    $(textElementName).css('top', -64);
+    $(textElementName).css('top', -64).css('visibility', 'visible');
     // set slice off screen and animate
     $(sliceElementName).css('top', sliceFinalPosition.top);
-    $(sliceElementName).css('left', windowWidth);
+    $(sliceElementName).css('left', windowWidth).css('visibility', 'visible');
     setTimeout(function(){       
         $(sliceElementName).stop().animate(
             {left : originalLeft},
