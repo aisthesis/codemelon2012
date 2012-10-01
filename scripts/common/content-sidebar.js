@@ -8,31 +8,21 @@
  */
 
 function contentSidebarMain() {
+    duration = 1500;
     $('#content-sidebar h4.channels').click(function() {        
-        $('#main-content section').show();
+        $('#main-content section').animate({'opacity' : 1}, duration);
     });
-    $('#content-sidebar .apps a').click(function() {
-        $('#main-content section').hide();
-        $('#main-content section.apps').show();
-    });
-    $('#content-sidebar .programming a').click(function() {
-        $('#main-content section').hide();
-        $('#main-content section.programming').show();
-    });
-    $('#content-sidebar .robotics a').click(function() {
-        $('#main-content section').hide();
-        $('#main-content section.robotics').show();
-    });
-    $('#content-sidebar .site a').click(function() {
-        $('#main-content section').hide();
-        $('#main-content section.site').show();
-    });
-    $('#content-sidebar .tutorials a').click(function() {
-        $('#main-content section').hide();
-        $('#main-content section.tutorials').show();
-    });
-    $('#content-sidebar .web a').click(function() {
-        $('#main-content section').hide();
-        $('#main-content section.web').show();
-    });
+    highlightChannel('apps');
+    highlightChannel('programming');
+    highlightChannel('robotics');
+    highlightChannel('site');
+    highlightChannel('tutorials');
+    highlightChannel('web');
+}
+
+function highlightChannel(channel) {
+    $('#content-sidebar .' + channel + ' a').click(function() {
+        $('#main-content section').animate({'opacity' : 0.1}, duration);
+        $('#main-content section.' + channel).animate({'opacity' : 1}, duration);
+    })
 }
