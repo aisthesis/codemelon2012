@@ -21,12 +21,7 @@ function navigation_forum($page) {
     echo '"#"';
 }
 function navigation_downloads($page) {
-    if ($page == 'downloads') {
-        echo '"#"';
-    }
-    else {
-        echo '"downloads.php?animate=0"';
-    }   
+    echo '"https://github.com/aisthesis/"';
 }
 function navigation_links($page) {
     if ($page == 'links') {

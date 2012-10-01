@@ -8,7 +8,7 @@
  */
 
 function contentSidebarMain() {
-    var duration = 1500;
+    var duration = 1000;
     $('#content-sidebar h4.channels').click(function() {        
         $('#main-content section').animate({'opacity' : 1}, duration);
     });
