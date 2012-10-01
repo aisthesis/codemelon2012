@@ -11,8 +11,12 @@ links:
     http://www.google.com/webfonts/
 -->
     <head>
-        <title>Welcome to codeMelon!</title>
+        <?php content_title($page); ?>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="author" content="Marshall Farrier">
+        <meta name="description" content="codeMelon: technology blog with news, tutorials 
+              and source code">
         <!-- fonts -->
         <link href='http://fonts.googleapis.com/css?family=Ubuntu:700|Cantata+One' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="http://fast.fonts.com/jsapi/cc5fae93-f1d0-40cc-acc7-c301ef9330aa.js"></script>
@@ -39,5 +43,16 @@ links:
         <script type="text/javascript" src="scripts/common/lower-background.js"></script>
         <script type="text/javascript" src="scripts/common/main.js"></script>
         <script type="text/javascript" src=<?php common_javaScriptFile($page); ?>></script>
+        <!-- Place immediately before closing </head> tag for Google Analytics -->
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-18817737-2']);
+          _gaq.push(['_trackPageview']);
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
     </head>
     <body>

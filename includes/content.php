@@ -9,6 +9,18 @@
  * @description PHP functions for linking specific page content
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
+function content_title($page) {
+    switch($page) {
+        case "home":
+            echo '<title>Welcome to codeMelon</title>';
+            break;
+        case "links":
+            echo '<title>codeMelon - Links</title>';
+            break;
+        default:
+            echo '<title>codeMelon</title>';
+    }
+}
 function content_styling($page) {
     echo '<link href="styles/content/' . $page . '.css" rel="stylesheet" type="text/css" />';
 }
