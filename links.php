@@ -20,6 +20,7 @@ require_once 'templates/head.html';
 require_once 'templates/navigation.html';
 require_once 'templates/logo.html';
 require_once 'templates/header.html';
+content_sidebar($page);
 require_once 'content/links.html';
 require_once 'templates/lower-background.html';
 require_once 'templates/footer.html';

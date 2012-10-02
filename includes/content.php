@@ -50,4 +50,13 @@ function content_includeHeader($page) {
     }
 }
 
+function content_sidebar($page) {
+    switch ($page) {
+        case "home":         
+            require_once 'templates/content-sidebar.html';
+            break;
+        default:
+            echo '<div>';
+    }
+}
 ?>
