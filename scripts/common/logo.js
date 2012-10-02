@@ -6,7 +6,7 @@
  * description:
  *   logo JavaScript for codemelon2012
  */
-function logoMain(activePage) {
+function logoMain() {
     var sliceFinalPosition = {
         top:72,
         left:72

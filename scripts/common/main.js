@@ -15,7 +15,7 @@ function codeMelonMain(activePage) {
     }
     //alert('hi');
     navigationMain(activePage);
-    logoMain(activePage);
+    logoMain();
     /*
      * The top of the gray footer is sometimes about 32px too high up on the page in Chrome.
      * This is presumably because the function is sometimes called asynchronously before

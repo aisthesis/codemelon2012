@@ -37,14 +37,6 @@
     text-decoration: none;
 }
 
-#main-content div.date {
-    font-size:12px;
-    font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
-    color:#bbb;
-    line-height:1.5em;
-    margin-bottom: 0.5em;
-}
-
 #main-content section {
     padding-bottom: 16px;
     border-bottom:1px solid #ddd;

@@ -59,4 +59,9 @@ function content_sidebar($page) {
             echo '<div>';
     }
 }
+
+
+function content_article($article) {
+    require_once 'content/articles/' . $article . '.html';
+}
 ?>

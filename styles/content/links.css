@@ -7,7 +7,7 @@
 */
 
 #main-content {       
-    -webkit-column-width: 248px;
+    -webkit-column-width: 256px;
     -moz-column-width: 256px;
     -webkit-column-gap: 32px;
     -moz-column-gap: 32px;
@@ -19,4 +19,7 @@
 section {
     display: inline-block;
     width:100%;
+}
+#content h2 {
+    color:#cfcfcf;
 }

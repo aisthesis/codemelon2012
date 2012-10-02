@@ -31,7 +31,6 @@
 }
 #content h2 {
     font-size:24px;
-    color:#cfcfcf;
     text-align:center;
     letter-spacing: 2px;
 }
@@ -56,4 +55,11 @@
 }
 #content h1,#content h2 {
     margin-bottom:0.5em;
+}
+#content div.date {
+    font-size:12px;
+    font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
+    color:#bbb;
+    line-height:1.5em;
+    margin-bottom: 0.5em;
 }
