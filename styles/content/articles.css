@@ -7,8 +7,8 @@
 */
 
 #main-content {       
-    -webkit-column-width: 288px;
-    -moz-column-width: 288px;
+    -webkit-column-width: 336px;
+    -moz-column-width: 336px;
     -webkit-column-gap: 32px;
     -moz-column-gap: 32px;
     margin-top:16px;
@@ -22,7 +22,7 @@
 #content h2 {
     color:#9f9f9f;
 }
-pre {
+#main-content pre {
     border: 4px solid #a2d04c;
     margin:8px 0px;
     padding: 0.5em 0 0.5em 1em;

@@ -38,8 +38,8 @@
 }
 
 #main-content section {
-    padding-bottom: 16px;
-    border-bottom:1px solid #ddd;
+    display: inline-block;
+    width:100%;
 }
 
 #main-content li {

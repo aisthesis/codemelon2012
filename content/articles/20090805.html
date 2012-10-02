@@ -23,9 +23,9 @@
 		for trouble in the long-run.</p>
 		
     <p>The key to coding menus in JavaScript lies in one simple command which reads</p>
-		
+    <section>	
     <pre><code>document.write("text");</code></pre>
-		
+    </section>	
     <p>This command seems both ridiculous and trivial when you first learn that all it does is cause
     the character sequence "text" to be written at the current location. Why on earth would you go to
     the trouble of writing all of this complicated script when you could just write the string "text"
@@ -46,7 +46,7 @@
     you write style declarations into your CSS files. I'll use as example the menu for this section as of
     the time at which I'm writing this article. Right now, I only have 3 links in my menu but expect to 
     have more as the section grows. Here's the code that generates my current menu:</p>
-		
+	<section>	
     <pre><code>function itWebMenu() {
   document.write("&lt;a " + 
     "href='web_main.htm'&gt;" +
@@ -56,20 +56,20 @@
   document.write("&lt;a " + 
     "href='web_menu.htm'&gt;Menus&lt;/a&gt;");
 }</code></pre>
-    
+    </section>
     <p>Note that within the document.write() function, you have to enclose the string that is the 
     argument of the function in double quotation marks(") and that double quotation marks <em>within this string</em>
     need to be written as single quotation marks ('). You can break up the individual parts of your code
     however you wish. For example, rather than</p>
-
+    <section>
     <pre><code>document.write("&lt;a " + 
   "href='web_icon.htm'&gt;Icons&lt;/a&gt;");</code></pre>		
-		
+    </section>	
     <p>I could have written</p>
-		
+    <section>	
     <pre><code>document.write("&lt;a href='web_icon");
 document.write(".htm'&gt;Icons&lt;/a&gt;");</code></pre>
-
+    </section>
     <p>I hope it's clear why the result of calling the function from a page of HTML code would be 
         exactly the same. In the code I'm actually using I've broken the lines up so that I can easily 
         see each anchor as a unit whenever I add or modify pages and need
@@ -86,13 +86,13 @@ document.write(".htm'&gt;Icons&lt;/a&gt;");</code></pre>
 		
     <p>Now that the page provides a reference through which the browser can locate our function definition, we
     can call the function within the body of the page. To call the function, we can now write:</p>
-
+    <section>
     <pre><code>&lt;div id="itSubMenu"&gt;
     &lt;script type="text/javascript"&gt;
         itWebMenu();
     &lt;/script&gt;
 &lt;/div&gt;</code></pre>
-		
+    </section>	
     <p>To show the context of our JavaScript function,
     I've also included the code for the div container in which the anchors are placed. Now, wherever this function is placed
     on the page, the code will execute and cause HTML code to be written in that spot and used by the browser in rendering the page.
