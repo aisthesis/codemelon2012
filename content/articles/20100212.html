@@ -1,0 +1,169 @@
+<!--
+@file content/articles/20100212.html
+@author Marshall Farrier
+@date 10/02/2012
+@description 'Simple Formulas for Calculating Tints and Shades'
+-->
+<div id="content-wrapper" class="outer-width-limiter">   
+    <div id="content"> 
+<div id="header">
+    <h2>Simple Formulas for Calculating Tints and Shades</h2>
+    <div class="date">02-12-2010</div>
+</div>
+<?php content_sidebar($page); ?>
+<div id="main-content">
+    
+    
+    <p>Tints and shades provide additional color options for a GUI or website without
+		clashing with its underlying color scheme. It is not entirely clear, however, just
+		how in general to derive tints mathematically from a base color. Here, I'm going to
+		present 2 simple formulas for deriving shades and for deriving tints. I'll
+		then use the color scheme of this website to show the color range defined by each formula.
+		While these formulas leave out many of the complications associated with saturation
+		issues, I think they are still quite usable.</p>
+		
+		<h4>Shades</h4>
+		
+		<p>For darkening or shading a color, the basic formula seems pretty obvious: If x, y and z are
+		the red, green and blue arguments for the original color (let's say '#xyz' representing each number
+		as a 2-digit hex value), and you want a shade representing amount s0 (&lt;=1) of '#xyz', then
+        the shade should be '#abc' where <code>a = s0 * x, b = s0 * y</code>, and <code>c = s0 * z</code>, again using 2-digit
+		hexadecimal representations when converting to strings.</p>
+		
+		<div class="color_block_label"><h5>Melon (#191106 through #ffb13d):</h5></div>
+		<div class="color_block first" style="background-color:#191106"></div>
+		<div class="color_block first" style="background-color:#33230c"></div>
+		<div class="color_block first" style="background-color:#4c3512"></div>
+		<div class="color_block first" style="background-color:#664618"></div>
+		<div class="color_block first" style="background-color:#7f581e"></div>
+		<div class="color_block first" style="background-color:#996a24"></div>
+		<div class="color_block first" style="background-color:#b27b2a"></div>
+		<div class="color_block first" style="background-color:#cc8d30"></div>
+		<div class="color_block first" style="background-color:#e59f36"></div>
+		<div class="color_block first" style="background-color:#ffb13d"></div>
+		
+		<div class="color_block_label"><h5>Green (#111906 through #b1ff3d):</h5></div>
+		<div class="color_block first" style="background-color:#111906"></div>
+		<div class="color_block first" style="background-color:#23330c"></div>
+		<div class="color_block first" style="background-color:#354c12"></div>
+		<div class="color_block first" style="background-color:#466618"></div>
+		<div class="color_block first" style="background-color:#587f1e"></div>
+		<div class="color_block first" style="background-color:#6a9924"></div>
+		<div class="color_block first" style="background-color:#7bb22a"></div>
+		<div class="color_block first" style="background-color:#8dcc30"></div>
+		<div class="color_block first" style="background-color:#9fe536"></div>
+		<div class="color_block first" style="background-color:#b1ff3d"></div>
+		
+		<div class="color_block_label"><h5>Brown/beige (#191610 through #ffe2a3):</h5></div>
+		<div class="color_block first" style="background-color:#191610"></div>
+		<div class="color_block first" style="background-color:#332d20"></div>
+		<div class="color_block first" style="background-color:#4c4330"></div>
+		<div class="color_block first" style="background-color:#665a41"></div>
+		<div class="color_block first" style="background-color:#7f7151"></div>
+		<div class="color_block first" style="background-color:#998761"></div>
+		<div class="color_block first" style="background-color:#b29e72"></div>
+		<div class="color_block first" style="background-color:#ccb482"></div>
+		<div class="color_block first" style="background-color:#e5cb92"></div>
+		<div class="color_block first" style="background-color:#ffe2a3"></div>
+		
+		<div class="color_block_label"><h5>Blue (#101619 through #a3e2ff):</h5></div>
+		<div class="color_block first" style="background-color:#101619"></div>
+		<div class="color_block first" style="background-color:#202d33"></div>
+		<div class="color_block first" style="background-color:#30434c"></div>
+		<div class="color_block first" style="background-color:#415a66"></div>
+		<div class="color_block first" style="background-color:#51717f"></div>
+		<div class="color_block first" style="background-color:#618799"></div>
+		<div class="color_block first" style="background-color:#729eb2"></div>
+		<div class="color_block first" style="background-color:#82b4cc"></div>
+		<div class="color_block first" style="background-color:#92cbe5"></div>
+		<div class="color_block first" style="background-color:#a3e2ff"></div>
+		
+		<p>Note first that in each case the brightest color uses 0xff (decimal 255) for one
+		of its rgb components, and 0xff of course represents the maximum allowable intensity. Once we reach
+		that number, we can no longer increase each component proportionally
+		within the numeric framework of the rgb encoding.</p>
+		
+		<p>Secondly, this method produces shades equivalent to those an artist would
+		create by adding <i>black</i> to a base color. With a specific color scheme, 
+		one certainly might also want to weight the shading toward one or
+		another part of the spectrum. For example, if you want your color to have blue shades, you might want
+		to reduce the red and green components disproportionately to the blue rather than reducing
+		all 3 components in the same proportion. <i>Given</i> the subjectively determined
+		weighting for the shading, one could certainly also look for appropriate transformations of our simple linear formula,
+		but I'm not going to examine such issues here.</p>
+        
+		<h4>Tints</h4>
+		<p style="margin-bottom:0px">While you can't make a color <i>brighter</i> when one of its components is 0xff (255), you can make it
+		<i>lighter</i> by adding white. The easiest way to formulate an equation in this case is to take the tint factor t0 to represent
+		the percentage of the original color to mix with white (#fff). Again we want <code>t0 &lt;= 1</code>, and a tint #abc
+		of a color #xyz can now be derived from the formulas:</p>
+        <section>
+            <pre><code>a = (t0 * x) + (255 * (1 - t0))
+b = (t0 * y) + (255 * (1 - t0))
+c = (t0 * z) + (255 * (1 - t0))</code></pre>
+        </section>
+		<p>So, let's see how the tints for the same colors look when calculated using this formula.</p>
+
+		<div class="color_block_label"><h5>Melon (#ffb13d through #fff7eb):</h5></div>
+		<div class="color_block" style="background-color:#ffb13d"></div>
+		<div class="color_block" style="background-color:#ffb850"></div>
+		<div class="color_block" style="background-color:#ffc063"></div>
+		<div class="color_block" style="background-color:#ffc877"></div>
+		<div class="color_block" style="background-color:#ffd08a"></div>
+		<div class="color_block" style="background-color:#ffd89e"></div>
+		<div class="color_block" style="background-color:#ffdfb1"></div>
+		<div class="color_block" style="background-color:#ffe7c4"></div>
+		<div class="color_block" style="background-color:#ffefd8"></div>
+		<div class="color_block" style="background-color:#fff7eb"></div>
+		
+		<div class="color_block_label"><h5>Green (#b1ff3d through #f7ffeb):</h5></div>
+		<div class="color_block" style="background-color:#b1ff3d"></div>
+		<div class="color_block" style="background-color:#b8ff50"></div>
+		<div class="color_block" style="background-color:#c0ff63"></div>
+		<div class="color_block" style="background-color:#c8ff77"></div>
+		<div class="color_block" style="background-color:#d0ff8a"></div>
+		<div class="color_block" style="background-color:#d8ff9e"></div>
+		<div class="color_block" style="background-color:#dfffb1"></div>
+		<div class="color_block" style="background-color:#e7ffc4"></div>
+		<div class="color_block" style="background-color:#efffd8"></div>
+		<div class="color_block" style="background-color:#f7ffeb"></div>
+		
+		<div class="color_block_label"><h5>Brown/beige (#ffe2a3 through #fffcf5):</h5></div>
+		<div class="color_block" style="background-color:#ffe2a3"></div>
+		<div class="color_block" style="background-color:#ffe4ac"></div>
+		<div class="color_block" style="background-color:#ffe7b5"></div>
+		<div class="color_block" style="background-color:#ffeabe"></div>
+		<div class="color_block" style="background-color:#ffedc7"></div>
+		<div class="color_block" style="background-color:#fff0d1"></div>
+		<div class="color_block" style="background-color:#fff3da"></div>
+		<div class="color_block" style="background-color:#fff6e3"></div>
+		<div class="color_block" style="background-color:#fff9ec"></div>
+		<div class="color_block" style="background-color:#fffcf5"></div>
+		
+		<div class="color_block_label"><h5>Blue (#a3e2ff through #f5fcff):</h5></div>
+		<div class="color_block" style="background-color:#a3e2ff"></div>
+		<div class="color_block" style="background-color:#ace4ff"></div>
+		<div class="color_block" style="background-color:#b5e7ff"></div>
+		<div class="color_block" style="background-color:#beeaff"></div>
+		<div class="color_block" style="background-color:#c7edff"></div>
+		<div class="color_block" style="background-color:#d1f0ff"></div>
+		<div class="color_block" style="background-color:#daf3ff"></div>
+		<div class="color_block" style="background-color:#e3f6ff"></div>
+		<div class="color_block" style="background-color:#ecf9ff"></div>
+		<div class="color_block" style="background-color:#f5fcff"></div>
+		
+		<p>An additional observation that's only slightly off-topic: In my favorite color
+		schemes from <a href="http://www.colourlovers.com/">COLOURlovers</a>, I've noticed
+		that (to my eye) harmonious colors often seem to result from transposing
+		2 of the 3 rgb components of one color. So, I wonder whether the
+		eye may perceive these mathematical relationships between colors much as the ear
+		perceives Pythagorean harmonies. For example, looking for a green to
+		harmonize with the melon color I liked (#ffb13d), I transposed the red and green
+		components to arrive at the color #b1ff3d. This transposition technique doesn't
+		provide any kind of foolproof formula for finding appealing color schemes, but
+		it does seem to work frequently enough to be worth a try.</p>
+		
+		<p>Finally, here's an Excel &reg; workbook with the necessary formulas for calculating
+		tints and shades and with functions for translating decimal into hexadecimal notation:
+		<a href="resources/gui_color.zip">gui_color.zip</a></p>
+</div>

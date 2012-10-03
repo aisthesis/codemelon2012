@@ -64,4 +64,14 @@ function content_sidebar($page) {
 function content_article($article) {
     require_once 'content/articles/' . $article . '.html';
 }
+
+function content_article_style($article) {
+    if (!isset($article)) { return; }
+    switch ($article) {
+        case '20100212':
+        case 'any other article requiring a special stylesheet':
+            echo '<link href="styles/content/articles/' . $article;
+            echo '.css" rel="stylesheet" type="text/css" />';   
+    }
+}
 ?>

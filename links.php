@@ -11,6 +11,7 @@ $animate = true;
 if (isset($_GET['animate'])) {
     $animate = $_GET['animate'];
 }
+$article = '';
 // necessary php includes
 require_once 'includes/common.php';
 require_once 'includes/navigation.php';
