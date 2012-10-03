@@ -8,26 +8,44 @@
  */
 
 function contentSidebarMain() {
-    var duration = 800;
+    var ms_to_complete = 800;
     $('#content-sidebar h4.channels').click(function() { 
         $('#content-sidebar a').css({'color' : '#a9a9a9'});       
-        $('#main-content section').animate({'opacity' : 1}, duration * 2, 'easeInOutQuad');
+        $('#main-content section').stop().animate({'opacity' : 1}, {
+            duration : ms_to_complete * 2, 
+            easing : 'easeInOutQuad',
+            queue : false}
+        );
     });
-    highlightChannel('apps', duration);
-    highlightChannel('programming', duration);
-    highlightChannel('robotics', duration);
-    highlightChannel('site', duration);
-    highlightChannel('tutorials', duration);
+    highlightChannel('apps', ms_to_complete);
+    highlightChannel('programming', ms_to_complete);
+    highlightChannel('robotics', ms_to_complete);
+    highlightChannel('site', ms_to_complete);
+    highlightChannel('tutorials', ms_to_complete);
     highlightChannel('web');
 }
 
-function highlightChannel(channel, duration) {
+function highlightChannel(channel, ms_to_complete) {
     $('#content-sidebar .' + channel + ' a').click(function() {
-        $('#main-content section').stop();
         $('#content-sidebar a').css({'color' : '#a9a9a9'});
         $(this).css({'color' : '#17d'});
-        $('#main-content section').animate({'opacity' : 0.1}, duration, 'easeInOutQuad', function() {
-            $('#main-content section.' + channel).animate({'opacity' : 1}, duration, 'easeInOutQuad');
-        });
+        $('#main-content section').stop().animate(
+            {'opacity' : 0.1}, 
+            {
+                duration : ms_to_complete, 
+                easing : 'easeInOutQuad', 
+                complete : function() {
+                    if ($(this).hasClass(channel)) {
+                        $(this).animate(
+                            {'opacity' : 1}, 
+                            {
+                                duration : ms_to_complete, 
+                                easing : 'easeInOutQuad'
+                            }
+                        );
+                    }
+                }
+            }
+        );
     })
 }
