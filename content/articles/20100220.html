@@ -1,0 +1,287 @@
+<!--
+@file content/articles/20100220.html
+@author Marshall Farrier
+@date 10/03/2012
+@description article 'Advanced Color Calculator'
+-->
+<div id="content-wrapper" class="outer-width-limiter">   
+    <div id="content"> 
+<div id="header">
+    <h2>Advanced Color Calculator</h2>
+    <div class="date">02-20-2010</div>
+</div>
+<?php content_sidebar($page); ?>
+<div id="main-content">
+    
+    <p>In this article I'd like to deal with some complexities that were omitted 
+		in my <a href="articles.php?animate=0&article=20100212">Simple Formulas for Calculating Tints and Shades</a>.
+		These complications arise when one attempts a more exact
+		treatment of color saturation.</p>
+		<p style="margin-bottom:10px">I should point out that here, as in my previous examination of color,
+		I intend to treat only the <i>mathematics</i> of color--whether or not it corresponds
+		to the way in which we perceive it.
+		So, for example, mixing 50% black (#000) with
+		50% white (#fff) just <i>is</i> the specific gray specified by the rgb value #808080.
+		It is a different issue whether the human eye perceives this gray to be halfway between white
+		and black. While the possible discrepancy in this case may seem insignificant, it can become noticeable
+		when we step through the various shades one step at a time. The following grayscale begins with black and
+		increases the amount of white by 10% at each step:</p>
+
+		<div class="color_block" style="background-color:#000"></div>
+		<div class="color_block" style="background-color:#191919"></div>
+		<div class="color_block" style="background-color:#323232"></div>
+		<div class="color_block" style="background-color:#4c4c4c"></div>
+		<div class="color_block" style="background-color:#666666"></div>
+		<div class="color_block" style="background-color:#7f7f7f"></div>
+		<div class="color_block" style="background-color:#999999"></div>
+		<div class="color_block" style="background-color:#b2b2b2"></div>
+		<div class="color_block" style="background-color:#cccccc"></div>
+		<div class="color_block" style="background-color:#e5e5e5"></div>
+		
+		<p>Most people will likely perceive some of these steps as larger than others, although
+		the difference in the numeric values is the same each time (with 
+		negligible exceptions due to rounding). The distance between
+		the steps, however, isn't the important issue here. I'm concerned here only with determining
+		which specific rgb values belong to the range of tints and shades of a particular coloer
+		and which ones don't.</p>
+		
+		<h4>Saturation</h4>
+		
+		<p>I'm going to call rgb colors <i>saturated</i> when 1) the maximum of the 3 rgb values is 255
+		and 2) the minimum of these values is 0. Any rgb color that is not itself a graytone can be
+		represented uniquely as a mixture of gray and a fully saturated color. Let's take the 3-tuple (a0, b0, c0) to be
+		the rgb representation of a color other than gray, 0 <= g <= 255, and 0 <= p <= 1. g is going to represent 
+		the desired shade of gray, and p is going to be the percent of a saturated color present in a mixture
+		that yields (a0, b0, c0). Since we know that (a0, b0, c0) is not a shade of gray, we can for ease of calculation permute
+		the values so that a0 >= b0 >= c0 and a0 > c0. We then get the equations:</p>
+    <section>	
+        <pre><code>a0 = (p * 255) + ((1 - p) * g)
+b0 = (p * b_sat) + ((1 - p) * g)
+c0 = (1 - p) * g</code></pre>
+    </section>	
+		<p>We have 3 unknowns here (p, g and b_sat) and 3 equations, so we have a unique solution for p, g and b_sat as long as
+		the equations are independent, as they clearly are when a0 > b0 > c0 (and when b0 = a0 or b0 = c0 we get 2 independent equations with
+		2 unknowns).</p>
+		 
+		<p>The spreadsheet zipped up in <a href="resources/gui_color_1_0.zip">gui_color_1_0.zip</a> solves these equations in 2 steps:
+		First, I extract all black from the original color (just like the simple spreadsheet), then I extract all white from the
+		result of the black extraction (unlike the simple spreadsheet). I'll leave it to the reader to verify that these
+		steps amount to extracting gray. They also yield numbers that make it easy to figure the proportions of gray and saturated
+		color present in the original unsaturated color. Here are some saturation ranges for the same set of colors I used
+		in the previous version. The saturation level nearest the original color is indicated by a dotted border. Also note
+		that the "gray" for the melon and for the green is actually white--i.e., no black was present in the orginal color.</p>
+		
+		<div class="color_block_label">Melon (#fff through #ff9800):</div>
+		<div class="color_block" style="background-color:#fff"></div>
+		<div class="color_block" style="background-color:#fff3e2"></div>
+		<div class="color_block" style="background-color:#ffe8c6"></div>
+		<div class="color_block" style="background-color:#ffddaa"></div>
+		<div class="color_block" style="background-color:#ffd18e"></div>
+		<div class="color_block" style="background-color:#ffc570"></div>
+		<div class="color_block" style="background-color:#ffba54"></div>
+		<div class="color_block orig_color" style="background-color:#ffaf38"></div>
+		<div class="color_block" style="background-color:#ffa31c"></div>
+		<div class="color_block" style="background-color:#ff9800"></div>
+
+		<div class="color_block_label">Green (#fff through #98ff00):</div>
+		<div class="color_block" style="background-color:#fff"></div>
+		<div class="color_block" style="background-color:#f3ffe2"></div>
+		<div class="color_block" style="background-color:#e8ffc6"></div>
+		<div class="color_block" style="background-color:#ddffaa"></div>
+		<div class="color_block" style="background-color:#d1ff8e"></div>
+		<div class="color_block" style="background-color:#c5ff70"></div>
+		<div class="color_block" style="background-color:#baff54"></div>
+		<div class="color_block orig_color" style="background-color:#afff38"></div>
+		<div class="color_block" style="background-color:#a3ff1c"></div>
+		<div class="color_block" style="background-color:#98ff00"></div>
+
+		<div class="color_block_label">Brown (#b2b2b2 through #ffad00):</div>
+		<div class="color_block" style="background-color:#b2b2b2"></div>
+		<div class="color_block" style="background-color:#bab19e"></div>
+		<div class="color_block" style="background-color:#c3b18b"></div>
+		<div class="color_block orig_color" style="background-color:#cbb077"></div>
+		<div class="color_block" style="background-color:#d4b063"></div>
+		<div class="color_block" style="background-color:#ddaf4e"></div>
+		<div class="color_block" style="background-color:#e5af3a"></div>
+		<div class="color_block" style="background-color:#eeae27"></div>
+		<div class="color_block" style="background-color:#f6ae13"></div>
+		<div class="color_block" style="background-color:#ffad00"></div>
+		
+		<div class="color_block_label">Blue (#4a4a4a through #00b1ff):</div>
+		<div class="color_block" style="background-color:#4a4a4a"></div>
+		<div class="color_block orig_color" style="background-color:#42555e;border-color:#ddd"></div>
+		<div class="color_block" style="background-color:#3a6172"></div>
+		<div class="color_block" style="background-color:#316c86"></div>
+		<div class="color_block" style="background-color:#297799"></div>
+		<div class="color_block" style="background-color:#2083af"></div>
+		<div class="color_block" style="background-color:#188fc3"></div>
+		<div class="color_block" style="background-color:#109ad7"></div>
+		<div class="color_block" style="background-color:#08a5eb"></div>
+		<div class="color_block" style="background-color:#00b1ff"></div>
+		
+		<p>It's interesting to see here how brown results from mixing gray (71.8%) with orange (28.2%).</p>
+		
+		<p>Also worth noting is that any given saturated color will have different "desaturation paths"
+		depending on which shade of gray we use in the desaturation mix. So, we can't simply desaturate
+		a given color but instead can only desaturate it <i>using a particular gray-tone</i>.</p>
+		<h4>Shades Revisited</h4>
+		
+		<p>Now that we know how to specify any color as a unique mixture of gray and some saturated color,
+		how do we apply this knowledge to the problem of specifying shades and tints? Starting with a color
+		(a0, b0, c0) for which we assume a0 > b0 > c0, our spreadsheet resolves this color into a fully
+		saturated color, a saturation percentage and a graytone, all of which are unique to the given color.
+		In other words, we have determined the values b_sat, p0 and g0 such that:</p>
+    <section>	
+        <pre><code>a0 = (p0 * 255) + ((1 - p0) * g0)
+b0 = (p0 * b_sat) + ((1 - p0) * g0)
+c0 = (1 - p0) * g0</code></pre>
+    </section>	
+		
+		
+		<p>In order to have black as the darkest shade of our original color, we
+		must not only increase the amount of gray used but also successively darken the gray toward black.
+		The obvious formula for shades of (a0, b0, c0) is thus:</p>
+    <section>	
+        <pre><code>x = (p * p0 * 255) + ((1 - (p * p0)) 
+    * p * g0)
+y = (p * p0 * b_sat) + ((1 - (p * p0)) 
+    * p * g0)
+c0 = (1 - (p * p0)) * p * g0</code></pre>
+    </section>	
+			
+		
+		<p>The following shading sequences show the colors resulting from these equations and bring out
+		an additional difficulty:</p>
+		
+		<div class="color_block_label">Melon (#2a2317 through #ffb13d):</div>
+		<div class="color_block" style="background-color:#2a2317"></div>
+		<div class="color_block" style="background-color:#52422b"></div>
+		<div class="color_block" style="background-color:#755d3b"></div>
+		<div class="color_block" style="background-color:#947546"></div>
+		<div class="color_block" style="background-color:#b0894f"></div>
+		<div class="color_block" style="background-color:#c79853"></div>
+		<div class="color_block" style="background-color:#dba453"></div>
+		<div class="color_block" style="background-color:#ebac4f"></div>
+		<div class="color_block" style="background-color:#f6b048"></div>
+		<div class="color_block" style="background-color:#ffb13d"></div>
+
+		<div class="color_block_label">Green (#232a17 through #b1ff3d):</div>
+		<div class="color_block" style="background-color:#232a17"></div>
+		<div class="color_block" style="background-color:#42522b"></div>
+		<div class="color_block" style="background-color:#5d753b"></div>
+		<div class="color_block" style="background-color:#759446"></div>
+		<div class="color_block" style="background-color:#89b04f"></div>
+		<div class="color_block" style="background-color:#98c753"></div>
+		<div class="color_block" style="background-color:#a4db53"></div>
+		<div class="color_block" style="background-color:#aceb4f"></div>
+		<div class="color_block" style="background-color:#b0f648"></div>
+		<div class="color_block" style="background-color:#b1ff3d"></div>
+
+		<div class="color_block_label">Brown (#181611 through #c8b180):</div>
+		<div class="color_block" style="background-color:#181611"></div>
+		<div class="color_block" style="background-color:#302b21"></div>
+		<div class="color_block" style="background-color:#463f30"></div>
+		<div class="color_block" style="background-color:#5c523f"></div>
+		<div class="color_block" style="background-color:#70654c"></div>
+		<div class="color_block" style="background-color:#847658"></div>
+		<div class="color_block" style="background-color:#968664"></div>
+		<div class="color_block" style="background-color:#a8956e"></div>
+		<div class="color_block" style="background-color:#b8a377"></div>
+		<div class="color_block" style="background-color:#c8b180"></div>
+		
+		<div class="color_block_label">Blue (#07090a through #405963):</div>
+		<div class="color_block" style="background-color:#07090a"></div>
+		<div class="color_block" style="background-color:#0e1315"></div>
+		<div class="color_block" style="background-color:#151c20"></div>
+		<div class="color_block" style="background-color:#1c262a"></div>
+		<div class="color_block" style="background-color:#222f34"></div>
+		<div class="color_block" style="background-color:#28373e"></div>
+		<div class="color_block" style="background-color:#2f4048"></div>
+		<div class="color_block" style="background-color:#344851"></div>
+		<div class="color_block" style="background-color:#3a515a"></div>
+		<div class="color_block" style="background-color:#405963"></div>
+		
+		
+		<p>This method limits us for shading when the starting color (our blue, for example) is already pretty dark.
+		More useful would be a new color relative to which this blue
+		is a shade. We want to be able to work not only with shades of our original
+		color, but in some cases, we may want to create a color of which the original color
+		is itself a shade. The formulas in the color_var1 worksheet identify various
+		colors of this sort. If, for example, we choose the more middle-of-the-road gray
+		defined by decimal 160 rather than the dark gray (decimal 75) originally used,
+		we can modify our scale of blue shades as follows:</p>
+		
+		<div class="color_block_label">Blue (#0f1417 through #6fa5bc):</div>
+		<div class="color_block" style="background-color:#0f1417"></div>
+		<div class="color_block" style="background-color:#1e282d"></div>
+		<div class="color_block" style="background-color:#2b3b42"></div>
+		<div class="color_block orig_color" style="background-color:#384d57;border-color:#ddd"></div>
+		<div class="color_block" style="background-color:#435e6a"></div>
+		<div class="color_block" style="background-color:#4e6e7c"></div>
+		<div class="color_block" style="background-color:#587d8e"></div>
+		<div class="color_block" style="background-color:#608b9e"></div>
+		<div class="color_block" style="background-color:#6899ae"></div>
+		<div class="color_block" style="background-color:#6fa5bc"></div>
+		
+		<p>The worksheet color_var2 performs the same calculations when
+		our original color is too light and we want it to appear as a tint of
+		an unknown base color.</p>
+
+		<h4>Tints</h4>
+		
+		<p>The same methods can be applied to tints. Since the formulas all follow the same
+		principles for tints as they do for shades (simply replacing black with white), I
+		won't go through their derivation but will simply show the scale of tints
+		resulting from these formulas. I'll also use the lighter shade of blue from the preceding section:</p>
+		
+		<div class="color_block_label">Melon (#ffb13d through #fff7eb):</div>
+		<div class="color_block" style="background-color:#ffb13d"></div>
+		<div class="color_block" style="background-color:#ffb850"></div>
+		<div class="color_block" style="background-color:#ffc063"></div>
+		<div class="color_block" style="background-color:#ffc877"></div>
+		<div class="color_block" style="background-color:#ffd08a"></div>
+		<div class="color_block" style="background-color:#ffd89e"></div>
+		<div class="color_block" style="background-color:#ffdfb1"></div>
+		<div class="color_block" style="background-color:#ffe7c4"></div>
+		<div class="color_block" style="background-color:#ffefd8"></div>
+		<div class="color_block" style="background-color:#fff7eb"></div>
+
+		<div class="color_block_label">Green (#b1ff3d through #f7ffeb):</div>
+		<div class="color_block" style="background-color:#b1ff3d"></div>
+		<div class="color_block" style="background-color:#b8ff50"></div>
+		<div class="color_block" style="background-color:#c0ff63"></div>
+		<div class="color_block" style="background-color:#c8ff77"></div>
+		<div class="color_block" style="background-color:#d0ff8a"></div>
+		<div class="color_block" style="background-color:#d8ff9e"></div>
+		<div class="color_block" style="background-color:#dfffb1"></div>
+		<div class="color_block" style="background-color:#e7ffc4"></div>
+		<div class="color_block" style="background-color:#efffd8"></div>
+		<div class="color_block" style="background-color:#f7ffeb"></div>
+
+		<div class="color_block_label">Brown (#c8b180 through #f7f5f0):</div>
+		<div class="color_block" style="background-color:#c8b180"></div>
+		<div class="color_block" style="background-color:#cbb68a"></div>
+		<div class="color_block" style="background-color:#cfbd95"></div>
+		<div class="color_block" style="background-color:#d3c3a1"></div>
+		<div class="color_block" style="background-color:#d8cbad"></div>
+		<div class="color_block" style="background-color:#ded2ba"></div>
+		<div class="color_block" style="background-color:#e3dac7"></div>
+		<div class="color_block" style="background-color:#e9e3d4"></div>
+		<div class="color_block" style="background-color:#f0ebe2"></div>
+		<div class="color_block" style="background-color:#f7f5f0"></div>
+		
+		<div class="color_block_label">Blue (#6fa5bc through #eef3f5):</div>
+		<div class="color_block" style="background-color:#6fa5bc"></div>
+		<div class="color_block" style="background-color:#7babc0"></div>
+		<div class="color_block" style="background-color:#87b2c5"></div>
+		<div class="color_block" style="background-color:#94baca"></div>
+		<div class="color_block" style="background-color:#a1c2d0"></div>
+		<div class="color_block" style="background-color:#b0cad6"></div>
+		<div class="color_block" style="background-color:#bed4dd"></div>
+		<div class="color_block" style="background-color:#cddee5"></div>
+		<div class="color_block" style="background-color:#dde8ed"></div>
+		<div class="color_block" style="background-color:#eef3f5"></div>
+		
+		<p>Download: <a href="resources/gui_color_1_0.zip">gui_color_1_0.zip</a></p>
+		
+</div>

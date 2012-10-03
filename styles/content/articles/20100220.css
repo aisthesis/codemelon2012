@@ -1,0 +1,27 @@
+/* 
+ * @file styles/content/articles/20100220.css
+ * @date 10/02/2012
+ * @author Marshall Farrier
+ * @description special styles for 20100212: Advanced Color Calculator
+ * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+*/
+
+#main-content div.color_block_label {
+	margin-left:10px;
+	margin-bottom:5px;
+	clear:both;
+}
+#main-content div.color_block {
+	float:left;
+	height:27px;
+	width:27px;
+	margin-left:2px;
+	margin-bottom:10px;
+}
+#main-content div.color_block+p {
+    clear:both;
+    padding-top:8px;
+}
+#main-content p+div.color_block_label {
+    margin-top:8px;
+}

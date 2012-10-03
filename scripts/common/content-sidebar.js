@@ -36,7 +36,7 @@ function highlightChannel(channel, ms_to_complete) {
                 easing : 'easeInOutQuad', 
                 complete : function() {
                     if ($(this).hasClass(channel)) {
-                        $(this).animate(
+                        $(this).stop().animate(
                             {'opacity' : 1}, 
                             {
                                 duration : ms_to_complete, 
