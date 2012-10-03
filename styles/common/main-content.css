@@ -30,6 +30,9 @@
     font-size:12px;
     line-height:2em;
 }
+#main-content p+p {
+    margin-top:1.0em;
+}
 #main-content a {    
     color:#17d;
 }

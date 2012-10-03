@@ -42,6 +42,7 @@
     text-decoration:none;
     color:#a9a9a9;
     line-height:1.8em;
+    outline:none !important;
 }
 
 #content-sidebar li a:hover {
