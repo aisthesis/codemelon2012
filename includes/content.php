@@ -62,6 +62,7 @@ function content_sidebar($page) {
 
 
 function content_article($article) {
+    echo "article is {$article}!";
     require_once 'content/articles/' . $article . '.html';
 }
 
