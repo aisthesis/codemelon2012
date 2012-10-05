@@ -57,7 +57,10 @@
 }
 #main-content div.image-wrapper {
     float:right;
+}
+#main-content p+div.image-wrapper {
     margin:16px;
 }
-#main-content div.image-wrapper.big img {
+#main-content div.image-wrapper:first-child {
+    margin:8px 16px 16px 16px;
 }

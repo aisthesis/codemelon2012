@@ -1,0 +1,132 @@
+<!--
+@file content/articles/20110209.html
+@author Marshall Farrier
+@date 10/02/2012
+@description article 'Android: OnClickListener for a RadioGroup'
+-->
+<div id="content-wrapper" class="outer-width-limiter">   
+    <div id="content"> 
+<div id="header">
+    <h2>Android: OnClickListener for a RadioGroup</h2>
+    <div class="date">02-09-2011</div>
+</div>
+<?php content_sidebar($page); ?>
+<div id="main-content" class="wide-columns">
+    <div class="image-wrapper"><img src="images/content/2011/chess_with_friends2.png" width="300" height="428" /></div>
+    <p>This tutorial will show first how to create a RadioGroup listener and, second, 
+		how to identify specific buttons when you can't access them through a resource id. 
+		Anonymous radio buttons (and other views)
+		will normally occur when you create them dynamically from a database or some other resource.
+		I couldn't find a good tutorial on setting up a radio group when I was working on it myself,
+		so I thought I would share what I've learned. This tutorial assumes that you know the basics
+		of setting up activities and views.</p>
+		
+		<p>The easiest way to explain it is really just to show you the code for the activity that includes
+		the RadioGroup. For the general structure of the Activity, cf. Ed Burnette, 
+		<a href="http://pragprog.com/titles/eband3/hello-android">Hello, Android, 2010,</a> pp. 47f. Here is my
+		sample InvitePlayer class (not including imports), which is used to select the player whom you want to challenge in a chess
+		app I'm working on:</p>
+    <section>	
+        <pre><code>public class InvitePlayer extends Activity 
+        implements OnClickListener {
+    private static final String TAG = "InvitePlayer";
+    private RadioGroup playerRadioGroup;
+    private View challengeButton;
+    private int selectedPlayer;
+    private Integer tmp;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.invite);        
+        init();
+    }
+
+    public void onClick(View v) {
+        if (v.getId() == R.id.challenge_button) {
+            Log.d(TAG, "challenging player number " + 
+                selectedPlayer);
+            // Otherwise do nothing:
+            if (selectedPlayer > 0) {	
+                Intent i = new Intent(this, 
+                    NewGame.class);
+                i.putExtra(OPPONENT_ID, 
+                    selectedPlayer);
+                startActivity(i);
+            }
+        }
+    }
+
+    private void init() {
+        selectedPlayer = -1;
+        challengeButton = findViewById(R.id
+            .challenge_button);
+        playerRadioGroup = (RadioGroup) findViewById(R
+            .id.players_radio);
+        challengeButton.setOnClickListener(this);
+        playerRadioGroup.setOnCheckedChangeListener(new 
+                RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup 
+                    group, int checkedId) {
+                tmp = (Integer) findViewById(checkedId)
+                    .getTag();
+                if (tmp != null) {
+                    selectedPlayer = tmp;
+                }
+            }
+        });
+    }	
+}</code></pre>
+    </section>	
+		
+		<p>Two things are worth noting here. One is taken from Ed Burnette's 
+		<a href="http://pragprog.com/titles/eband3/hello-android">book</a>: Set your Activity up to implement
+		the OnClickListener interface so that you can then just define an onClick(View v) method inside it. The other
+		part is setting up the OnCheckedChangeListener in the RadioGroup. There, you don't have to worry about an
+		additional onClick() method because you have to define the behavior in the overriden method onCheckedChanged(RadioGroup group, int checkedId)
+		when you create your RadioGroup.OnCheckedChangeListener(). So, that's one way to create a RadioGroup with appropriate
+		listeners--and by far the cleanest of the various techniques I tried.</p>
+		
+		<p>The addition wrinkle here stems from the fact that I don't care what the id is of the specific button that is being checked
+		but rather about the tag data it carries. So, the action I take when a new button is selected simply retrieves with the View.getTag()
+		method the tag I set elsewhere for the radio button. My code here is likely a little paranoid in that I eliminate all possibility that
+		the tag assignment is messed up by disallowing a null tag.</p>
+		
+		<p>A null-valued tag for a RadioButton should actually be impossible on the basis of the code where I create the various buttons
+		that populate my custon view:</p>
+    <section>	
+        <pre><code>private void init(Context context) {
+    dbAdapter = new ChessDataBaseAdapter(context);
+    dbAdapter.open();
+    playerCursor = dbAdapter.getPlayers();
+    numPlayers = playerCursor.getCount();
+    final int playerNameCol = playerCursor
+        .getColumnIndex(PLAYER_NAME_COL);
+    final int playerIdCol = playerCursor
+        .getColumnIndex(PLAYER_ID_COL);
+    playerRadio = new RadioButton[numPlayers];
+    playerCursor.moveToFirst();
+    for (int i = 0; i < numPlayers; ++i) {
+        playerRadio[i] = new RadioButton(context);
+        playerRadio[i].setText(playerCursor
+            .getString(playerNameCol));
+        playerRadio[i].setTag(playerCursor
+            .getInt(playerIdCol));
+        this.addView(playerRadio[i], new 
+            LayoutParams(LayoutParams.WRAP_CONTENT,
+                LayoutParams.FILL_PARENT));
+        playerCursor.moveToNext();
+    }
+}</code></pre>
+    </section>	
+		
+		<p>The init() method is called within the constructor of my custon PlayerRadioGroup (extends RadioGroup) class.
+		The first few lines open the SQLite database where my player list is stored, then retrieve the possible players
+		in the form of a cursor, which is then used to: 1) Determine how many player radio buttons we need, 2) what name
+		to assign to each button, and 3) what value to use for the setTag() method. The value set in step 3) (playerRadio[i].setTag(...);)
+		is the value that we then retrieve to determine the selected player in the InvitePlayer activity.</p>
+		
+		<p>Note also that, while I can't access a resource id for the buttons, I do have a resource id available for the RadioGroup because that
+		is created in XML where I can create an accessible id variable for it.</p>
+</div>
