@@ -88,7 +88,7 @@
 		when you create your RadioGroup.OnCheckedChangeListener(). So, that's one way to create a RadioGroup with appropriate
 		listeners--and by far the cleanest of the various techniques I tried.</p>
 		
-		<p>The addition wrinkle here stems from the fact that I don't care what the id is of the specific button that is being checked
+		<p>The additional wrinkle here stems from the fact that I don't care what the id is of the specific button that is being checked
 		but rather about the tag data it carries. So, the action I take when a new button is selected simply retrieves with the View.getTag()
 		method the tag I set elsewhere for the radio button. My code here is likely a little paranoid in that I eliminate all possibility that
 		the tag assignment is messed up by disallowing a null tag.</p>

@@ -6,7 +6,7 @@
  * @site codeMelon2012
  * @author Marshall Farrier
  * @date 09/25/2012
- * @description functions used for navigation bar
+ * @description functions used for navigation bar and in page footer
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
 function navigation_home($page) {
@@ -41,7 +41,9 @@ function navigation_about($page) {
     else {
         echo '"index.php?animate=0#about"';
     }
-}function navigation_terms($page) {
+}
+// Used in footer
+function navigation_terms($page) {
     if ($page == 'home') {
         echo '"#terms"';
     }
