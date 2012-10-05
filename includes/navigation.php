@@ -20,7 +20,10 @@ function navigation_home($page) {
 function navigation_forum($page) {
     echo '"#"';
 }
-function navigation_downloads($page) {
+function navigation_documentation($page) {
+    echo '"#"';
+}
+function navigation_sourceCode($page) {
     echo '"https://github.com/aisthesis/"';
 }
 function navigation_links($page) {
