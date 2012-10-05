@@ -1,0 +1,98 @@
+<!--
+@file content/articles/20110206.html
+@author Marshall Farrier
+@date 10/04/2012
+@description article 'Graph Library for Java'
+-->
+<div id="content-wrapper" class="outer-width-limiter">   
+    <div id="content"> 
+<div id="header">
+    <h2>Graph Library for Java</h2>
+    <div class="date">02-06-2011</div>
+</div>
+<?php content_sidebar($page); ?>
+<div id="main-content" class="normal-columns">
+    <p>This library is a Java implementation of the graph datastructures
+and algorithms presented in Cormen, Leiserson, Rivest and Stein, <a href="http://mitpress.mit.edu/algorithms/">Introduction 
+to Algorithms, 3rd ed.</a>(CLRS).
+I have also used some ideas from <a href="http://www.cs.princeton.edu/~rs/">Robert Sedgewick's</a>
+graph algorithms books (in C as well as in Java) and a few other sources. I started developing the library
+late last fall while working through the graph theoretical portion of CLRS. To begin with, I just found it helpful
+for getting a solid grasp of the material in the book. But then I also discovered that Java has no standard support for graphs (although there
+are several unofficial graph libraries for Java easily found by googling). Boost, by way of contrast, does
+provide C++ support for graphs. Since I intend to continue the study of graph theory both from a mathematical
+perspective and from the computer science standpoint, I thought it would be useful essentially to convert
+my current knowledge into code so that I could continue to refine it as I learn more about the subject.</p>
+
+<p>In its current form the library does not support
+multigraphs but does support both directed and undirected graphs and, for convenience, allows for alphabetical as well as numerical
+labeling of vertices. While the latter feature has made the <em>code</em> a good deal more expansive than it would have been
+otherwise, I don't think it has incurred any significant cost in terms of runtime. Standard numbering begins at 0 (in contrast
+to CLRS's starting at 1) but the graph constructor allows lettering to start at any letter and continue consecutively up to 
+'z' or 'Z'. Overflowing beyond 'z' or 'Z' will raise an exception. The library also does not support discontinuous labeling, such
+as 'a', 'b', 'c', 'x', 'y', 'z'. Once you specify a starting letter in your constructor, the remaining vertices will be labeled
+consecutively up to the size of the graph, which is also specified in the constructor.</p>
+
+<p>The hardest part of developing this library was working out a viable structure for the graph objects. Once I had done
+that in a way that seems viable (after numerous versions that I ended up rejecting), it became more or less trivial to convert the pseudo-code from
+CLRS into Java code for the library. The only difficulties were really just making sure that the numbering matched up properly
+(i.e., translating between their numbering starting at 1 and mine starting at 0). Nonetheless, I haven't yet finished all of the
+algorithms in the book because I did spend a lot of time working on the basic structure of the various graph objects as well as
+some helper classes. And I've tested the code mainly on examples from the book but haven't tried it yet on large graphs to see
+where the performance limitations might lie.</p>
+
+<p>Following CLRS, the library offers the alternatives of storing edges in a linked list for each vertex (usually better for sparse graphs) or 
+in a 2-dimensional array, as a matrix (better for dense graphs). The following tree shows the 
+various graph classes, some helper classes, and the inheritance relationships between Graph objects:</p>
+<section>
+<ul>
+<li>graph.<b>WeightedGraph</b> (interface)
+<li>graph.<b>Graph</b> (interface)
+	<ul>
+	<li>graph.<b>AbstractGraph</b> implements graph.Graph
+		<ul>
+		<li>graph.<b>LinkedListGraph</b> extends graph.AbstractGraph implements graph.Graph</li>
+		<li>graph.<b>WeightedLinkedListGraph</b> extends graph.AbstractGraph implements graph.Graph, graph.WeightedGraph</li>
+		<li>graph.<b>MatrixGraph</b> extends graph.AbstractGraph implements graph.Graph
+			<ul>
+			<li>graph.<b>WeightedMatrixGraph</b> extends graph.MatrixGraph implements graph.Graph, graph.WeightedGraph</li>
+			</ul>
+		</li>
+		</ul>
+	</li>
+	</ul>
+</li>
+<li>graph.<b>Edge</b> (helper class)</li>
+<li>graph.<b>WeightedVertex</b> (helper class)</li>
+<li>graph.<b>DisjointSet</b> (helper class)</li>
+</ul>
+</section>
+<p>The documentation of the library will have to be incremental. While the class hierarchy provides a basic overview,
+the user will for now unfortunately have to just look at the code to find the signature and outputs of the various methods.
+Since it is a work in progress, it doesn't make much sense
+at this point even to attempt a complete documentation. However, the library has reached a point where 
+others might be interested in taking it for a spin, participating in its development or providing helpful ideas and
+critique. Time permitting, I'll provide as much documentation as I can as the library develops.</p>
+
+<p>Over and above the basics needed for working with any graph (e.g., inserting an edge), the library currently includes some
+of the juicier algorithms in the LinkedListGraph and WeightedLinkedListGraph classes. I will in fact probably try to implement
+all functionality first on the linked list style graphs (again following CLRS) before developing the corresponding methods
+for matrix graphs. Currently, the LinkedListGraph class supports:</p>
+<ul>
+	<li>breadthFirstSearch()</li>
+	<li>depthFirstSearch()</li>
+	<li>topologicalSort()</li>
+	<li>stronglyConnectedComponents()</li>
+</ul>
+
+<p>And the WeightedLinkedListGraph class supports additionally:</p>
+<ul>
+	<li>minSpanningTreeKruskal() // Kruskal's algorithm</li>
+	<li>minSpanningTreePrim() // Prim's algorithm</li>
+</ul>
+
+<p>The .zip downloadable file contains the complete folder that I use in Eclipse. It should import easily in its entirety if you use Eclipse.
+For other IDEs you can extract and copy-paste.</p>
+
+<p><a href="resources/2011/Graph2.zip">Graph2.zip</a></p>
+</div>
