@@ -94,7 +94,7 @@
 		the tag assignment is messed up by disallowing a null tag.</p>
 		
 		<p>A null-valued tag for a RadioButton should actually be impossible on the basis of the code where I create the various buttons
-		that populate my custon view:</p>
+		that populate my custom view:</p>
     <section>	
         <pre><code>private void init(Context context) {
     dbAdapter = new ChessDataBaseAdapter(context);
@@ -121,7 +121,7 @@
 }</code></pre>
     </section>	
 		
-		<p>The init() method is called within the constructor of my custon PlayerRadioGroup (extends RadioGroup) class.
+		<p>The init() method is called within the constructor of my custom PlayerRadioGroup (extends RadioGroup) class.
 		The first few lines open the SQLite database where my player list is stored, then retrieve the possible players
 		in the form of a cursor, which is then used to: 1) Determine how many player radio buttons we need, 2) what name
 		to assign to each button, and 3) what value to use for the setTag() method. The value set in step 3) (playerRadio[i].setTag(...);)
