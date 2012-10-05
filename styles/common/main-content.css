@@ -22,10 +22,6 @@
 #main-content h4 {
     font-size:16px;
 }
-#main-content p,#main-content a,#main-content li {
-    font-family:'Frutiger Neue W01 Book',Helvetica,Arial,sans-serif;
-    /* Univers is also a good option but requires a paid subscription */
-}
 #main-content b {
     font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
 }

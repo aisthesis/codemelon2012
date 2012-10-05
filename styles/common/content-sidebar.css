@@ -13,7 +13,6 @@
     float:left;
     position:relative;
     font-size:12px;
-    font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
     font-weight:bold;
 }
 
@@ -29,6 +28,7 @@
     line-height:2.0em;
     cursor:pointer;
     font-size:12px;
+    font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
 }
 
 #content-sidebar li {
