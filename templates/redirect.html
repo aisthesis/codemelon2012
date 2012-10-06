@@ -1,0 +1,31 @@
+<!--
+@file templates/redirect.html
+@author Marshall Farrier
+@date 10/06/2012
+@description redirection to home page
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>codeMelon</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <?php redirect_main($target_page); ?>
+        <style type="text/css">
+            body {
+                margin:16px 10%;
+                max-width:512px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Content was moved!</h1>
+        <p><a href="index.php">codeMelon.com</a> has been improved since your
+            last visit. The content you requested has recently been moved. Please update your
+            bookmarks to the new location.
+        </p>
+        <p>We appreciate your understanding and hope that you enjoy the site's new look!
+        </p>
+        <p>In a few seconds your browser should automatically redirect you to the 
+            <?php redirect_link($target_page); ?></p>
+    </body>
+</html>
