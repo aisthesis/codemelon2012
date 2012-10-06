@@ -1,0 +1,219 @@
+/*
+	Styles for Java library documentation
+	Modeled on Android developer documentation
+	Author: Marshall Farrier
+	Date: 5/1/11
+*/
+
+/* general */
+
+body {
+	color:#333;
+	font-family:arial, sans-serif;
+	font-size:13px;
+	line-height:1.3em;
+}
+
+a {
+    color: #006699;
+}
+
+#header {
+    border-bottom: 3px solid #a4db53;
+    height: 114px;
+    min-width: 675px;
+    padding: 0 10px;
+    position: relative;
+    z-index: 100;
+}
+
+#headerLeft {	
+	margin: 10px;
+}
+
+#headerRight {
+	position:absolute;
+	right:0;
+	text-align:right;
+	top:0;	
+	margin: 10px;
+}
+
+#body-content {
+    margin: 0;
+    position: relative;
+    width: 100%;
+}
+
+#side-nav {
+    background-color: #FFFFFF;
+    font-size: 12px;
+    padding: 0;
+	position: absolute; 
+	left: 0px; 
+	width: 246px;
+	border-right: 3px solid #aaa;	
+}
+#side-nav h2 {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0.5em 0 0;
+    padding: 3px 0 1px 9px;
+}
+#side-nav ul {
+    list-style: none outside none;
+    margin-left: 1.5em;
+    padding: 5px 0;
+}
+#side-nav li {
+    line-height: 16px;
+    padding: 0;
+    white-space: nowrap;
+}
+#nav-panels {
+	margin:0;
+}
+#packages-nav {
+	padding-bottom: 10px;
+	border-bottom: 3px solid #aaa;
+}
+#doc-content {
+	margin-left: 249px; 	
+}
+#jd-header {
+    background-color: #E2E2E2;
+    padding: 7px 15px;
+}
+#jd-header h1 {
+    font-size: 1.7em;
+    margin: 5px 0 10px 0;
+}
+#jd-content {
+    padding: 18px 15px;
+}
+#jd-content h2 {
+    border-top: 2px solid #CCCCCC;
+    color: #111111;
+    font-size: 1.45em;
+    margin: 2em 0 1em;
+    padding: 0.5em 0 0;
+}
+#jd-content h4 {
+    color: #3A3A3A;
+    font-size: 1.1em;
+	line-height:1.3em;
+}
+#jd-content h5 {
+    color: #3A3A3A;
+    font-size: 1em;
+    margin: 1em 0 0.65em;
+    padding: 0;
+}
+p, ul, ol, dl, dd, dt, li {
+    line-height: 1.3em;
+}
+p {
+    margin: 0 0 1em;
+    padding: 0;
+}
+table {
+    border-collapse: collapse;
+    border-width: 0;
+    empty-cells: show;
+    font-size: 1em;
+    margin: 0 0 1em;
+    padding: 0;
+}
+td, th {
+    background-color: inherit;
+    border: 1px solid #CCCCCC;
+    padding: 6px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+th {
+    background-color: #DEE8F1;
+}
+#jd-content table {
+    margin: 0 0 1em 1em;
+}
+.nolist {
+    list-style: none outside none;
+    margin: 0 0 1em 1em;
+    padding: 0;
+}
+.jd-inheritance-table {
+    border-spacing: 0;
+    font-size: 0.9em;
+    padding: 0;
+}
+.jd-inheritance-table .jd-inheritance-space {
+	width: 1em;
+}
+.jd-inheritance-table td {
+    border: medium none;
+    margin: 0;
+    padding: 0;
+}
+.jd-inhmethod code a {
+	text-decoration: underline;
+	font-size: 1.1em;
+}
+.jd-sumtable {
+    font-size: 0.9em;
+    margin: 0.5em 1em 1em;
+    width: 95%;
+}
+.jd-sumtable-expando {
+    margin: 0.5em 0;
+    padding: 0;
+}
+tr.alt-color {
+    background-color: #F6F6F6;
+}
+.jd-sumtable-subclasses {
+    max-width: 968px;
+}
+.jd-inheritedlinks {
+    padding: 0 0 0 13px;
+}
+.jd-sumtable a {
+    text-decoration: none;
+}
+#subclasses-indirect {
+}
+.sympad {
+    margin-right: 2px;
+}
+.jd-descrdiv {
+    border: 0 none;
+    margin: 0;
+    padding: 3px 1em 0;
+}
+.jd-details {
+    margin: 0 0 1em;
+}
+h4.jd-details-title {
+    background-color: #E2E2E2;
+}
+h4 .normal {
+    font-size: 0.9em;
+    font-weight: normal;
+}
+.jd-tagdata {
+    margin: 0.5em 1em;
+}
+.jd-tagdescr {
+    line-height: 1em;
+    margin: 0.5em 0 0.75em;
+}
+.jd-tagtable th {
+    font-style: italic;
+}
+.jd-tagtable td, .jd-tagtable th {
+    background-color: #FFFFFF;
+    border: medium none;
+    font-weight: normal;
+    padding: 2px 10px;
+    vertical-align: top;
+}

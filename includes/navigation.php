@@ -17,11 +17,8 @@ function navigation_home($page) {
         echo '"index.php?animate=0"';
     }
 }
-function navigation_forum($page) {
-    echo '"#"';
-}
 function navigation_documentation($page) {
-    echo '"#"';
+    echo '"content/documentation/package_summary_graph.php"';
 }
 function navigation_sourceCode($page) {
     echo '"https://github.com/aisthesis/"';

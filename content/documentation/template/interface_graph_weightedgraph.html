@@ -1,0 +1,918 @@
+<!--
+	Documentation of Graph interface
+	author: Marshall Farrier
+	date: 5/2/11
+-->
+		<div id="doc-content" style="height: <?php echo $content_height; ?>px">
+			<div id="jd-header">
+				public interface
+				<h1>WeightedGraph</h1>
+			</div>
+			<div id="jd-content">
+				<table class="jd-inheritance-table">
+					<tbody>
+						<tr>
+							<td class="jd-inheritance-cell" colspan="1">graph</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<table class="jd-sumtable jd-sumtable-subclasses">
+					<tbody>
+						<tr>
+							<td style="border:none;margin:0;padding:0;" colspan="12">
+								Known Indirect Subclasses
+								<div id="subclasses-indirect">
+									<div id="subclasses-indirect-list" class="jd-inheritedlinks">
+										<a href="#">WeightedLinkedListGraph</a>,
+										<a href="#">WeightedMatrixGraph</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<div class="jd-descr">
+					<h2>Class Overview</h2>
+					<p>Interface specifying the required methods for weighted graphs.</p>
+					<p>In addition to real-valued edge weights,
+					the edges of a weighted graph may contain various integer-valued edge properties. The user can specify
+					in the graph constructor how many such properties are needed (if any). Weighted graphs also provide support for 
+					a real-valued vertex weight.</p>
+				</div>
+				
+				<div class="jd-descr">
+					<h2>Summary</h2>
+					
+					<table id="pubmethods" class="jd-sumtable">
+					<?php $i = 0; ?>
+						<tbody>
+							<tr>
+								<th colspan="12">Public Methods</th>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#edgeProperties()">edgeProperties</a></span>()
+									<div class="jd-descrdiv">Returns the number of edge properties stored in the calling graph.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#getEdgeProperty(Edge,int)">getEdgeProperty</a></span>(<a href="class_graph_edge.php">Edge</a> e, int property)
+									<div class="jd-descrdiv">Returns the value of the given property for the given edge.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#getEdgeProperty(int,int,int)">getEdgeProperty</a></span>(int from, int to, int property)
+									<div class="jd-descrdiv">Returns the value of the given property for the edge (from, to).</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract double</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#getEdgeWeight(Edge)">getEdgeWeight</a></span>(<a href="class_graph_edge.php">Edge</a> e)
+									<div class="jd-descrdiv">Returns the weight of the given edge.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract double</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#getEdgeWeight(int,int)">getEdgeWeight</a></span>(int from, int to)
+									<div class="jd-descrdiv">Returns the weight of the edge (from, to).</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract double</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#getVertexWeight(int)">getVertexWeight</a></span>(int vertex)
+									<div class="jd-descrdiv">Returns the weight of the specified vertex.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract <a href="class_graph_weightededge.php">WeightedEdge</a>[]</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#getWeightedEdges()">getWeightedEdges</a></span>()
+									<div class="jd-descrdiv">Returns an array containing all weighted edges in the graph.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract <a href="class_graph_weightededge.php">WeightedEdge</a>[]</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#getWeightedEdges(int)">getWeightedEdges</a></span>(int from)
+									<div class="jd-descrdiv">Returns an array containing all weighted edges from the specified source vertex.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract boolean</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#insert(Edge,double)">insert</a></span>(<a href="class_graph_edge.php">Edge</a> e, double weight)
+									<div class="jd-descrdiv">Inserts edge e into the graph and sets its weight to the specified value.
+									Returns false and does nothing if the edge is already present in the graph.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract boolean</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#insert(int,int,double)">insert</a></span>(int from, int to, double weight)
+									<div class="jd-descrdiv">Inserts the edge (from, to) into the graph and sets its weight to the specified value.
+									Returns false and does nothing if the edge is already present in the graph.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract void</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#setEdgeProperty(Edge,int,int)">setEdgeProperty</a></span>(<a href="class_graph_edge.php">Edge</a> e, int property, int value)
+									<div class="jd-descrdiv">Sets the given property of the specified edge to the given value.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract void</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#setEdgeProperty(int,int,int,int)">setEdgeProperty</a></span>(int from, int to, int property, int value)
+									<div class="jd-descrdiv">Sets the given property of the edge (from, to) to the given value.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract void</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#setEdgeWeight(Edge,double)">setEdgeWeight</a></span>(<a href="class_graph_edge.php">Edge</a> e, double weight)
+									<div class="jd-descrdiv">Sets the weight of the specified edge.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract void</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#setEdgeWeight(int,int,double)">setEdgeWeight</a></span>(int from, int to, double weight)
+									<div class="jd-descrdiv">Sets the weight of the edge (from, to).</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract void</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#setVertexWeight(int,double)">setVertexWeight</a></span>(int vertex, double weight)
+									<div class="jd-descrdiv">Sets the weight of a vertex.</div>
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</div><!-- end Summary -->
+				
+				<h2>Public Methods</h2>
+				<a name="edgeProperties()"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract int</span>
+						<span class="sympad">edgeProperties</span>
+						<span class="normal">()</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Determine the number of edge properties stored in the graph. Edge properties
+							are used to store integer values associated with an edge. For example, it may be useful to 
+							associate a color property with an edge and store in the edge the integer
+							corresponding to the given color.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>an integer corresponding to the number of edge properties.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="getEdgeProperty(Edge,int)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract int</span>
+						<span class="sympad">getEdgeProperty</span>
+						<span class="normal">(<a href="class_graph_edge.php">Edge</a> e, int property)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Determine the value of the given property for the given edge.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>e</th>
+										<td><a href="class_graph_edge.php">Edge</a> object for which the value of the given property is to be determined.</td>
+									</tr>
+									<tr>
+										<th>property</th>
+										<td>The index of the property to be evaluated.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>an integer corresponding to the value of the given property for the given edge.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="getEdgeProperty(int,int,int)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract int</span>
+						<span class="sympad">getEdgeProperty</span>
+						<span class="normal">(int from, int to, int property)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Determine the value of the given property for the edge (<i>from</i>, <i>to</i>).</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>from</th>
+										<td>Integer specifying the head vertex for the edge for which the value of the given property is to be determined.</td>
+									</tr>
+									<tr>
+										<th>to</th>
+										<td>Integer specifying the tail vertex for the edge for which the value of the given property is to be determined.</td>
+									</tr>
+									<tr>
+										<th>property</th>
+										<td>The index of the property to be evaluated.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>an integer corresponding to the value of the given property for the edge (<i>from</i>, <i>to</i>).</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="getEdgeWeight(Edge)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract double</span>
+						<span class="sympad">getEdgeWeight</span>
+						<span class="normal">(<a href="class_graph_edge.php">Edge</a> e)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Determine an edge's weight.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>e</th>
+										<td><a href="class_graph_edge.php">Edge</a> object whose weight is to be determined.</td>
+									</tr>
+									
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>a double indicating the weight of the given edge.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="getEdgeWeight(int,int)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract double</span>
+						<span class="sympad">getEdgeWeight</span>
+						<span class="normal">(int from, int to)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Determine an edge's weight.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>from</th>
+										<td>Head vertex of the edge whose weight is to be determined.</td>
+									</tr>
+									<tr>
+										<th>to</th>
+										<td>Tail vertex of the edge whose weight is to be determined.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>a double indicating the weight of the edge (<i>from</i>, <i>to</i>).</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="getVertexWeight(int)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract double</span>
+						<span class="sympad">getVertexWeight</span>
+						<span class="normal">(int vertex)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Determine the weight of a vertex.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>vertex</th>
+										<td>Vertex whose weight is to be returned.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>a double indicating the weight of the vertex.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="getWeightedEdges()"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract <a href="#">WeightedEdge</a>[]</span>
+						<span class="sympad">getWeightedEdges</span>
+						<span class="normal">()</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Retrieve all weighted edges in the graph as an array of <a href="#">WeightedEdge</a> objects.</p>
+						</div>						
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>an array of <a href="#">WeightedEdge</a> objects representing all edges in the calling graph.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="getWeightedEdges(int)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract <a href="#">WeightedEdge</a>[]</span>
+						<span class="sympad">getWeightedEdges</span>
+						<span class="normal">(int from)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Retrieve all weighted edges originating from the given vertex as an array of <a href="#">WeightedEdge</a> objects.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>from</th>
+										<td>Vertex that is the head of all edges returned.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>an array of <a href="#">WeightedEdge</a> objects representing all edges whose head is the vertex <i>from</i>.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="insert(Edge,double)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract boolean</span>
+						<span class="sympad">insert</span>
+						<span class="normal">(<a href="class_graph_edge.php">Edge</a> e, double weight)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Insert an edge into the graph while also specifying its weight. Returns true iff the edge is
+							not already present in the graph. Does nothing and returns false if the graph already contains
+							the given edge.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>e</th>
+										<td>Edge to be inserted</td>
+									</tr>
+									<tr>
+										<th>weight</th>
+										<td>Weight of the edge to be inserted.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>a boolean value showing whether or not the operation was successful. True is returned if the
+								edge could be inserted, and false is returned if the insertion failed.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="insert(int,int,double)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract boolean</span>
+						<span class="sympad">insert</span>
+						<span class="normal">(int from, int to, double weight)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Insert the edge (<i>from</i>, <i>to</i>) into the calling graph while also specifying its weight. Returns true iff the edge is
+							not already present in the graph. Does nothing and returns false if the graph already contains
+							(<i>from</i>, <i>to</i>).</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>from</th>
+										<td>Head of the edge to be inserted.</td>
+									</tr>
+									<tr>
+										<th>to</th>
+										<td>Tail of the edge to be inserted.</td>
+									</tr>
+									<tr>
+										<th>weight</th>
+										<td>Weight of the edge to be inserted.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>a boolean value showing whether or not the operation was successful. True is returned if the
+								edge (<i>from</i>, <i>to</i>) could be inserted, and false is returned if the insertion failed.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="setEdgeProperty(Edge,int,int)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract void</span>
+						<span class="sympad">setEdgeProperty</span>
+						<span class="normal">(<a href="class_graph_edge.php">Edge</a> e, int property, int value)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Set an edge's property to an integer value.</p>
+							<p>Implementations of this method are expected to throw an <code><a href="http://download.oracle.com/javase/6/docs/api/">IllegalArgumentException</a></code> 
+							if the graph does not contain the edge <i>e</i>.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>e</th>
+										<td>Edge whose property is to be set</td>
+									</tr>
+									<tr>
+										<th>property</th>
+										<td>Index of the property that is being set.</td>
+									</tr>
+									<tr>
+										<th>value</th>
+										<td>Value to which the property is set.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Throws</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th></th>
+										<td>java.lang.IllegalArgumentException</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				
+				<a name="setEdgeProperty(int,int,int,int)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract void</span>
+						<span class="sympad">setEdgeProperty</span>
+						<span class="normal">(int from, int to, int property, int value)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Set an edge's property to an integer value.</p>
+							<p>Implementations of this method are expected to throw an <code><a href="http://download.oracle.com/javase/6/docs/api/">IllegalArgumentException</a></code> 
+							if the graph does not contain the edge (<i>from</i>, <i>to</i>).</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>from</th>
+										<td>Head of the edge whose property is to be set</td>
+									</tr>
+									<tr>
+										<th>to</th>
+										<td>Tail of the edge whose property is to be set</td>
+									</tr>
+									<tr>
+										<th>property</th>
+										<td>Index of the property that is being set.</td>
+									</tr>
+									<tr>
+										<th>value</th>
+										<td>Value to which the property is set.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Throws</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th></th>
+										<td>java.lang.IllegalArgumentException</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				
+				<a name="setEdgeWeight(Edge,double)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract void</span>
+						<span class="sympad">setEdgeWeight</span>
+						<span class="normal">(<a href="class_graph_edge.php">Edge</a> e, double weight)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Set an edge's weight.</p>
+							<p>Implementations of this method are expected to throw an <code><a href="http://download.oracle.com/javase/6/docs/api/">IllegalArgumentException</a></code> 
+							if the graph does not contain the edge <i>e</i>.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>e</th>
+										<td>Edge whose weight is to be set</td>
+									</tr>
+									<tr>
+										<th>weight</th>
+										<td>Value to which the edge's weight will be set.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Throws</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th></th>
+										<td>java.lang.IllegalArgumentException</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				
+				<a name="setEdgeWeight(int,int,double)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract void</span>
+						<span class="sympad">setEdgeWeight</span>
+						<span class="normal">(int from, int to, double weight)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Set an edge's weight.</p>
+							<p>Implementations of this method are expected to throw an <code><a href="http://download.oracle.com/javase/6/docs/api/">IllegalArgumentException</a></code> 
+							if the graph does not contain the edge (<i>from</i>, <i>to</i>).</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>from</th>
+										<td>Head of the edge whose weight is to be set</td>
+									</tr>
+									<tr>
+										<th>to</th>
+										<td>Tail of the edge whose weight is to be set</td>
+									</tr>
+									<tr>
+										<th>weight</th>
+										<td>Value to which the edge's weight will be set.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Throws</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th></th>
+										<td>java.lang.IllegalArgumentException</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				
+				<a name="setVertexWeight(int,double)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract void</span>
+						<span class="sympad">setVertexWeight</span>
+						<span class="normal">(int vertex, double weight)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Set the weight of a vertex.</p>
+							<p>Implementations of this method are expected to throw an <code><a href="http://download.oracle.com/javase/6/docs/api/">IllegalArgumentException</a></code> 
+							if the graph does not contain the given vertex.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>vertex</th>
+										<td>Vertex whose weight is to be set</td>
+									</tr>
+									<tr>
+										<th>weight</th>
+										<td>Value to which the edge's weight will be set.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Throws</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th></th>
+										<td>java.lang.IllegalArgumentException</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

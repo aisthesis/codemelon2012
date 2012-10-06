@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><?php echo $page_title; ?></title>
+	
+	<link rel="stylesheet" href="style/reset.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="style/style.css" type="text/css" media="all" />
+	<!-- Place immediately before closing </head> tag for Google Analytics -->
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-18817737-2']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+<body>
+	<div id="header">
+		<div id="headerLeft">
+			<a href="../../index.php"><img alt="codeMelon" src="image/logo_small.png" width="192" height="96" /></a>
+		</div>
+		<div id="headerRight">
+			<a href="../../index.php">codeMelon.com</a>
+		</div>
+	</div>
+	<div id="body-content">
+		<?php
+			echo '<div id="side-nav" style="height: ' . $content_height . 'px">';
+		?>
+			<div id="nav-panels">
+				<div id="packages-nav">
+					<h2>Packages</h2>
+					<ul>
+						<li><a href="package_summary_graph.php">graph</a></li>
+						<li><a href="package_sum_linprog.php">linearprogramming</a></li>
+					</ul>
+				</div>

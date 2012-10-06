@@ -1,0 +1,409 @@
+<!--
+	Documentation of graph.Edge class
+	author: Marshall Farrier
+	date: 5/21/11
+-->
+		<div id="doc-content" style="height: <?php echo $content_height; ?>px">
+			<div id="jd-header">
+				public class
+				<h1>Edge</h1>
+			</div>
+			<div id="jd-content">
+				<table class="jd-inheritance-table">
+					<tbody>
+						<tr>
+							<td class="jd-inheritance-cell" colspan="2">
+								<a href="http://download.oracle.com/javase/6/docs/api/">java.lang.Object</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#8627</td>
+							<td class="jd-inheritance-cell" colspan="1">graph.Edge</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<table class="jd-sumtable jd-sumtable-subclasses">
+					<tbody>
+						<tr>
+							<td style="border:none;margin:0;padding:0;" colspan="12">
+								Known Direct Subclasses
+								<div id="subclasses-indirect">
+									<div id="subclasses-indirect-list" class="jd-inheritedlinks">
+										<a href="class_graph_weightededge.php">WeightedEdge</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<div class="jd-descr">
+					<h2>Class Overview</h2>
+					<p>An edge is a simple immutable object consisting of a head and tail vertex. Edges do not directly support
+					an associated edge weight. If a weight is needed, a 
+					<code><a href="class_graph_weightededge.php">WeightedEdge</a></code>
+					may be used instead. Edges may be inserted into a graph, and arrays of edges may be retrieved so that, for example, all edges
+					in the graph can be examined or those edges can be identified whose head is some particular vertex.</p>
+					<p>The vertices of an edge may be represented as either integers or letters of the alphabet. Integers must be used for graphs having
+					more than 26 vertices. If character representation is used, the edge should be constructed as in the example<br />
+					<code>Edge e = new Edge('r', 'u', true);</code><br />
+					The <code><a href="#toString()">toString()</a></code> method of such an edge will then return the string "(r, u)".</p>
+					<p>Although edges are inherently directed, the same <code>Edge</code> objects are also used to describe edges of undirected graphs.
+					An edge in an undirected graph is viewed as the equivalent of 2 directed edges between the corresponding
+					vertices. More formally: An undirected graph contains the edge (<i>from</i>, <i>to</i>) iff it also contains the
+					edge (<i>to</i>, <i>from</i>). In an undirected graph, however, these 2 directed edges will be counted as a single edge when counting the number of
+					edges in the graph.</p>
+				</div>
+				
+				<div class="jd-descr">
+					<h2>Summary</h2>
+					
+					<table id="pubctors" class="jd-sumtable">
+					<?php $i = 0; ?>
+						<tbody>
+							<tr>
+								<th colspan="12">Public Constructors</th>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr> </nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#Edge(int,int)">Edge</a></span>(int from, int to)
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr> </nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#Edge(int,int,boolean)">Edge</a></span>(int from, int to, boolean charRep)
+									<div class="jd-descrdiv">Construct an edge in which vertices may be represented by letters of the alphabet.</div>
+								</td>
+							</tr>							
+						</tbody>
+					</table>
+					
+					<table id="pubmethods" class="jd-sumtable">
+					<?php $i = 0; ?>
+						<tbody>
+							<tr>
+								<th colspan="12">Public Methods</th>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>boolean</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#charRep()">charRep</a></span>()
+									<div class="jd-descrdiv">The edge uses letters of the alphabet rather than integers to represent vertices.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>boolean</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#equals(Edge)">equals</a></span>(<a href="class_graph_edge.php">Edge</a> e)
+									<div class="jd-descrdiv">The calling edge equals the argument edge <i>e</i>.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#from()">from</a></span>()
+									<div class="jd-descrdiv">Returns an integer corresponding to the head vertex of the edge.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#to()">to</a></span>()
+									<div class="jd-descrdiv">Returns an integer corresponding to the tail vertex of the edge.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr><a href="http://download.oracle.com/javase/6/docs/api/">String</a></nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#toString()">toString</a></span>()
+									<div class="jd-descrdiv">Returns a string representation of the edge.</div>
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</div><!-- end Summary -->
+				
+				<h2>Public Constructors</h2>
+				<a name="Edge(int,int)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public </span>
+						<span class="sympad">Edge</span>
+						<span class="normal">(int from, int to)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Construct an edge from vertex <i>from</i> to vertex <i>to</i> using integer
+							representation of vertices. The <code><a href="#charRep()">charRep()</a></code>
+							method of an edge constructed in this way will return false.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Throws</h5>
+							<ul class="nolist">
+								<li><code><a href="http://download.oracle.com/javase/6/docs/api/">java.lang.IllegalArgumentException</a></code>
+								if the <i>from</i> or <i>to</i> argument is negative.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="Edge(int,int,boolean)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public </span>
+						<span class="sympad">Edge</span>
+						<span class="normal">(int from, int to, boolean charRep)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Construct an edge from vertex <i>from</i> to vertex <i>to</i> using 
+							character representation of vertices if <i>charRep</i> is set to <code>true</code>
+							or integer representation if <i>charRep</i> is <code>false</code>.
+							The <code><a href="#charRep()">charRep()</a></code>
+							method of an edge constructed in this way will return the value of <i>charRep</i>.</p>
+							<p>If <i>charRep</i> is set to <code>true</code>, client programs will likely
+							prefer to use characters in the specification of 
+							the head and tail vertices. For example:
+							<code>Edge e = new Edge('r', 'u', true);</code></p>
+						</div>
+					</div>
+					<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Throws</h5>
+							<ul class="nolist">
+								<li><code><a href="http://download.oracle.com/javase/6/docs/api/">java.lang.IllegalArgumentException</a></code>
+								if either of the following conditions holds:
+								<ol>
+									<li>1) the <i>from</i> or <i>to</i> argument is negative.</li>
+									<li>2) <i>charRep</i> is <code>true</code> and both <i>from</i> and <i>to</i>
+										are neither in the range 'a' - 'z' nor 'A' - 'Z'. This includes the case where one vertex is
+										in the range 'a' - 'z' and the other is in the range 'A' - 'Z'.</li>
+								</ol>
+								</li>
+							</ul>
+						</div>
+				</div>
+				
+				<h2>Public Methods</h2>
+				<a name="charRep()"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public boolean</span>
+						<span class="sympad">charRep</span>
+						<span class="normal">()</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Determine whether or not the edge represents vertices as letters or as integers.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>a boolean value showing whether or not the edge represents vertices as letters.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="equals(Edge)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public boolean</span>
+						<span class="sympad">equals</span>
+						<span class="normal">(<a href="class_graph_edge.php">Edge</a> e)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Overrides the <code><a href="http://download.oracle.com/javase/6/docs/api/">equals(Object o)</a></code> method
+							of <code><a href="http://download.oracle.com/javase/6/docs/api/">java.lang.Object</a></code>.
+							2 edges are considered to be equal iff 1) they have the same head and tail vertices and 2) they represent vertices in the same form (as letters
+							or integers).</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>e</th>
+										<td>edge in reference to which the calling edge is to be tested for equality.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>a boolean value showing whether or not both edges are to be considered equal.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="from()"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public int</span>
+						<span class="sympad">from</span>
+						<span class="normal">()</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Determine the edge's head vertex as an integer value. If the edge uses character representation,
+							this value must be typecast to a <code>char</code> in order to immediately determine the character
+							represented by the given integer.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>an integer corresponding to the edge's head vertex.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="to()"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public int</span>
+						<span class="sympad">to</span>
+						<span class="normal">()</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Determine the edge's tail vertex as an integer value. If the edge uses character representation,
+							this value must be typecast to a <code>char</code> in order to immediately determine the character
+							represented by the given integer.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>an integer corresponding to the edge's tail vertex.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="toString()"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public <a href="http://download.oracle.com/javase/6/docs/api/">String</a></span>
+						<span class="sympad">toString</span>
+						<span class="normal">()</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Overrides the <code><a href="http://download.oracle.com/javase/6/docs/api/">toString()</a></code> method
+							of <code><a href="http://download.oracle.com/javase/6/docs/api/">java.lang.Object</a></code>.
+							Returns a string of the form "(<i>u</i>, <i>v</i>)" representing the calling edge. If the edge represents 
+							vertices as characters (as determined by its <code><a href="#charRep()">charRep()</a></code> method), <i>u</i>
+							and <i>v</i> will be the corresponding letters. Otherwise, <i>u</i> and <i>v</i> will be the corresponding
+							integers.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>a string representation of the calling edge having the form "(<i>u</i>, <i>v</i>)".</li>
+							</ul>
+						</div>
+					</div>
+				</div>				
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

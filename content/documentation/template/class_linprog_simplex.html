@@ -1,0 +1,165 @@
+<!--
+	Documentation of Simplex class
+	author: Marshall Farrier
+	date: 5/5/11
+-->
+		<div id="doc-content" style="height: <?php echo $content_height; ?>px">
+			<div id="jd-header">
+				public class
+				<h1>Simplex</h1>
+			</div>
+			<div id="jd-content">
+				<table class="jd-inheritance-table">
+					<tbody>
+						<tr>
+							<td class="jd-inheritance-cell" colspan="1">linearprogramming</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<div class="jd-descr">
+					<h2>Class Overview</h2>
+					<p>Java implementation of the linear programming algorithm provided in 
+					<a href="http://mitpress.mit.edu/algorithms/">Cormen, Leiserson, Rivest
+					and Stein, Introduction to Algorithms, 3rd ed.</a>, ch. 29. In this implementation, the objective
+					function and inequality constraints must be specified when a <a href="class_linprog_simplex.php">Simplex</a> object 
+					is created (i.e., as arguments to its constructor). The <a href="#getResult()">getResult()</a> method will then generate and return an array
+					of type double that provides an optimal solution, or it will return <code>null</code> if the 
+					solution is unbounded. If there are multiple solutions to the linear program specified when a <a href="class_linprog_simplex.php">Simplex</a>
+					object is created, <a href="#getResult()">getResult()</a>
+					will return one such solution.</p>
+				</div>
+				
+				<div class="jd-descr">
+					<h2>Summary</h2>
+					
+					<table id="pubctors" class="jd-sumtable">
+					<?php $i = 0; ?>
+						<tbody>
+							<tr>
+								<th colspan="12">Public Constructors</th>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr> </nobr>
+								</td>
+								<td class="jd-linkcol" width="100%" style="line-height:1.5em">
+									<nobr>
+									<span class="sympad">
+										<a href="#Simplex(double[][],double[],double[])">Simplex</a></span>
+										(double[][] A, double[] b, double[] c)
+									</nobr>
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+					
+					<table id="pubmethods" class="jd-sumtable">
+					<?php $i = 0; ?>
+						<tbody>
+							<tr>
+								<th colspan="12">Public Methods</th>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>double[]</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#getResult()">getResult</a></span>()
+									<div class="jd-descrdiv">Returns an optimal solution to the calling linear program.</div>
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</div><!-- end Summary -->
+				
+				<h2>Public Constructors</h2>
+				<a name="Simplex(double[][],double[],double[])"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public</span>
+						<span class="sympad">Simplex</span>
+						<span class="normal">(double[][] A, double[] b, double[] c)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Create a Simplex object from the standard form of a linear program.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>A</th>
+										<td>2-dimensional array of type <i>double</i> representing the coefficients in
+										the inequality constraints of the standard form of a linear program.</td>
+									</tr>
+									<tr>
+										<th>b</th>
+										<td>An array of type <i>double</i> representing the maxima given in the
+										inequality constraints.</td>
+									</tr>
+									<tr>
+										<th>c</th>
+										<td>An array of type <i>double</i> representing the objective function of the given linear program.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+					</div>
+				</div>
+				
+				
+				<h2>Public Methods</h2>
+				<a name="getResult()"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public void</span>
+						<span class="sympad">getResult</span>
+						<span class="normal">()</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Solve the linear program specified when the calling object was created.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>an array of type double that maximizes the objective function. Or else <code>null</code> if
+								the inequality constraints impose no bound on the objective function.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

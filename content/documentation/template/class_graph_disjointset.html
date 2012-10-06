@@ -1,0 +1,232 @@
+<!--
+	Documentation of graph.Edge class
+	author: Marshall Farrier
+	date: 5/21/11
+-->
+		<div id="doc-content" style="height: <?php echo $content_height; ?>px">
+			<div id="jd-header">
+				public class
+				<h1>DisjointSet</h1>
+			</div>
+			<div id="jd-content">
+				<table class="jd-inheritance-table">
+					<tbody>
+						<tr>
+							<td class="jd-inheritance-cell" colspan="2">
+								<a href="http://download.oracle.com/javase/6/docs/api/">java.lang.Object</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#8627</td>
+							<td class="jd-inheritance-cell" colspan="1">graph.DisjointSet</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<div class="jd-descr">
+					<h2>Class Overview</h2>
+					<p>A <code><a href="class_graph_disjointset.php">DisjointSet</a></code> maintains a dynamic collection of disjoint sets, each of
+					which is identified by a canonical member. A datastructure of this kind is needed 
+					in order to implement Kruskal's algorithm for finding a minimum spanning tree in a weighted graph.
+					This version of the disjoint set datastructure includes only the basic operations needed 
+					for the implementation of graph algorithms and follows the simple union technique of 
+					<a href="http://mitpress.mit.edu/algorithms/">CLRS</a> 21.2 (pp. 564ff.) rather than the faster
+					but more complicated techniques of 21.4. For optimal performance of Kruskal's algorithm, 
+					the current implementation needs to be improved.</p>
+					<p>The constructor creates a specified number 
+					(<i>n</i> in the following example) of sets, each having
+					a single integer member: {0}, {1}, ..., {n - 1}. Additional methods then allow us to create
+					unions of such sets and, following any sequence of union operations, to determine the set
+					to which a given integer in the appropriate range belongs.</p>
+					
+				</div>
+				
+				<div class="jd-descr">
+					<h2>Summary</h2>
+					
+					<table id="pubctors" class="jd-sumtable">
+					<?php $i = 0; ?>
+						<tbody>
+							<tr>
+								<th colspan="12">Public Constructors</th>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr> </nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#DisjointSet(int)">DisjointSet</a></span>(int size)
+									<div class="jd-descrdiv">Construct <i>size</i> disjoint sets, each containing 1 integer element.</div>
+								</td>
+							</tr>
+													
+						</tbody>
+					</table>
+					
+					<table id="pubmethods" class="jd-sumtable">
+					<?php $i = 0; ?>
+						<tbody>
+							<tr>
+								<th colspan="12">Public Methods</th>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#findSet(int)">findSet</a></span>(int member)
+									<div class="jd-descrdiv">Find the set containing the integer <i>member</i>.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>boolean</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#union(int,int)">union</a></span>(int i, int j)
+									<div class="jd-descrdiv">Merge the set containing <i>i</i> with the set containing <i>j</i>.</div>
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</div><!-- end Summary -->
+				
+				<h2>Public Constructors</h2>
+				<a name="DisjointSet(int)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public </span>
+						<span class="sympad">DisjointSet</span>
+						<span class="normal">(int size)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Construct <i>size</i> disjoint sets, each containing a single integer between 0 and <i>size</i> - 1. The
+							representative element returned by <code><a href="#findSet(int)">FindSet(int)</a></code> is initially (prior 
+							to any union operations) simply
+							the sole element of the set.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Throws</h5>
+							<ul class="nolist">
+								<li><code><a href="http://download.oracle.com/javase/6/docs/api/">java.lang.IllegalArgumentException</a></code>
+								if the <i>size</i> argument is negative.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<h2>Public Methods</h2>
+				<a name="findSet(int)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public int</span>
+						<span class="sympad">findSet</span>
+						<span class="normal">(int member)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Identify the (unique) set containing <i>member</i>. The integers <i>i</i> and <i>j</i> are 
+							members of the same set within a <code><a href="class_graph_disjointset.php">DisjointSet</a></code>
+							object <i>ds</i> iff the equality <code>ds.findSet(i) == ds.findSet(j)</code> holds.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>member</th>
+										<td>integer whose containing set is to be identified.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>an integer corresponding to the canonical representative of the containing set.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="union(int,int)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public boolean</span>
+						<span class="sympad">union</span>
+						<span class="normal">(int i, int j)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Merges the sets of which <i>i</i> and <i>j</i> are members. For any disjoint set <i>ds</i> and integers
+							<i>i</i> and <i>j</i> in the appropriate range, execution of the statement <code>ds.union(i, j)</code> guarantees
+							that subsequently the equality <code>ds.findSet(i) == ds.findSet(j)</code> will hold.</p>
+							<p>If <i>i</i> and <i>j</i> are already contained in the same set, this method will return
+							<code>false</code> and do nothing.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>i</th>
+										<td>an element determining (by virtue of being any member) one of the 2 sets to be merged.</td>
+									</tr>
+									<tr>
+										<th>j</th>
+										<td>an element determining (by virtue of being any member) the other of the 2 sets to be merged.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>a boolean value of <code>true</code> if <i>i</i> and <i>j</i> were
+								members of distinct sets prior to execution of the union and <code>false</code> if <i>i</i> and <i>j</i>
+								were already contained in the same set.</li>
+							</ul>
+						</div>
+					</div>
+				</div>				
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

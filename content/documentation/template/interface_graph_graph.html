@@ -1,0 +1,1242 @@
+<!--
+	Documentation of Graph interface
+	author: Marshall Farrier
+	date: 5/2/11
+-->
+		<div id="doc-content" style="height: <?php echo $content_height; ?>px">
+			<div id="jd-header">
+				public interface
+				<h1>Graph</h1>
+			</div>
+			<div id="jd-content">
+				<table class="jd-inheritance-table">
+					<tbody>
+						<tr>
+							<td class="jd-inheritance-cell" colspan="1">graph</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<table class="jd-sumtable jd-sumtable-subclasses">
+					<tbody>
+						<tr>
+							<td style="border:none;margin:0;padding:0;" colspan="12">
+								Known Indirect Subclasses
+								<div id="subclasses-indirect">
+									<div id="subclasses-indirect-list" class="jd-inheritedlinks">
+										<a href="#">AbstractGraph</a>,
+										<a href="#">LinkedListGraph</a>,
+										<a href="#">MatrixGraph</a>,
+										<a href="#">WeightedLinkedListGraph</a>,
+										<a href="#">WeightedMatrixGraph</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<div class="jd-descr">
+					<h2>Class Overview</h2>
+					<p>Interface specifying the methods common to all graphs.</p>
+				</div>
+				
+				<div class="jd-descr">
+					<h2>Summary</h2>
+					
+					<table id="constants" class="jd-sumtable">
+					<?php $i = 0; ?>
+						<tbody>
+							<tr>
+								<th colspan="12">Constants</th>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>static int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#BACK_EDGE">BACK_EDGE</a></span>
+									<div class="jd-descrdiv">Identifier for back edges discovered in a depth-first search.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>static int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#BLACK">BLACK</a></span>
+									<div class="jd-descrdiv">Identifier for the color black in methods that color edges or vertices.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>static int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#COLOR">COLOR</a></span>
+									<div class="jd-descrdiv">Identifier for the color property of a vertex.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>static int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#CROSS_EDGE">CROSS_EDGE</a></span>
+									<div class="jd-descrdiv">Identifier for cross edges discovered in a depth-first search.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>static int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#DISCOVERY_TIME">DISCOVERY_TIME</a></span>
+									<div class="jd-descrdiv">Identifier for the "time" when a vertex is first discovered in a depth-first search.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>static int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#DISTANCE">DISTANCE</a></span>
+									<div class="jd-descrdiv">The distance property discovered in breadth-first search and other algorithms.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>static int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#EDGE_TYPE">EDGE_TYPE</a></span>
+									<div class="jd-descrdiv">The type of an edge, such as back edge, forward edge, tree edge, cross edge.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>static int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#FINISH_TIME">FINISH_TIME</a></span>
+									<div class="jd-descrdiv">Identifier for the "time" when depth-first search has finished exploring all descendants of
+									a vertex.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>static int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#FORWARD_EDGE">FORWARD_EDGE</a></span>
+									<div class="jd-descrdiv">Identifier for forward edges discovered in a depth-first search.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>static int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#GRAY">GRAY</a></span>
+									<div class="jd-descrdiv">Identifier for the color gray in methods that color edges or vertices.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>static int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#NIL_VERTEX">NIL_VERTEX</a></span>
+									<div class="jd-descrdiv">Identifier for the nil vertex.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>static int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#PARENT">PARENT</a></span>
+									<div class="jd-descrdiv">The parent property of a vertex.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>static int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#TREE_EDGE">TREE_EDGE</a></span>
+									<div class="jd-descrdiv">Identifier for tree edges discovered in a depth-first search.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>static int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#TREE_NUMBER">TREE_NUMBER</a></span>
+									<div class="jd-descrdiv">Field for identifying distinct components of a graph.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>static int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#WHITE">WHITE</a></span>
+									<div class="jd-descrdiv">Identifier for the color white in methods that color edges or vertices.</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<table id="pubmethods" class="jd-sumtable">
+					<?php $i = 0; ?>
+						<tbody>
+							<tr>
+								<th colspan="12">Public Methods</th>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#edges()">edges</a></span>()
+									<div class="jd-descrdiv">Returns the number of edges in the graph</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract int[]</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#getAdjacencies(int)">getAdjacencies</a></span>(int from)
+									<div class="jd-descrdiv">Returns an array of integers representing all vertices u s.t. (from, u) 
+									is an edge in the calling graph.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract <a href="class_graph_edge.php">Edge</a>[]</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#getEdges()">getEdges</a></span>()
+									<div class="jd-descrdiv">Returns an array of objects of type <a href="class_graph_edge.php">Edge</a> representing all edges 
+									in the calling graph.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract <a href="class_graph_edge.php">Edge</a>[]</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#getEdges()">getEdges</a></span>(int from)
+									<div class="jd-descrdiv">Returns an array of objects of type <a href="class_graph_edge.php">Edge</a> representing all edges (from, u) 
+									in the calling graph.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract boolean</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#hasEdge(Edge)">hasEdge</a></span>(<a href="class_graph_edge.php">Edge</a> e)
+									<div class="jd-descrdiv">Determines whether or not a given edge is in the graph.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract boolean</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#hasEdge(int,int)">hasEdge</a></span>(int from, int to)
+									<div class="jd-descrdiv">Determines whether or not the edge (from, to) is in the graph.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract boolean</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#insert(Edge)">insert</a></span>(<a href="class_graph_edge.php">Edge</a> e)
+									<div class="jd-descrdiv">Inserts the given edge into the calling graph and returns true on success.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract boolean</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#insert(int,int)">insert</a></span>(int from, int to)
+									<div class="jd-descrdiv">Inserts the edge (from, to) is in the graph and returns true on success.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract boolean</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#remove(Edge)">remove</a></span>(<a href="class_graph_edge.php">Edge</a> e)
+									<div class="jd-descrdiv">Removes the given edge from the calling graph or returns false if the edge is not found.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract boolean</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#remove(int,int)">remove</a></span>(int from, int to)
+									<div class="jd-descrdiv">Removes the edge (from, to) from the calling graph or returns false if the edge is not found.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract <a href="interface_graph_graph.php">Graph</a></nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#transpose()">transpose</a></span>()
+									<div class="jd-descrdiv">Returns a graph that is the transpose of the calling graph.</div>
+								</td>
+							</tr>
+							
+							<?php
+								if ($i == 0) {
+									echo '<tr class="alt-color">';
+									$i = $i + 1;
+								}
+								else {
+									echo '<tr>';
+									$i = $i - 1;									
+								}
+							?>
+								<td class="jd-typecol">
+									<nobr>abstract int</nobr>
+								</td>
+								<td class="jd-linkcol" width="100%">
+									<span class="sympad">
+										<a href="#vertices()">vertices</a></span>()
+									<div class="jd-descrdiv">Returns the number of vertices in the graph</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div><!-- end Summary -->
+				
+				<h2>Constants</h2>
+				<a name="BACK_EDGE"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public static final int</span>
+						BACK_EDGE
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Identifier for back edges discovered in a depth-first search.</p>
+						</div>
+						<div class="jd-tagdata">
+							<span class="jd-tagtitle">Constant value: </span>
+							<span>2 (0x00000002)</span>
+						</div>
+					</div>
+				</div>
+				
+				<a name="BLACK"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public static final int</span>
+						BLACK
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Identifier for the color black in methods that color edges or vertices.</p>
+						</div>
+						<div class="jd-tagdata">
+							<span class="jd-tagtitle">Constant value: </span>
+							<span>2 (0x00000002)</span>
+						</div>
+					</div>
+				</div>
+				
+				<a name="COLOR"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public static final int</span>
+						COLOR
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Identifier for the color property of a vertex.</p>
+						</div>
+						<div class="jd-tagdata">
+							<span class="jd-tagtitle">Constant value: </span>
+							<span>0 (0x00000000)</span>
+						</div>
+					</div>
+				</div>
+				
+				<a name="CROSS_EDGE"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public static final int</span>
+						CROSS_EDGE
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Identifier for cross edges discovered in a depth-first search.</p>
+						</div>
+						<div class="jd-tagdata">
+							<span class="jd-tagtitle">Constant value: </span>
+							<span>4 (0x00000004)</span>
+						</div>
+					</div>
+				</div>
+				
+				<a name="DISCOVERY_TIME"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public static final int</span>
+						DISCOVERY_TIME
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Identifier for the "time" when a vertex is first discovered in a depth-first search.</p>
+						</div>
+						<div class="jd-tagdata">
+							<span class="jd-tagtitle">Constant value: </span>
+							<span>2 (0x00000002)</span>
+						</div>
+					</div>
+				</div>
+				
+				<a name="DISTANCE"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public static final int</span>
+						DISTANCE
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>The distance property discovered in breadth-first search and other algorithms.</p>
+						</div>
+						<div class="jd-tagdata">
+							<span class="jd-tagtitle">Constant value: </span>
+							<span>2 (0x00000002)</span>
+						</div>
+					</div>
+				</div>
+				
+				<a name="EDGE_TYPE"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public static final int</span>
+						EDGE_TYPE
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Identifier for the property field specifying the type of an edge,
+							such as back edge, forward edge, tree edge, cross edge.</p>
+						</div>
+						<div class="jd-tagdata">
+							<span class="jd-tagtitle">Constant value: </span>
+							<span>0 (0x00000000)</span>
+						</div>
+					</div>
+				</div>
+				
+				<a name="FINISH_TIME"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public static final int</span>
+						FINISH_TIME
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Identifier for the vertex property field specifying the "time" when depth-first 
+							search has finished exploring all descendants of a vertex.</p>
+						</div>
+						<div class="jd-tagdata">
+							<span class="jd-tagtitle">Constant value: </span>
+							<span>3 (0x00000003)</span>
+						</div>
+					</div>
+				</div>
+				
+				<a name="FORWARD_EDGE"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public static final int</span>
+						FORWARD_EDGE
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Identifier for forward edges discovered in a depth-first search.</p>
+						</div>
+						<div class="jd-tagdata">
+							<span class="jd-tagtitle">Constant value: </span>
+							<span>3 (0x00000003)</span>
+						</div>
+					</div>
+				</div>
+				
+				<a name="GRAY"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public static final int</span>
+						GRAY
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Identifier for the color gray in methods that color edges or vertices.</p>
+						</div>
+						<div class="jd-tagdata">
+							<span class="jd-tagtitle">Constant value: </span>
+							<span>1 (0x00000001)</span>
+						</div>
+					</div>
+				</div>
+				
+				<a name="NIL_VERTEX"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public static final int</span>
+						NIL_VERTEX
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Identifier for the nil vertex.</p>
+						</div>
+						<div class="jd-tagdata">
+							<span class="jd-tagtitle">Constant value: </span>
+							<span>'A' - 'z' - 1 (-78, 0xfffffb2)</span>
+						</div>
+					</div>
+				</div>
+				
+				<a name="PARENT"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public static final int</span>
+						PARENT
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>The property of a vertex in which its parent is specified.</p>
+						</div>
+						<div class="jd-tagdata">
+							<span class="jd-tagtitle">Constant value: </span>
+							<span>1 (0x00000001)</span>
+						</div>
+					</div>
+				</div>
+				
+				<a name="TREE_EDGE"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public static final int</span>
+						TREE_EDGE
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Identifier for tree edges discovered in a depth-first search.</p>
+						</div>
+						<div class="jd-tagdata">
+							<span class="jd-tagtitle">Constant value: </span>
+							<span>1 (0x00000001)</span>
+						</div>
+					</div>
+				</div>
+				
+				<a name="TREE_NUMBER"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public static final int</span>
+						TREE_NUMBER
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Field for identifying distinct components of a graph.</p>
+						</div>
+						<div class="jd-tagdata">
+							<span class="jd-tagtitle">Constant value: </span>
+							<span>4 (0x00000004)</span>
+						</div>
+					</div>
+				</div>
+				
+				<a name="WHITE"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public static final int</span>
+						WHITE
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Identifier for the color white in methods that color edges or vertices.</p>
+						</div>
+						<div class="jd-tagdata">
+							<span class="jd-tagtitle">Constant value: </span>
+							<span>0 (0x00000000)</span>
+						</div>
+					</div>
+				</div>
+				
+				<h2>Public Methods</h2>
+				<a name="edges()"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract int</span>
+						<span class="sympad">edges</span>
+						<span class="normal">()</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Determine the number of edges in the graph</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>an integer corresponding to the number of edges in the graph.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="getAdjacencies(int)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract int[]</span>
+						<span class="sympad">getAdjacencies</span>
+						<span class="normal">(int from)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Determine the adjacencies of a given vertex.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>from</th>
+										<td>Integer value of the vertex for which adjacencies are to be determined. A vertex <i>u</i>
+										is considered adjacent to <i>from</i> only if <i>from</i> dominates <i>u</i>.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>an array of integers representing all vertices <i>u</i> s.t. (<i>from, u</i>)
+								is an edge in the calling graph.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="getEdges()"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract <a href="class_graph_edge.php">Edge</a>[]</span>
+						<span class="sympad">getEdges</span>
+						<span class="normal">()</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Retrieve all edges in the graph.</p>
+						</div>						
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>an array of <a href="class_graph_edge.php">Edge</a> objects representing all edges 
+								in the calling graph.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="getEdges(int)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract <a href="class_graph_edge.php">Edge</a>[]</span>
+						<span class="sympad">getEdges</span>
+						<span class="normal">(int from)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Retrieve all edges dominated by a given vertex.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>from</th>
+										<td>Integer value of the dominating vertex. The method returns all edges of which this vertex
+										is the head or, in another terminology, dominated by the given vertex.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>an array of <a href="class_graph_edge.php">Edge</a> objects representing all edges 
+								of the form (<i>from</i>, <i>u</i>) where <i>from</i> is the input
+								argument and <i>u</i> may be any vertex in the graph.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="hasEdge(Edge)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract boolean</span>
+						<span class="sympad">hasEdge</span>
+						<span class="normal">(<a href="class_graph_edge.php">Edge</a> e)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Determine whether or not the graph contains a given edge.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>e</th>
+										<td><a href="class_graph_edge.php">Edge</a> object whose presence in the graph is to be evaluated. The method
+										will return true iff the graph contains an <a href="#">Edge</a> e1 such that e.equals(e1).</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								true if the graph contains the given edge and false if it does not.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="hasEdge(int,int)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract boolean</span>
+						<span class="sympad">hasEdge</span>
+						<span class="normal">(int from, int to)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Determine whether or not the graph contains a given edge.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>from</th>
+										<td>Integer specifying the head (dominating) vertex for the edge whose presence is to be determined.</td>
+									</tr>
+									<tr>
+										<th>to</th>
+										<td>Integer specifying the tail (dominated) vertex for the edge whose presence is to be determined.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								true if the graph contains the edge (<i>from</i>, <i>to</i>) and false if it does not.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="insert(Edge)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract boolean</span>
+						<span class="sympad">insert</span>
+						<span class="normal">(<a href="class_graph_edge.php">Edge</a> e)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Add an edge to the calling graph. Returns true and inserts the edge if the
+							edge is not already present. If the given edge is present, this method returns
+							false and does not modify the graph.</p>
+							<p>In an undirected graph, insert(<i>e1</i>) will have the same effect as insert(<i>e2</i>) if
+							the head vertex of <i>e1</i> is the tail of <i>e2</i> and the tail vertex of <i>e1</i> is the head of 
+							<i>e2</i>.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>e</th>
+										<td><a href="class_graph_edge.php">Edge</a> object to be inserted.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								true iff the graph does not contain the given edge and the insertion is successful.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="insert(int,int)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract boolean</span>
+						<span class="sympad">insert</span>
+						<span class="normal">(int from, int to)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Add an edge to the calling graph. Returns true and inserts the edge if the
+							edge is not already present. If the given edge is present, this method returns
+							false and does not modify the graph.</p>
+							<p>In an undirected graph, insert(<i>from</i>, <i>to</i>) has the same effect as
+							insert(<i>to</i>, <i>from</i>).</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>from</th>
+										<td>Integer corresponding to the head of the edge to be inserted or, in
+										another terminology, the vertex dominating the edge to be inserted.</td>
+									</tr>
+									<tr>
+										<th>to</th>
+										<td>Integer corresponding to the tail of the edge to be inserted or, in another
+										terminology, the vertex dominated by the edge to be inserted.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								true iff the graph does not contain the edge (<i>from</i>, <i>to</i>) and the insertion is successful.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="remove(Edge)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract boolean</span>
+						<span class="sympad">remove</span>
+						<span class="normal">(<a href="class_graph_edge.php">Edge</a> e)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Remove an edge. Returns true and removes the edge if the
+							edge is found in the graph. If the given edge is not found, this method returns
+							false and does not modify the graph.</p>
+							<p>In an undirected graph, remove(<i>e1</i>) will have the same effect as remove(<i>e2</i>) if
+							the head vertex of <i>e1</i> is the tail of <i>e2</i> and the tail vertex of <i>e1</i> is the head of 
+							<i>e2</i>.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>e</th>
+										<td><a href="class_graph_edge.php">Edge</a> object to be removed.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								true iff the graph contains the given edge when the method is called and its removal is successful.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="remove(int,int)"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract boolean</span>
+						<span class="sympad">remove</span>
+						<span class="normal">(int from, int to)</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Remove an edge. Returns true and removes the edge if it is found. If the given edge is not found, the method returns
+							false and does not modify the graph.</p>
+							<p>In an undirected graph, remove(<i>from</i>, <i>to</i>) has the same effect as
+							insert(<i>to</i>, <i>from</i>).</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5>Parameters</h5>
+							<table class="jd-tagtable">
+								<tbody>
+									<tr>
+										<th>from</th>
+										<td>Integer corresponding to the head of the edge to be removed or, in
+										another terminology, the vertex dominating the edge to be removed.</td>
+									</tr>
+									<tr>
+										<th>to</th>
+										<td>Integer corresponding to the tail of the edge to be removed or, in another
+										terminology, the vertex dominated by the edge to be removed.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								true iff the graph contains the edge (<i>from</i>, <i>to</i>) when the method is called
+								and its removal is successful.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="transpose()"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract <a href="interface_graph_graph.php">Graph</a></span>
+						<span class="sympad">transpose</span>
+						<span class="normal">()</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Get the transpose of a graph.</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>a <a href="interface_graph_graph.php">Graph</a> object that is the transpose of the calling graph.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<a name="vertices()"></a>
+				<div class="jd-details">
+					<h4 class="jd-details-title">
+						<span class="normal">public abstract int</span>
+						<span class="sympad">vertices</span>
+						<span class="normal">()</span>
+					</h4>
+					<div class="jd-details-descr">
+						<div class="jd-tagdescr">
+							<p>Determine the number of vertices in the graph</p>
+						</div>
+						<div class="jd-tagdata">
+							<h5 class="jd-tagtitle">Returns</h5>
+							<ul class="nolist">
+								<li>an integer corresponding to the number of vertices in the graph.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

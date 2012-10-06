@@ -1,0 +1,124 @@
+<!--
+	Overview of graph package
+	author: Marshall Farrier
+	date: 5/1/11
+-->
+		<div id="doc-content" style="height: <?php echo $content_height; ?>px">
+			<div id="jd-header">
+				package
+				<h1>graph</h1>
+			</div>
+			<div id="jd-content">
+				<h2>Interfaces</h2>
+				<div class="jd-sumtable">
+					<table class="jd-sumtable-expando">
+						<tbody>
+							<tr class="alt-color">
+								<td class="jd-linkcol">
+									<a href="interface_graph_graph.php">Graph</a>
+								</td>
+								<td class="jd-descrcol" width="100%">
+									Declares basic methods required of all graphs.
+								</td>
+							</tr>
+							<tr>
+								<td class="jd-linkcol">
+									<a href="interface_graph_weightedgraph.php">WeightedGraph</a>
+								</td>
+								<td class="jd-descrcol">
+									Declares additional methods required of all weighted graphs.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<h2>Classes</h2>
+				<div class="jd-sumtable">
+					<table class="jd-sumtable-expando">
+						<tbody>
+							<tr class="alt-color">
+								<td class="jd-linkcol">
+									<a href="#">AbstractGraph</a>
+								</td>
+								<td class="jd-descrcol" width="100%">
+									An abstract class containing methods common to all graphs.
+								</td>
+							</tr>
+							<tr>
+								<td class="jd-linkcol">
+									<a href="class_graph_disjointset.php">DisjointSet</a>
+								</td>
+								<td class="jd-descrcol">
+									Contains methods for managing disjoint sets. Some graph methods depend on objects of this class.
+								</td>
+							</tr>
+							<tr class="alt-color">
+								<td class="jd-linkcol">
+									<a href="class_graph_edge.php">Edge</a>
+								</td>
+								<td class="jd-descrcol">
+									Defines generic edges that can be used with all graphs.
+								</td>
+							</tr>
+							<tr>
+								<td class="jd-linkcol">
+									<a href="#">LinkedListGraph</a>
+								</td>
+								<td class="jd-descrcol">
+									Uses a linked list representation of edges to describe directed or undirected graphs 
+									with no edge weights. This class will generally 
+									perform better than a <a href="#">MatrixGraph</a> on sparse graphs.
+								</td>
+							</tr>
+							<tr class="alt-color">
+								<td class="jd-linkcol">
+									<a href="#">MatrixGraph</a>
+								</td>
+								<td class="jd-descrcol">
+									Uses a matrix representation of edges to represent directed or undirected graphs 
+									with no edge weights. This class will often provide superior performance on dense graphs.
+								</td>
+							</tr>
+							<tr>
+								<td class="jd-linkcol">
+									<a href="class_graph_weightededge.php">WeightedEdge</a>
+								</td>
+								<td class="jd-descrcol">
+									Weighted edges for use in weighted graphs.
+								</td>
+							</tr>
+							<tr class="alt-color">
+								<td class="jd-linkcol">
+									<a href="#">WeightedLinkedListGraph</a>
+								</td>
+								<td class="jd-descrcol">
+									Uses a linked list representation of edges to describe
+									directed or undirected graphs with weighted edges. Like <a href="#">LinkedListGraph</a>,
+									it typically provides superior performance on sparse graphs.
+								</td>
+							</tr>
+							<tr>
+								<td class="jd-linkcol">
+									<a href="#">WeightedMatrixGraph</a>
+								</td>
+								<td class="jd-descrcol">
+									Uses a matrix representation of edges to represent directed or undirected graphs 
+									with weighted edges. This class will often provide superior performance on dense graphs.
+								</td>
+							</tr>
+							<tr class="alt-color">
+								<td class="jd-linkcol">
+									<a href="#">WeightedVertex</a>
+								</td>
+								<td class="jd-descrcol">
+									Provides a representation for vertices with which we want to associate a real-valued weight.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
