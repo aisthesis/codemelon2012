@@ -10,7 +10,7 @@
 #main-content h5 {
     font-size:12px;
     font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
-    font-weight:bold;
+    font-weight:600;
     color:#7f7f7f;
 }
 #main-content h1,#main-content h2,#main-content h3,#main-content h4,#main-content h5 {
@@ -21,6 +21,7 @@
 }
 #main-content h4 {
     font-size:16px;
+    font-weight:normal;
 }
 #main-content b {
     font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;

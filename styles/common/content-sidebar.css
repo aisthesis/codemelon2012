@@ -13,7 +13,6 @@
     float:left;
     position:relative;
     font-size:12px;
-    font-weight:bold;
 }
 
 #content-sidebar h4 {
@@ -29,6 +28,7 @@
     cursor:pointer;
     font-size:12px;
     font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
+    font-weight:600;
 }
 
 #content-sidebar li {
