@@ -20,7 +20,7 @@ a {
 
 #header {
     border-bottom: 3px solid #a2d04c;
-    height: 114px;
+    height: 128px;
     min-width: 675px;
     padding: 0 10px;
     position: relative;
@@ -28,7 +28,9 @@ a {
 }
 
 #headerLeft {	
-	margin: 10px;
+	position:absolute;
+    top:32px;
+    left:32px;
 }
 
 #headerRight {
@@ -37,6 +39,25 @@ a {
 	text-align:right;
 	top:0;	
 	margin: 10px;
+}
+#header div.logo-text {
+    position:relative;
+    padding-top: 48px;
+    padding-left:92px;
+}
+#header div.logo-text h1 {
+    display:inline;
+    font-family: 'Ubuntu', sans-serif;
+    font-size:24px;
+}
+#header div.logo-text h1:first-child {
+    color:#a2d04c;
+}
+#header div.logo-text h1:nth-child(2) {
+    color:#f8a122;
+}
+#header div.logo-text a {
+    text-decoration:none;
 }
 
 #body-content {
