@@ -58,7 +58,8 @@ date 2/9/11
 		<content type="xhtml">
 			<div xmlns="http://www.w3.org/1999/xhtml">	
 				<p>This library is a Java implementation of the graph datastructures
-				and algorithms presented in Cormen, Leiserson, Rivest and Stein, <a href="http://mitpress.mit.edu/algorithms/">Introduction 
+				and algorithms presented in Cormen, Leiserson, Rivest and Stein, <a 
+                href="http://mitpress.mit.edu/algorithms/">Introduction 
 				to Algorithms, 3rd ed.</a>(CLRS).
 				I have also used some ideas from <a href="http://www.cs.princeton.edu/~rs/">Robert Sedgewick's</a>
 				graph algorithms books (in C as well as in Java) and a few other sources. I started developing the library
