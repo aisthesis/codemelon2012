@@ -20,7 +20,7 @@ date 2/9/11
 	
 	<entry>
 		<title>Tutorial: OnClickListener for a RadioGroup</title>
-		<link rel="alternate" href="http://codemelon.com/proj_android_radio_group.php" />
+		<link rel="alternate" href="http://codemelon.com/articles.php?animate=0&article=20110209" />
 		<updated>2011-02-09T15:00:00Z</updated>
 		<author>
 			<name>Marshall Farrier</name>
@@ -37,7 +37,7 @@ date 2/9/11
 				I couldn't find a good tutorial on setting up a radio group when I was working on it myself,
 				so I thought I would share what I've learned. This tutorial assumes that you know the basics
 				of setting up activities and views.
-				... <a href="proj_android_radio_group.php">more</a></p>
+				... <a href="articles.php?animate=0&article=20110209">more</a></p>
 			</div>
 		</content>
 		<category term="android" />			
@@ -46,7 +46,7 @@ date 2/9/11
 	
 	<entry>
 		<title>Creating a custom view</title>
-		<link rel="alternate" href="http://codemelon.com/proj_android_custom_view.php" />
+		<link rel="alternate" href="http://codemelon.com/articles.php?animate=0&article=20110205" />
 		<updated>2011-02-05T15:00:00Z</updated>
 		<author>
 			<name>Marshall Farrier</name>
@@ -62,7 +62,7 @@ date 2/9/11
 				creating custom views both on the web and in the literature, I couldn't find anything that
 				explained what is actually essential in this particular kind of configuration. So, I had to piece it together
 				from tutorials that explained something kind of similar but still not quite the same and then the usual
-				trial and error. ... <a href="proj_android_custom_view.php">more</a></p>
+				trial and error. ... <a href="articles.php?animate=0&article=20110205">more</a></p>
 			</div>
 		</content>
 		<category term="android" />			
