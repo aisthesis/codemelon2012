@@ -1,0 +1,71 @@
+<?xml version ="1.0" encoding="utf-8"?>
+<!-- Atom feed for codeMelon
+author Marshall Farrier
+date 2/9/11
+-->
+<feed xmlns="http://www.w3.org/2005/Atom">	
+	<title>codeMelon: Android</title>
+	<link href="http://codemelon.com/feed_android.xml" rel="self" type="application/rss+xml" />
+	<updated>2011-02-09T15:00:00Z</updated>
+	<author>
+		<name>Marshall Farrier</name>
+		<uri>http://marshallfarrier.com/</uri>
+		<email>info@codemelon.com</email>
+	</author>
+	<id>http://codemelon.com/</id>
+	<category term="programming" />
+	<rights>(c) 2011 Marshall Farrier</rights>
+	<icon>/image/icon.png</icon>
+	<logo>/image/logo.png</logo>
+	
+	<entry>
+		<title>Tutorial: OnClickListener for a RadioGroup</title>
+		<link rel="alternate" href="http://codemelon.com/proj_android_radio_group.php" />
+		<updated>2011-02-09T15:00:00Z</updated>
+		<author>
+			<name>Marshall Farrier</name>
+			<uri>http://marshallfarrier.com/</uri>
+			<email>info@codemelon.com</email>
+		</author>
+		<summary>How to set up a RadioGroup and how to use View.setTag() and View.getTag() methods</summary>
+		<content type="xhtml">
+			<div xmlns="http://www.w3.org/1999/xhtml">				
+				<p>This tutorial will show first how to create a RadioGroup listener and, second, 
+				how to identify specific buttons when you can't access them through a resource id. 
+				Anonymous radio buttons (and other views)
+				will normally occur when you create them dynamically from a database or some other resource.
+				I couldn't find a good tutorial on setting up a radio group when I was working on it myself,
+				so I thought I would share what I've learned. This tutorial assumes that you know the basics
+				of setting up activities and views.
+				... <a href="proj_android_radio_group.php">more</a></p>
+			</div>
+		</content>
+		<category term="android" />			
+		<id>tag:codemelon.com,2011-02-09:/proj_android_radio_group.php</id>
+	</entry>
+	
+	<entry>
+		<title>Creating a custom view</title>
+		<link rel="alternate" href="http://codemelon.com/proj_android_custom_view.php" />
+		<updated>2011-02-05T15:00:00Z</updated>
+		<author>
+			<name>Marshall Farrier</name>
+			<uri>http://marshallfarrier.com/</uri>
+			<email>info@codemelon.com</email>
+		</author>
+		<summary>The technique I'll present here allows you to create a custom view entirely in Java, then
+			embed that view into an XML layout.</summary>
+		<content type="xhtml">
+			<div xmlns="http://www.w3.org/1999/xhtml">				
+				<p>The technique I'll present here allows you to create a custom view entirely in Java, then
+				embed that view into an XML layout. While there are already numerous tutorials for
+				creating custom views both on the web and in the literature, I couldn't find anything that
+				explained what is actually essential in this particular kind of configuration. So, I had to piece it together
+				from tutorials that explained something kind of similar but still not quite the same and then the usual
+				trial and error. ... <a href="proj_android_custom_view.php">more</a></p>
+			</div>
+		</content>
+		<category term="android" />			
+		<id>tag:codemelon.com,2011-02-05:/proj_android_custom_view.php</id>
+	</entry>	
+</feed>
