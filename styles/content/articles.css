@@ -6,18 +6,20 @@
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 */
 
-#main-content { 
-    -webkit-column-gap: 32px;
-    -moz-column-gap: 32px;
+#main-content {
     margin-top:16px;
 }
 #main-content.normal-columns {      
     -webkit-column-width: 336px;
-    -moz-column-width: 336px;
+    -moz-column-width: 336px; 
+    -webkit-column-gap: 32px;
+    -moz-column-gap: 32px;
 }
 #main-content.wide-columns {     
     -webkit-column-width: 448px;
-    -moz-column-width: 448px;
+    -moz-column-width: 448px; 
+    -webkit-column-gap: 32px;
+    -moz-column-gap: 32px;
 }
 #main-content h4 {
     font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
