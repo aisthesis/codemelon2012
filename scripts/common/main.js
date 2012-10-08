@@ -25,5 +25,8 @@ function codeMelonMain(activePage) {
     navigationMain(activePage);
     logoMain();
     $(window).resize(backgroundMain);
-    contentSidebarMain();
+    switch (activePage) {
+        case 'home':
+            contentSidebarMain();
+    }
 }
