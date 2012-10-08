@@ -20,7 +20,8 @@ To include page-specific styles:
     <div class="date">01-01-1901</div>
 </div>
 <?php content_sidebar($page); ?>
-<div id="main-content" class="normal-columns">
+<div id="main-content">
+<div class="normal-columns">
     <p>blah blah</p>
     <section>	
         <pre><code>Preformatted code will preserve line breaks
@@ -32,4 +33,7 @@ its being split between columns</code></pre>
     <div class="image-wrapper"><img src="images/content/2011/chess_with_friends2.png" width="300" height="428" /></div>
     <h4>Section Title</h4>
     <p>blah</p>
+</div><!-- .normal-columns -->
+<div class="wide-columns">
+</div><!-- .wide-columns -->
 </div>
