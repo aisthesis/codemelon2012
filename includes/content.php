@@ -23,10 +23,6 @@ function content_title($page) {
 }
 function content_styling($page) {
     echo '<link href="styles/content/' . $page . '.css" rel="stylesheet" type="text/css" />';
-    switch ($page) {
-        case "articles":
-            echo '<link href="styles/content/jquery-linedtextarea.css" type="text/css" rel="stylesheet" />';
-    }
 }
 
 function content_includeHeader($page) {
