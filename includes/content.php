@@ -77,4 +77,13 @@ function content_article_style($article) {
             echo '.css" rel="stylesheet" type="text/css" />';   
     }
 }
+function content_article_script($article) {
+    if (!isset($article)) { return; }
+    switch ($article) {
+        case '20121007':        
+        case 'any other article requiring special scripts':
+            echo '<script type="text/javascript" src="scripts/content/articles/';
+            echo $article . '.js"></script>';
+    }
+}
 ?>
