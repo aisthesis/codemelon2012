@@ -37,10 +37,32 @@ http://www.clicktorelease.com/code/css3dclouds/
             separate sheet and referenced in head, items needed aren't
             yet defined.
             */
-           /*
-                objects is an array of cloud bases
-                layers is an array of cloud layers
-            */
+           (function() {
+                var lastTime = 0;
+                var vendors = ['ms', 'moz', 'webkit', 'o'];
+                for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+                    window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+                    window.cancelRequestAnimationFrame = window[vendors[x]+
+                      'CancelRequestAnimationFrame'];
+                }
+
+                if (!window.requestAnimationFrame)
+                    window.requestAnimationFrame = function(callback, element) {
+                        var currTime = new Date().getTime();
+                        var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+                        var id = window.setTimeout(function() { callback(currTime + timeToCall); }, 
+                          timeToCall);
+                        lastTime = currTime + timeToCall;
+                        return id;
+                    };
+
+                if (!window.cancelAnimationFrame)
+                    window.cancelAnimationFrame = function(id) {
+                        clearTimeout(id);
+                    };
+            }())
+
+           
             var objects = [],
                 layers = [],
                 world = document.getElementById('world'),
@@ -70,7 +92,17 @@ http://www.clicktorelease.com/code/css3dclouds/
                 world.appendChild( div );
                 // create cloud layers
                 for( var j = 0; j < 5 + Math.round( Math.random() * 10 ); j++ ) {
-                    var cloud = document.createElement( 'div' );
+                    var cloud = document.createElement( 'img' );
+                    cloud.style.opacity = 0;
+                    var r = Math.random();
+                    var src = 'images/content/2012/cloud.png';
+                    ( function( img ) { img.addEventListener( 'load', function() {
+                        img.style.opacity = .8;
+                    } ) } )( cloud );
+                    cloud.setAttribute( 'src', src );
+
+                    
+                    
                     cloud.className = 'cloudLayer';
                     var x = 256 - ( Math.random() * 512 );
                     var y = 256 - ( Math.random() * 512 );
