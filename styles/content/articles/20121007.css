@@ -25,14 +25,16 @@
 }
  
 #world {
-    height: 512px;
+    position: absolute;
     left: 50%;
+    top: 50%;
     margin-left: -256px;
     margin-top: -256px;
-    position: absolute;
-    top: 50%;
-    transform-style: preserve-3d;
+    height: 512px;
     width: 512px;
-    /* in order to distinguish the element */
-    background-color:#afafaf;
+    background-color: rgba( 255, 0, 0, .2 );
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    /*background-color:#afafaf;*/
 }

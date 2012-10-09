@@ -79,9 +79,8 @@ function content_article_style($article) {
 }
 function content_article_script($article) {
     if (!isset($article)) { return; }
-    switch ($article) {
-        case '20121007':        
-        case 'any other article requiring special scripts':
+    switch ($article) {     
+        case 'articles requiring special scripts':
             echo '<script type="text/javascript" src="scripts/content/articles/';
             echo $article . '.js"></script>';
     }
