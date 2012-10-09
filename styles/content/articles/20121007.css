@@ -9,23 +9,33 @@
 
 #main-content .playground-panel {
     position:relative;
-    background-image: linear-gradient(bottom, rgb(69,132,180) 28%, rgb(31,71,120) 64%);
-    background-image: -webkit-gradient(linear, 0% 100%, 0% 0%,
-        color-stop(0.28, #4584B4), color-stop(0.64, #1F4778));
-    background-image: -moz-linear-gradient(center bottom , #4584B4 28%, #1F4778 64%);
     min-height:1024px;
 }
 #viewport {
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    perspective: 400; 
+    -webkit-perspective: 1000; 
+    -moz-perspective: 1000; 
+    -o-perspective: 1000; 
     position: absolute;
-    right: 0;
+    left: 0;
     top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background-image: linear-gradient(bottom, rgb(69,132,180) 28%, rgb(31,71,120) 64%);
+    background-image: -o-linear-gradient(bottom, rgb(69,132,180) 28%, rgb(31,71,120) 64%);
+    background-image: -moz-linear-gradient(bottom, rgb(69,132,180) 28%, rgb(31,71,120) 64%);
+    background-image: -webkit-linear-gradient(bottom, rgb(69,132,180) 28%, rgb(31,71,120) 64%);
+    background-image: -ms-linear-gradient(bottom, rgb(69,132,180) 28%, rgb(31,71,120) 64%);
+
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.28, rgb(69,132,180)),
+        color-stop(0.64, rgb(31,71,120))
+    );
 }
 #world {
-    overflow:hidden;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -37,7 +47,6 @@
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     -o-transform-style: preserve-3d;
-    /*background-color:#afafaf;*/
 }
 #world div {
     -webkit-transform-style: preserve-3d;
