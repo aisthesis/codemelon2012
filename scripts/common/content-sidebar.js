@@ -18,6 +18,7 @@ function contentSidebarMain() {
         );
     });
     highlightChannel('apps', ms_to_complete);
+    highlightChannel('playground', ms_to_complete);
     highlightChannel('programming', ms_to_complete);
     highlightChannel('robotics', ms_to_complete);
     highlightChannel('site', ms_to_complete);
