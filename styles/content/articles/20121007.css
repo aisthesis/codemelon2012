@@ -2,18 +2,19 @@
  * @file styles/content/articles/20100212.css
  * @date 10/02/2012
  * @author Marshall Farrier
- * @description special styles for 20100212: Simple Formulas for Calculating Tints and Shades
+ * @description special styles for 20121007: 'Playground: Clouds'
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ * Based on http://www.clicktorelease.com/code/css3dclouds/
 */
 
 #main-content .playground-panel {
+    position:relative;
     background-image: linear-gradient(bottom, rgb(69,132,180) 28%, rgb(31,71,120) 64%);
     background-image: -webkit-gradient(linear, 0% 100%, 0% 0%,
         color-stop(0.28, #4584B4), color-stop(0.64, #1F4778));
     background-image: -moz-linear-gradient(center bottom , #4584B4 28%, #1F4778 64%);
     min-height:1024px;
 }
-
 #viewport {
     bottom: 0;
     left: 0;
@@ -23,8 +24,8 @@
     right: 0;
     top: 0;
 }
- 
 #world {
+    overflow:hidden;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -37,4 +38,19 @@
     -moz-transform-style: preserve-3d;
     -o-transform-style: preserve-3d;
     /*background-color:#afafaf;*/
+}
+#world div {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;	
+    -o-transform-style: preserve-3d;	
+}
+.cloudBase {
+    background-color: rgba( 255, 0, 255, .5 );
+    position: absolute;
+    left: 256px;
+    top: 256px;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
 }

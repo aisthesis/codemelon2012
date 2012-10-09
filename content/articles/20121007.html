@@ -37,12 +37,60 @@ http://www.clicktorelease.com/code/css3dclouds/
             separate sheet and referenced in head, items needed aren't
             yet defined.
             */
-            var world = document.getElementById( 'world' ),
-                viewport = document.getElementById( 'viewport' ),
+           /*
+                objects is an array of cloud bases
+                layers is an array of cloud layers
+            */
+            var objects = [],
+                layers = [],
+                world = document.getElementById('world'),
+                viewport = document.getElementById('viewport'),
                 d = 0,
+                p = 400,
                 worldXAngle = 0,
                 worldYAngle = 0;
-
+                
+            viewport.style.webkitPerspective = p;
+            viewport.style.MozPerspective = p;
+            viewport.style.oPerspective = p;
+            
+            generate();
+             
+            /*
+                Creates a single cloud base: a div in world
+                that is translated randomly into world space.
+                Each axis goes from -256 to 256 pixels.
+            */
+            function createCloud() {
+                var div = document.createElement( 'div'  );
+                div.className = 'cloudBase';
+                var x = 256 - ( Math.random() * 512 );
+                var y = 256 - ( Math.random() * 512 );
+                var z = 256 - ( Math.random() * 512 );
+                var t = 'translateX( ' + x + 'px ) translateY( ' + y + 'px ) translateZ( ' + z + 'px )';
+                div.style.webkitTransform = t;
+                div.style.MozTransform = t;
+                div.style.oTransform = t;
+                world.appendChild( div );
+                return div;
+            }
+            /*
+                Clears the DOM of previous clouds bases 
+                and generates a new set of cloud bases
+            */
+            function generate() {
+                objects = [];
+                layers = [];
+                if ( world.hasChildNodes() ) {
+                    while ( world.childNodes.length >= 1 ) {
+                        world.removeChild( world.firstChild );       
+                    } 
+                }
+                for( var j = 0; j < 5; j++ ) {
+                    objects.push( createCloud() );
+                }
+            }
+            
             window.addEventListener( 'mousewheel', onContainerMouseWheel );
             window.addEventListener( 'DOMMouseScroll', onContainerMouseWheel ); 
             window.addEventListener( 'mousemove', function( e ) {
