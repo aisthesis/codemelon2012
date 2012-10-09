@@ -1,11 +1,12 @@
 Backlog by priority (descending):
 TODO:
-*	jQuery playground page(s) for experimentation with interesting
-	effects. Added 2012-10-07
 * Nice page transitions. Ideally sliding. Added 2012-10-07
+* If possible, shaded effect for logo. Added 2012-10-08
 *	Floating navigation for articles: Maybe a big '?' on the right side
 	of the logo section such that mouseover causes a horizontal menu to 
 	appear for n seconds (semi-transparent) with all categories from
 	sidebar. Then when you mouseover the appropriate section, it gives
 	you links to each article of that type. Added 2012-10-07
 COMPLETED:
+*	jQuery playground page(s) for experimentation with interesting
+	effects. Added 2012-10-07. Completed 2012-10-08
