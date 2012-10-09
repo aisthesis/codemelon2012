@@ -115,7 +115,8 @@ http://www.clicktorelease.com/code/css3dclouds/
                         y: y,
                         z: z,
                         a: a,
-                        s: s
+                        s: s,
+                        speed: 0.02 * Math.random()
                     };
                     var t = 'translateX( ' + x + 'px ) translateY( ' + y + 'px ) translateZ( ' + 
                         z + 'px ) rotateZ( ' + a + 'deg ) scale( ' + s + ' )';
@@ -151,6 +152,12 @@ http://www.clicktorelease.com/code/css3dclouds/
                 worldXAngle = ( .5 - ( e.clientY / window.innerHeight ) ) * 180;
                 updateView();
             });
+            window.addEventListener( 'keydown', function( e ) {
+                if( e.keyCode == 32 ) {
+                    e.preventDefault();
+                    generate();
+                }
+            } );
 
             function updateView() {
                 var t = 'translateZ( ' + d + 'px ) rotateX( ' + worldXAngle + 'deg) rotateY( ' + worldYAngle + 'deg)';
@@ -170,7 +177,8 @@ http://www.clicktorelease.com/code/css3dclouds/
                     layer.data.a += layer.data.speed;
                     var t = 'translateX( ' + layer.data.x + 'px ) translateY( ' + layer.data.y +
                         'px ) translateZ( ' + layer.data.z + 'px ) rotateY( ' + ( - worldYAngle ) + 
-                        'deg ) rotateX( ' + ( - worldXAngle ) + 'deg ) scale( ' + layer.data.s + ')';
+                        'deg ) rotateX( ' + ( - worldXAngle ) + 'deg ) rotateZ( ' +
+                        layer.data.a + 'deg ) scale( ' + layer.data.s + ')';
                     layer.style.webkitTransform = t;
                     layer.style.MozTransform = t;
                     layer.style.oTransform = t;
