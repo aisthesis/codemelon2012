@@ -50,6 +50,7 @@ before jQuery has made the proper adjustment
     font-size: 36px;
     font-family: 'Ubuntu', sans-serif;
     z-index:5;
+    text-shadow: 2px 2px 4px #2f2f2f;
 }
 #logo div.logo-text h1:first-child {
     color:#a2d04c;
