@@ -26,7 +26,6 @@
     background-image: -moz-linear-gradient(bottom, rgb(69,132,180) 28%, rgb(31,71,120) 64%);
     background-image: -webkit-linear-gradient(bottom, rgb(69,132,180) 28%, rgb(31,71,120) 64%);
     background-image: -ms-linear-gradient(bottom, rgb(69,132,180) 28%, rgb(31,71,120) 64%);
-
     background-image: -webkit-gradient(
         linear,
         left bottom,
@@ -47,6 +46,7 @@
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     -o-transform-style: preserve-3d;
+    pointer-events: none;
 }
 #world div {
     -webkit-transform-style: preserve-3d;
