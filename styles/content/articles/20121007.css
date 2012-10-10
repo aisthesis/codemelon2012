@@ -21,17 +21,17 @@
     right: 0;
     bottom: 0;
     overflow: hidden;
-    background-image: linear-gradient(bottom, rgb(69,132,180) 28%, rgb(31,71,120) 64%);
-    background-image: -o-linear-gradient(bottom, rgb(69,132,180) 28%, rgb(31,71,120) 64%);
-    background-image: -moz-linear-gradient(bottom, rgb(69,132,180) 28%, rgb(31,71,120) 64%);
-    background-image: -webkit-linear-gradient(bottom, rgb(69,132,180) 28%, rgb(31,71,120) 64%);
-    background-image: -ms-linear-gradient(bottom, rgb(69,132,180) 28%, rgb(31,71,120) 64%);
+    background-image: linear-gradient(bottom, #77afcf 28%, #2977a3 64%);
+    background-image: -o-linear-gradient(bottom, #77afcf 28%, #2977a3 64%);
+    background-image: -moz-linear-gradient(bottom, #77afcf 28%, #2977a3 64%);
+    background-image: -webkit-linear-gradient(bottom, #77afcf 28%, #2977a3 64%);
+    background-image: -ms-linear-gradient(bottom, #77afcf 28%, #2977a3 64%);
     background-image: -webkit-gradient(
         linear,
         left bottom,
         left top,
-        color-stop(0.28, rgb(69,132,180)),
-        color-stop(0.64, rgb(31,71,120))
+        color-stop(0.28, #77afcf),
+        color-stop(0.64, #2977a3)
     );
 }
 #world {
