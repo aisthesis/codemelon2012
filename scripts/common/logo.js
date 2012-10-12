@@ -13,7 +13,7 @@ function logoMain() {
     };
     var logoTextFinalPosition = {
         top:28,
-        left:128
+        left:136
     }
     if (window.doAnimation) {
         doFullLogoAnimation(sliceFinalPosition, logoTextFinalPosition);
