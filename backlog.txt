@@ -1,4 +1,4 @@
-Backlog by priority (descending):
+Backlog by priori0ty (descending):
 TODO:
 * SyntaxHighlighter: http://alexgorbatchev.com/SyntaxHighlighter/
 	Added 2012-10-12.
