@@ -67,6 +67,15 @@ function content_article($article) {
 
 function content_article_style($article) {
     if (!isset($article)) { return; }
+    // syntax highlighter styles
+    switch ($article) {
+        case '20110209':
+            echo '<link href="lib/syntaxhighlighter_3.0.83/styles/shCore.css"';
+            echo ' rel="stylesheet" type="text/css" />';
+            echo '<link href="lib/syntaxhighlighter_3.0.83/styles/shThemeEclipse.css"';
+            echo ' rel="stylesheet" type="text/css" />';
+    }
+    // special styling for particular articles
     switch ($article) {
         case '20100212':
         case '20100220':
@@ -78,6 +87,24 @@ function content_article_style($article) {
 }
 function content_article_script($article) {
     if (!isset($article)) { return; }
+    // syntax highlighter scripts
+    switch ($article) {
+        // include core in all cases
+        case '20110209':
+            echo '<script type="text/javascript"';
+            echo ' src="lib/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>';
+            // call syntaxhighlighter function
+            echo '<script type="text/javascript">SyntaxHighlighter.all()</script>';
+        
+    }
+    switch ($article) {
+        // include necessary brushes. MUST INCLUDE break here!!!!
+        case '20110209':
+            echo '<script type="text/javascript"';
+            echo ' src="lib/syntaxhighlighter_3.0.83/scripts/shBrushJava.js"></script>';
+            break;
+    }
+    // special scripts for particular articles
     switch ($article) {     
         case 'articles requiring special scripts':
             echo '<script type="text/javascript" src="scripts/content/articles/';
