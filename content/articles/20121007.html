@@ -24,7 +24,7 @@ http://www.clicktorelease.com/code/css3dclouds/
         <li>Press the <strong>spacebar</strong> to generate a new cloud group.</li>
         <li>Hold the <strong>SHIFT</strong> key and move your mouse to rotate around
             the clouds.</li>
-        <li>In Chrome and Safari, you can also zoom in or out by holding <strong>CTRL</strong>
+        <li>In Chrome and Safari, you can also zoom in or out by holding <strong>SHIFT</strong>
             and scrolling with the mouse wheel.</li>
     </ul>
     
@@ -184,7 +184,7 @@ http://www.clicktorelease.com/code/css3dclouds/
                 world.style.oTransform = t;
             }
             function onContainerMouseWheel(e) {
-                if (e.ctrlKey) {
+                if (e.shiftKey) {
                     e.preventDefault();
                     /* in Firefox d is updating on the basis of e.detail. Chrome and Safari
                      * use e.wheelData to measure the change
