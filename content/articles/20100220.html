@@ -55,7 +55,7 @@
 		that yields (a0, b0, c0). Since we know that (a0, b0, c0) is not a shade of gray, we can for ease of calculation permute
 		the values so that a0 >= b0 >= c0 and a0 > c0. We then get the equations:</p>
     <section>	
-        <pre><code>a0 = (p * 255) + ((1 - p) * g)
+        <pre class="math"><code>a0 = (p * 255) + ((1 - p) * g)
 b0 = (p * b_sat) + ((1 - p) * g)
 c0 = (1 - p) * g</code></pre>
     </section>	
@@ -132,7 +132,7 @@ c0 = (1 - p) * g</code></pre>
 		saturated color, a saturation percentage and a graytone, all of which are unique to the given color.
 		In other words, we have determined the values b_sat, p0 and g0 such that:</p>
     <section>	
-        <pre><code>a0 = (p0 * 255) + ((1 - p0) * g0)
+        <pre class="math"><code>a0 = (p0 * 255) + ((1 - p0) * g0)
 b0 = (p0 * b_sat) + ((1 - p0) * g0)
 c0 = (1 - p0) * g0</code></pre>
     </section>	
@@ -142,7 +142,7 @@ c0 = (1 - p0) * g0</code></pre>
 		must not only increase the amount of gray used but also successively darken the gray toward black.
 		The obvious formula for shades of (a0, b0, c0) is thus:</p>
     <section>	
-        <pre><code>x = (p * p0 * 255) + ((1 - (p * p0)) 
+        <pre class="math"><code>x = (p * p0 * 255) + ((1 - (p * p0)) 
     * p * g0)
 y = (p * p0 * b_sat) + ((1 - (p * p0)) 
     * p * g0)
