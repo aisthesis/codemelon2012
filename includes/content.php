@@ -70,9 +70,9 @@ function content_article_style($article) {
     // syntax highlighter styles
     switch ($article) {
         case '20110209':
-            echo '<link href="lib/syntaxhighlighter_3.0.83/styles/shCore.css"';
+            echo '<link href="lib/syntaxhighlighter_3.0.83/styles/shCoreCodeMelon.css"';
             echo ' rel="stylesheet" type="text/css" />';
-            echo '<link href="lib/syntaxhighlighter_3.0.83/styles/shThemeEclipse.css"';
+            echo '<link href="lib/syntaxhighlighter_3.0.83/styles/shThemeCodeMelon.css"';
             echo ' rel="stylesheet" type="text/css" />';
     }
     // special styling for particular articles

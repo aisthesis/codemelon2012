@@ -97,7 +97,7 @@
 		<p>A null-valued tag for a RadioButton should actually be impossible on the basis of the code where I create the various buttons
 		that populate my custom view:</p>
     <section>	
-        <pre><code>private void init(Context context) {
+        <pre class="brush: java">private void init(Context context) {
     dbAdapter = new ChessDataBaseAdapter(context);
     dbAdapter.open();
     playerCursor = dbAdapter.getPlayers();
@@ -119,7 +119,7 @@
                 LayoutParams.FILL_PARENT));
         playerCursor.moveToNext();
     }
-}</code></pre>
+}</pre>
     </section>	
 		
 		<p>The init() method is called within the constructor of my custom PlayerRadioGroup (extends RadioGroup) class.
