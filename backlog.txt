@@ -1,7 +1,5 @@
 Backlog by priori0ty (descending):
 TODO:
-* SyntaxHighlighter: http://alexgorbatchev.com/SyntaxHighlighter/
-	Added 2012-10-12.
 * Nice page transitions. Ideally sliding. Book has a good fade effect.
 	Added 2012-10-07
 *	More playground pages to play with effects. Added 2012-10-12
@@ -14,6 +12,8 @@ TODO:
 * optimize for mobile. Added 2012-10-11
 * Move to AWS. Added 2012-10-12
 COMPLETED:
+* SyntaxHighlighter: http://alexgorbatchev.com/SyntaxHighlighter/
+	Added 2012-10-12. Completed 2012-10-13.
 * If possible, shaded effect for logo. Added 2012-10-08. 
 	Completed 2012-10-11
 *	jQuery playground page(s) for experimentation with interesting
