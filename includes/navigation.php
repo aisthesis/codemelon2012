@@ -14,7 +14,7 @@ function navigation_home($page) {
         echo '"#"';
     }
     else {
-        echo '"index.php?animate=0"';
+        echo '"index.php?animate=0" class="transition"';
     }
 }
 function navigation_documentation($page) {
@@ -28,7 +28,7 @@ function navigation_links($page) {
         echo '"#"';
     }
     else {
-        echo '"links.php?animate=0"';
+        echo '"links.php?animate=0" class="transition"';
     }   
 }
 function navigation_about($page) {
@@ -36,7 +36,7 @@ function navigation_about($page) {
         echo '"#about"';
     }
     else {
-        echo '"index.php?animate=0#about"';
+        echo '"index.php?animate=0#about" class="transition"';
     }
 }
 // Used in footer
@@ -45,7 +45,7 @@ function navigation_terms($page) {
         echo '"#terms"';
     }
     else {
-        echo '"index.php?animate=0#terms"';
+        echo '"index.php?animate=0#terms" class="transition"';
     }
 }
 ?>
