@@ -1,14 +1,12 @@
 /*
  * site:    codemelon2012
- * file:	scripts/common/main.js
+ * file:	scripts/main.js
  * author:	Marshall Farrier
- * created:	8/24/2012
- * edited: 10/14/2012
+ * date:	8/24/2012
  * description:
  *   main JavaScript for codemelon2012
  * links:
- *   Smooth page transitions:
- *      http://www.onextrapixel.com/2010/02/23/how-to-use-jquery-to-make-slick-page-transitions/
+ *   http://code.google.com/p/jquery-rotate/ (if needed)
  */
 
 function codeMelonMain(activePage) {
@@ -24,27 +22,11 @@ function codeMelonMain(activePage) {
      * So trying as first item in queue. Seems to work best, although still not 100% accurate.
      */
     backgroundMain();
-    $('body').css({'display' : 'none'});
     navigationMain(activePage);
-    if (!window.doAnimation) { logoMain(); }
+    logoMain();
     switch (activePage) {
         case 'HOME':
             contentSidebarMain();
     }
-    // fade page in
-    $('body').fadeIn(
-        500,
-        function() {
-            if (window.doAnimation) { logoMain(); }
-            $(window).resize(backgroundMain);
-        }
-    );
-    // fade page out for internal links
-    $("a.transition").click(function(event){
-        event.preventDefault();
-        linkLocation = this.href;
-        $("body").fadeOut(250, function(){
-            window.location = linkLocation;
-        });      
-    });
+    $(window).resize(backgroundMain);
 }
