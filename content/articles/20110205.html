@@ -38,7 +38,7 @@
 		
 		
     <section>	
-        <pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+        <pre class="brush: xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;LinearLayout 			
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@color/background"
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content" />
         &lt;/ScrollView>
     &lt;/LinearLayout>
-&lt;/LinearLayout></code></pre>
+&lt;/LinearLayout></pre>
     </section>	
 		
 		<p>Now we just have to create the PlayerRadioGroup custom view appropriately. This isn't very hard, but
@@ -81,7 +81,7 @@
 		
 		
     <section>	
-        <pre><code>public class PlayerRadioGroup extends RadioGroup {
+        <pre class="brush: java">public class PlayerRadioGroup extends RadioGroup {
     private ChessDataBaseAdapter dbAdapter;
     private RadioButton[] playerList;
     // TODO Generate player list from database
@@ -112,7 +112,7 @@
                     LayoutParams.FILL_PARENT));
         }
     }
-}</code></pre>
+}</pre>
     </section>
 		<p>The main thing to note here is that the emulator will abort your entire app if you don't
 		put in the second constructor, which is the one actually used. The rest is pretty straightforward
