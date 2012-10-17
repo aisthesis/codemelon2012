@@ -12,6 +12,12 @@ To include page-specific styles:
     page should be styles/content/articles/20121001.css.
 2)  Add the article name to the list of pages that get page-specific
     styles in the content_article_style() function in includes/content.php
+Syntax Highlighter for code blocks: http://alexgorbatchev.com/SyntaxHighlighter/
+    For highlighting, the particular article also needs to be added in includes/content.php
+    Spots to add article:
+    1)  in the content_article_style() method for generic styling
+    2)  in the content_article_script() method for generic highlighter code
+    3)  in the content_article_script() method again for the particular brush(es) to use
 -->
 <div id="content-wrapper" class="outer-width-limiter">   
     <div id="content"> 
@@ -21,19 +27,25 @@ To include page-specific styles:
 </div>
 <?php content_sidebar($page); ?>
 <div id="main-content">
-<div class="normal-columns">
-    <p>blah blah</p>
-    <section>	
-        <pre><code>Preformatted code will preserve line breaks
+    <div class="normal-columns">
+        <p>blah blah</p>
+        <section>	
+            <pre class="brush: plain"><code>Preformatted code will preserve line breaks
 and appear in a special box.
 Place it within section tags to prevent
 its being split between columns</code></pre>
-    </section>	
-    <p>blah blah</p>
-    <div class="image-wrapper"><img src="images/content/2011/chess_with_friends2.png" width="300" height="428" /></div>
-    <h4>Section Title</h4>
-    <p>blah</p>
-</div><!-- .normal-columns -->
-<div class="wide-columns">
-</div><!-- .wide-columns -->
+        </section>	
+        <p>blah blah</p>
+        <div class="image-wrapper"><img src="images/content/2011/chess_with_friends2.png" width="300" height="428" /></div>
+        <h4>Section Title</h4>
+        <p>blah</p>
+    </div><!-- .normal-columns -->
+    
+    <div class="wide-columns">
+        <p>Blah</p>
+    </div><!-- .wide-columns -->
+    
+    <!-- No columns, just a space for effects -->
+    <div class="playground-panel">
+    </div><!-- .playground-panel -->
 </div>

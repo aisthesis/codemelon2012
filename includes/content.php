@@ -69,6 +69,7 @@ function content_article_style($article) {
     if (!isset($article)) { return; }
     // syntax highlighter styles
     switch ($article) {
+        case 'template':
         case '20090805':
         case '20110205':
         case '20110209':
@@ -92,6 +93,7 @@ function content_article_script($article) {
     // syntax highlighter scripts
     switch ($article) {
         // include core in all cases
+        case 'template':
         case '20090805':
         case '20110205':
         case '20110209':
@@ -103,6 +105,10 @@ function content_article_script($article) {
     }
     switch ($article) {
         // include necessary brushes. MUST INCLUDE break here!!!!
+        case 'template':
+            echo '<script type="text/javascript"';
+            echo ' src="lib/syntaxhighlighter_3.0.83/scripts/shBrushPlain.js"></script>';
+            break;
         case '20090805':
             echo '<script type="text/javascript"';
             echo ' src="lib/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>';
