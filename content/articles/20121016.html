@@ -1,0 +1,49 @@
+<!--
+@file content/articles/20121016.html
+@url <site root>/articles.php?article=20121016
+@author Marshall Farrier
+@created 10/16/2012
+@last-edited 10/16/2012
+@description article 'Playground: Blobs'
+To include page-specific styles:
+    1)  create a stylesheet with a corresponding
+        name in styles/content/articles/, e.g., if the page is 20121001.html, the style
+        page should be styles/content/articles/20121001.css.
+    2)  Add the article name to the list of pages that get page-specific
+        styles in the content_article_style() function in includes/content.php
+Syntax Highlighter for code blocks: http://alexgorbatchev.com/SyntaxHighlighter/
+    For highlighting, the particular article also needs to be added in includes/content.php
+    Spots to add article:
+    1)  in the content_article_style() method for generic styling
+    2)  in the content_article_script() method for generic highlighter code
+    3)  in the content_article_script() method again for the particular brush(es) to use
+-->
+<div id="content-wrapper" class="outer-width-limiter">   
+    <div id="content"> 
+<div id="header">
+    <h2>Playground: Blobs</h2>
+    <div class="date">10-16-2012</div>
+</div>
+<?php content_sidebar($page); ?>
+<div id="main-content">
+    <div class="normal-columns">
+        <p>This experiment is based on the blobs demonstrated in 
+            <a href="http://hakim.se/experiments/html5/blob/03/">Experiments / Blob / 03</a> 
+            and referenced in <a href="http://www.queness.com/post/4650/10-jaw-dropping-html5-and-javascript-effects">10
+            Jaw Dropping HTML5 and Javascript Effects</a>.</p>
+        <section>	
+            <pre class="brush: plain"><code>Preformatted code will preserve line breaks
+and appear in a special box.
+Place it within section tags to prevent
+its being split between columns</code></pre>
+        </section>	
+        <p>blah blah</p>
+        <div class="image-wrapper"><img src="images/content/2011/chess_with_friends2.png" width="300" height="428" /></div>
+        <h4>Section Title</h4>
+        <p>blah</p>
+    </div><!-- .normal-columns -->
+    
+    <!-- No columns, just a space for effects -->
+    <div class="playground-panel">
+    </div><!-- .playground-panel -->
+</div>
