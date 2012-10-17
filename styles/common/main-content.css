@@ -63,4 +63,6 @@
 }
 #main-content .playground-panel {
     margin-top:16px;
+    position:relative;
+    min-height:1024px;
 }

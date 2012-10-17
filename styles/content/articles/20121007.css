@@ -7,10 +7,6 @@
  * Based on http://www.clicktorelease.com/code/css3dclouds/
 */
 
-#main-content .playground-panel {
-    position:relative;
-    min-height:1024px;
-}
 #viewport {
     -webkit-perspective: 1000; 
     -moz-perspective: 1000; 
