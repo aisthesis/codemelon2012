@@ -1,0 +1,15 @@
+/* 
+ * @file styles/content/articles/20121016.css
+ * @date 10/16/2012
+ * @author Marshall Farrier
+ * @description special styles for 20121016: 'Playground: Blob'
+ * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ * Based on http://hakim.se/experiments/html5/blob/03/
+*/
+
+#world {
+    position:relative;
+    width:100%;
+    height:1024px;
+    background-color: #9f9f9f;
+}

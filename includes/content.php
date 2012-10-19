@@ -82,7 +82,8 @@ function content_article_style($article) {
     switch ($article) {
         case '20100212':
         case '20100220':
-        case '20121007':        
+        case '20121007': 
+        case '20121016':
         case 'any other article requiring a special stylesheet':
             echo '<link href="styles/content/articles/' . $article;
             echo '.css" rel="stylesheet" type="text/css" />';   
