@@ -7,8 +7,15 @@
 @description 'Playground: Clouds'
 http://www.clicktorelease.com/code/css3dclouds/
 -->
-<div id="content-wrapper" class="outer-width-limiter">   
-    <div id="content"> 
+<div id="content-wrapper" class="outer-width-limiter">
+    
+    
+<div id="article-wrapper">
+    <div id="meny">
+        <p>Blah blah</p>
+    </div>
+    <div class="meny-arrow"></div>
+<div id="content"> 
 <div id="header">
     <h2>Playground: Clouds</h2>
     <div class="date">10-07-2012</div>
@@ -211,4 +218,14 @@ http://www.clicktorelease.com/code/css3dclouds/
             update();
         </script>
     </div>
-</div>
+    <!-- -->
+    <script>
+        var meny = Meny.create({
+            menuElement: document.querySelector( '#meny' ),
+            contentsElement: document.querySelector( '#content' ),
+            position: 'top',
+            height: 200
+        });
+    </script><!-- -->
+</div><!-- #main-content -->
+</div><!-- #article-wrapper -->
