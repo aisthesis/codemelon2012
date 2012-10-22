@@ -1,12 +1,13 @@
 Backlog by priori0ty (descending):
 TODO:
+* Nice page transitions. Ideally sliding. Book has a good fade effect.
+	Added 2012-10-07
+*	More playground pages to play with effects. Added 2012-10-12
 *	Floating navigation for articles: Maybe a big '?' on the right side
 	of the logo section such that mouseover causes a horizontal menu to 
 	appear for n seconds (semi-transparent) with all categories from
 	sidebar. Then when you mouseover the appropriate section, it gives
-	you links to each article of that type. Added 2012-10-07. Actually, 
-	a nice option might be to use hakimel's Meny: https://github.com/hakimel/Meny
-*	More playground pages to play with effects. Added 2012-10-12
+	you links to each article of that type. Added 2012-10-07
 *	mp3 player (probably on marshallfarrier.com). Added 2012-10-11
 * optimize for mobile. Added 2012-10-11
 * Move to AWS. Added 2012-10-12
@@ -17,7 +18,3 @@ COMPLETED:
 	Completed 2012-10-11
 *	jQuery playground page(s) for experimentation with interesting
 	effects. Added 2012-10-07. Completed 2012-10-08
-ABANDONED:
-* Nice page transitions. Ideally sliding. Book has a good fade effect.
-	Added 2012-10-07. Abandoned 2012-10-18. The animation doesn't work properly in
-	Chrome.

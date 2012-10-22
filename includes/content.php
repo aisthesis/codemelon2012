@@ -23,10 +23,6 @@ function content_title($page) {
 }
 function content_styling($page) {
     echo '<link href="styles/content/' . $page . '.css" rel="stylesheet" type="text/css" />';
-    switch ($page) {
-        case 'articles':
-            echo '<link href="styles/content/meny.css" rel="stylesheet" type="text/css" />';
-    }
 }
 
 function content_includeHeader($page) {
@@ -63,12 +59,7 @@ function content_sidebar($page) {
             echo '<div>';
     }
 }
-function content_script($page) {
-    switch($page) {
-        case 'articles':
-            echo '<script type="text/javascript" src="lib/meny.js"></script>';
-    }
-}
+
 
 function content_article($article) {
     require_once 'content/articles/' . $article . '.html';
@@ -91,8 +82,7 @@ function content_article_style($article) {
     switch ($article) {
         case '20100212':
         case '20100220':
-        case '20121007': 
-        case '20121016':
+        case '20121007':        
         case 'any other article requiring a special stylesheet':
             echo '<link href="styles/content/articles/' . $article;
             echo '.css" rel="stylesheet" type="text/css" />';   
