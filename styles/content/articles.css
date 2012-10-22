@@ -43,10 +43,16 @@
     position:absolute;
     left:50%;
     top:-32px;
-    margin-left:-16px;
+    margin-left:-32px;
+    width:32px;
+    height:32px;
+    background-color:transparent;
+}
+#menu-arrow .arrow {
+    margin:8px auto 7px auto;
     width:0;
     height:0;
-    border-left:16px solid transparent;
-    border-right:16px solid transparent;
-    border-top: 16px solid #a2d04c;
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+    border-top: 17px solid #a2d04c;
 }
