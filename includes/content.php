@@ -127,7 +127,8 @@ function content_article_script($article) {
             break;
     }
     // special scripts for particular articles
-    switch ($article) {     
+    switch ($article) { 
+        case '20121007':
         case 'articles requiring special scripts':
             echo '<script type="text/javascript" src="scripts/content/articles/';
             echo $article . '.js"></script>';
