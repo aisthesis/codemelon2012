@@ -9,13 +9,13 @@
 #main-content {
     margin-top:16px;
 }
-#main-content .normal-columns {      
+.normal-columns {      
     -webkit-column-width: 336px;
     -moz-column-width: 336px; 
     -webkit-column-gap: 32px;
     -moz-column-gap: 32px;
 }
-#main-content .wide-columns {     
+.wide-columns {     
     -webkit-column-width: 448px;
     -moz-column-width: 448px; 
     -webkit-column-gap: 32px;
@@ -39,7 +39,7 @@
     line-height:1.5em;
     overflow:auto;
 }
-#menu-arrow {
+#article-menu-arrow {
     position:absolute;
     left:50%;
     top:-32px;
@@ -48,16 +48,52 @@
     height:32px;
     background-color:transparent;
 }
-#menu-arrow .arrow {
+#article-menu-arrow .arrow {
     width:0;
     height:0;
     border-left:10px solid transparent;
     border-right:10px solid transparent;
     margin:4px auto 11px auto;
 }
-#menu-arrow.down .arrow {
+#article-menu-arrow.down .arrow {
     border-top: 17px solid #a2d04c;
 }
-#menu-arrow.up .arrow {
-    border-bottom: 17px solid #f8a122;
+#article-menu-arrow.up .arrow {
+    border-bottom: 17px solid #a2d04c;
+}
+
+#article-nav {
+    position: absolute;
+    width:110%;
+    margin-left:-5%;
+    top:156px;
+    background-color:#2f2f2f;
+    z-index:9;
+    opacity:0; 
+    box-shadow: inset 0 0 16px #dfdfdf;
+}
+
+#article-nav .outer-width-limiter {
+    position:relative;
+    margin:0 auto;
+    height:100%;
+    padding:16px 0;
+}
+#article-nav .outer-width-limiter ul {
+    list-style-type: none;
+    padding-left:32px;
+}
+#article-nav .outer-width-limiter li .date {
+    font-size:12px;
+    font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
+    color:#bbb;  
+    padding-left:1em;
+}
+#article-nav .outer-width-limiter li a {
+    font-family:'Frutiger Neue W01 Book',Helvetica,Arial,sans-serif;
+    font-size:16px;
+    font-weight:normal;
+    line-height:1.5em;
+    color:#f8a122;
+    text-decoration: none;
 }
