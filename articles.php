@@ -22,6 +22,7 @@ if (isset($_GET['animate'])) {
 require_once 'includes/common.php';
 require_once 'includes/navigation.php';
 require_once 'includes/content.php';
+require_once 'includes/articles.php';
 
 require_once 'templates/head.html';
 require_once 'templates/navigation.html';
