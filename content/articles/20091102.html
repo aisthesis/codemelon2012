@@ -6,13 +6,11 @@
 @last-edited 10/07/2012
 @description article 'Legs vs. Wheels'
 -->
-<div id="content-wrapper" class="outer-width-limiter">   
-    <div id="content"> 
-<div id="header">
-    <h2>Legs vs. Wheels</h2>
-    <div class="date">11-02-2009</div>
-</div>
-<?php content_sidebar($page); ?>
+<?php 
+    $title = 'Legs vs. Wheels';
+    $date = '11-02-2009';
+    content_article_setup($title, $date, $page);
+?>
 <div id="main-content">
 <div class="wide-columns">
     <div class="image-wrapper">
