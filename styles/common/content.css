@@ -50,7 +50,7 @@
     font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
     font-weight:800;
 }
-#content p,#content a,#content li {
+#content p,#content a,#content li, #content dd {
     font-family:'Frutiger Neue W01 Book',Helvetica,Arial,sans-serif;
     /* Univers is also a good option but requires a paid subscription */
 }

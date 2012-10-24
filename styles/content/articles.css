@@ -64,8 +64,7 @@
 
 #article-nav {
     position: absolute;
-    width:110%;
-    margin-left:-5%;
+    width:100%;
     top:156px;
     background-color:#2f2f2f;
     z-index:9;

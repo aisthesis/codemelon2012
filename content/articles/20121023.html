@@ -1,0 +1,58 @@
+<!--
+@file content/articles/20121023.html
+@url <site root>/articles.php?animate=0&article=20121023
+@author Marshall Farrier
+@created 10/23/2012
+@last-edited 10/23/2012
+@description article 'Migrating to the Cloud'
+To include page-specific styles:
+    1)  create a stylesheet with a corresponding
+        name in styles/content/articles/, e.g., if the page is 20121001.html, the style
+        page should be styles/content/articles/20121001.css.
+    2)  Add the article name to the list of pages that get page-specific
+        styles in the content_article_style() function in includes/content.php
+Syntax Highlighter for code blocks: http://alexgorbatchev.com/SyntaxHighlighter/
+    For highlighting, the particular article also needs to be added in includes/content.php
+    Spots to add article:
+    1)  in the content_article_style() method for generic styling
+    2)  in the content_article_script() method for generic highlighter code
+    3)  in the content_article_script() method again for the particular brush(es) to use
+-->
+<?php 
+    $title = 'Website Hosting in the Cloud';
+    $date = '10-23-2012';
+    content_article_setup($title, $date, $page);
+?>
+<div id="main-content">
+    <div class="normal-columns">
+        <p>To see what is involved in setting up and maintaining a cloud-hosted
+            website, I'm going to move this site to AWS, which offers a <a 
+            href="http://aws.amazon.com/free/">free
+            usage tier</a> for the first 12 months. This article will serve to
+            document the steps I take to set up the service and will thus be
+            a work in progress as I migrate the site. 
+        </p>
+        <p>I will need to:</p>
+        <ul>
+            <li>Set up an Apache server in EC2 to run my PHP code.</li>
+            <li>Upload static content to S3.</li>
+            <li>Link my domain name with my EC2 instance.</li>
+            <li>Set up email management for the codemelon.com domain.</li>
+        </ul>
+        <h4>Step-by-Step</h4>
+        <dl>
+            <dt>Step 1: Sign up for an AWS account</dt>
+                <dd>I simply signed up for the <a 
+                    href="http://aws.amazon.com/free/">free
+                    tier</a> using my Amazon.com account. With 30 minutes I had an email
+                    confirming that I could start using AWS services. Completely painless so far.
+                    I also like the fact that it will be free for the first year as long as I have
+                    traffic characteristic of a non-profit personal tech blog 
+                    rather than a high-traffic commercial site. Even after the 12-month free
+                    period, the cost should stay within reason given the current flow of traffic.
+                </dd> 
+            <dt>Step 2: Set up the EC2 server</dt>
+                <dd>This comes next.</dd>
+        </dl>
+    </div><!-- .normal-columns -->
+</div><!-- #main-content -->

@@ -7,7 +7,7 @@
         styling for the main content section
 */
 
-#main-content h5 {
+#main-content h5, #main-content dt {
     font-size:12px;
     font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
     font-weight:600;
@@ -16,7 +16,7 @@
 #main-content h1,#main-content h2,#main-content h3,#main-content h4,#main-content h5 {
     margin-top:16px;
 }
-#main-content h1,h2,h3 {
+#main-content h1,#main-content h2,#main-content h3 {
     font-weight: 800;
 }
 #main-content h4 {
@@ -26,12 +26,18 @@
 #main-content b {
     font-family:'FrutigerNeueW01-Regular',Helvetica,Arial,sans-serif;
 }
-#main-content p,#main-content li {
+#main-content p,#main-content li, #main-content dd {
     font-size:12px;
     line-height:2em;
 }
-#main-content p+p {
+#main-content p+p, #main-content dt {
     margin-top:1.0em;
+}
+#main-content dd {
+    margin-top:0.5em;
+    margin-left:1.5em;
+    display: list-item;
+    list-style: circle;
 }
 #main-content a {    
     color:#17d;
