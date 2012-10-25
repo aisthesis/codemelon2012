@@ -33,10 +33,10 @@ function content_includeHeader($page) {
         case "other pages using content header":
             echo '<div id="header"><table><tr>';
             echo '<td><div class="outer"><div class="image-wrapper">';
-            echo '<img width="240" height="200" src="images/RoboticArm.jpg" />';
+            echo '<img width="240" height="200" src="https://s3.amazonaws.com/codemelon/images/RoboticArm.jpg" />';
             echo '</div></div></td>';
             echo '<td><div class="outer"><div class="image-wrapper">';
-            echo '<img width="240" height="200" src="images/JeffRowleyJaws2012.jpg" />';
+            echo '<img width="240" height="200" src="https://s3.amazonaws.com/codemelon/images/JeffRowleyJaws2012.jpg" />';
             echo '</div></div></td>';
             echo '<td><div class="outer"><div class="image-wrapper">';
             echo '<iframe width="240" height="200" src="http://www.youtube.com/embed/QmWD76jwjbQ" frameborder="0"></iframe>';

@@ -3,7 +3,7 @@
 @url <site root>/articles.php?animate=0&article=20121023
 @author Marshall Farrier
 @created 10/23/2012
-@last-edited 10/23/2012
+@last-edited 10/25/2012
 @description article 'Migrating to the Cloud'
 To include page-specific styles:
     1)  create a stylesheet with a corresponding
@@ -39,6 +39,7 @@ Syntax Highlighter for code blocks: http://alexgorbatchev.com/SyntaxHighlighter/
             <li>Link my domain name with my EC2 instance.</li>
             <li>Set up email management for the codemelon.com domain.</li>
         </ul>
+				<section>
         <h4>Step-by-Step</h4>
         <dl>
             <dt>Step 1: Sign up for an AWS account</dt>
@@ -50,9 +51,38 @@ Syntax Highlighter for code blocks: http://alexgorbatchev.com/SyntaxHighlighter/
                     traffic characteristic of a non-profit personal tech blog 
                     rather than a high-traffic commercial site. Even after the 12-month free
                     period, the cost should stay within reason given the current flow of traffic.
-                </dd> 
-            <dt>Step 2: Set up the EC2 server</dt>
-                <dd>This comes next.</dd>
+                </dd>
+				</dl></section>
+				<dl>
+						<section>
+            <dt>Step 2: Set up a sample EC2 server</dt>
+                <dd>This is just the click of a button. I opted for a sample 64-bit
+								PHP server and within minutes had my sample application running.</dd>
+						</section>
+								<dd>Moreover, EC2 provides immediate setup of a server running PHP version 5.3,
+								which isn't the latest (5.4) but still is an upgrade over the version running on my 
+								current server, which prevented me from using namespacing in my PHP code.
+								</dd>
+								<dd>It now looks like the migration is going to be
+								quite a bit easier than I expected. I'm pretty sure that I could in fact just upload all of my files
+								and be done with it. However, in order to stay in the free tier, I need to 
+								be careful about bandwidth. So, before actually launching, I think I will
+								move all of my images to S3 rather than use up EC2 bandwidth with my static image files.</dd>
+						<section>
+						<dt>Step 3: Upload images to S3.</dt>
+							<dd>First, you go to the S3 Management Console after logging in with your AWS credentials.
+							The console itself walks you through the process of uploading files. You choose a bucket name,
+							which has to be unique across all of S3. I chose 'codemelon' for this site, and the name
+							was fortunately available. Then you can create a folder structure (actually just adding '/' symbols
+							to your filenames, but it looks like folders) and upload your files.</dd>
+						</section>
+							<dd>If you want to have
+							URLs pointing to the files, as I do for my images, you must also make them public
+							by highlighting the root directory of whatever file group you want to make public
+							and then clicking 'Make Public' in the 'Actions' dropdown. You can then enter as 
+							absolute paths to your files something like
+							<code class="long-word">https://s3.amazonaws.com/codemelon/images/JeffRowleyJaws2012.jpg</code> to access the images--where
+							'codemelon' is my bucket name and 'images' the folder in which the file is located.</dd>
         </dl>
     </div><!-- .normal-columns -->
 </div><!-- #main-content -->

@@ -39,6 +39,9 @@
     line-height:1.5em;
     overflow:auto;
 }
+#main-content .long-word {
+	word-wrap: break-word;
+}
 #article-menu-arrow {
     position:absolute;
     left:50%;
