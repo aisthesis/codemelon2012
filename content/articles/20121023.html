@@ -39,53 +39,78 @@ Syntax Highlighter for code blocks: http://alexgorbatchev.com/SyntaxHighlighter/
             <li>Link my domain name with my EC2 instance.</li>
             <li>Set up email management for the codemelon.com domain.</li>
         </ul>
-				<section>
+        <section>
         <h4>Step-by-Step</h4>
         <dl>
             <dt>Step 1: Sign up for an AWS account</dt>
-                <dd>I simply signed up for the <a 
-                    href="http://aws.amazon.com/free/">free
-                    tier</a> using my Amazon.com account. With 30 minutes I had an email
-                    confirming that I could start using AWS services. Completely painless so far.
-                    I also like the fact that it will be free for the first year as long as I have
-                    traffic characteristic of a non-profit personal tech blog 
-                    rather than a high-traffic commercial site. Even after the 12-month free
-                    period, the cost should stay within reason given the current flow of traffic.
-                </dd>
-				</dl></section>
-				<dl>
-						<section>
+            <dd>I simply signed up for the <a 
+                href="http://aws.amazon.com/free/">free
+                tier</a> using my Amazon.com account. With 30 minutes I had an email
+                confirming that I could start using AWS services. Completely painless so far.
+                I also like the fact that it will be free for the first year as long as I have
+                traffic characteristic of a non-profit personal tech blog 
+                rather than a high-traffic commercial site. Even after the 12-month free
+                period, the cost should stay within reason given the current flow of traffic.
+            </dd>
+        </dl>
+        </section>
+        <dl>
+            <section>
             <dt>Step 2: Set up a sample EC2 server</dt>
-                <dd>This is just the click of a button. I opted for a sample 64-bit
-								PHP server and within minutes had my sample application running.</dd>
-						</section>
-								<dd>Moreover, EC2 provides immediate setup of a server running PHP version 5.3,
-								which isn't the latest (5.4) but still is an upgrade over the version running on my 
-								current server, which prevented me from using namespacing in my PHP code.
-								</dd>
-								<dd>It now looks like the migration is going to be
-								quite a bit easier than I expected. I'm pretty sure that I could in fact just upload all of my files
-								and be done with it. However, in order to stay in the free tier, I need to 
-								be careful about bandwidth. So, before actually launching, I think I will
-								move all of my images to S3 rather than use up EC2 bandwidth with my static image files.</dd>
-						<section>
-						<dt>Step 3: Upload images to S3.</dt>
-							<dd>First, you go to the S3 Management Console after logging in with your AWS credentials.
-							The console itself walks you through the process of uploading files. You choose a bucket name,
-							which has to be unique across all of S3. I chose 'codemelon' for this site, and the name
-							was fortunately available. Then you can create a folder structure (actually just adding '/' symbols
-							to your filenames, but it looks like folders) and upload your files.</dd>
-						</section>
-							<dd>If you want to have
-							URLs pointing to the files, as I do for my images, you must also make them public
-							by highlighting the root directory of whatever file group you want to make public
-							and then clicking 'Make Public' in the 'Actions' dropdown. You can then enter as 
-							absolute paths to your files something like
-							<code class="long-word">https://s3.amazonaws.com/codemelon/images/JeffRowleyJaws2012.jpg</code> to access the images--where
-							'codemelon' is my bucket name and 'images' the folder in which the file is located.</dd>
-							<dd>Also noteworthy is that latencies are essentially non-existent for the small
-							image files I am accessing. And I'm just using the free account with the default US Standard
-							location!</dd>
+            <dd>This is just the click of a button. I opted for a sample 64-bit
+                PHP server and within minutes had my sample application running.</dd>
+            </section>
+            <dd>Moreover, EC2 provides immediate setup of a server running PHP version 5.3,
+            which isn't the latest (5.4) but still is an upgrade over the version running on my 
+            current server, which prevented me from using namespacing in my PHP code.
+            </dd>
+            <dd>It now looks like the migration is going to be
+            quite a bit easier than I expected. I'm pretty sure that I could in fact just upload all of my files
+            and be done with it. However, in order to stay in the free tier, I need to 
+            be careful about bandwidth. So, before actually launching, I think I will
+            move all of my images to S3 rather than use up EC2 bandwidth with my static image files.</dd>
+						
+            <section>
+            <dt>Step 3: Upload images to S3.</dt>
+                <dd>First, you go to the S3 Management Console after logging in with your AWS credentials.
+                The console itself walks you through the process of uploading files. You choose a bucket name,
+                which has to be unique across all of S3. I chose 'codemelon' for this site, and the name
+                was fortunately available. Then you can create a folder structure (actually just adding '/' symbols
+                to your filenames, but it looks like folders) and upload your files.</dd>
+            </section>
+            <dd>If you want to have
+            URLs pointing to the files, as I do for my images, you must also make them public
+            by highlighting the root directory of whatever file group you want to make public
+            and then clicking 'Make Public' in the 'Actions' dropdown. You can then enter as 
+            absolute paths to your files something like
+            <code class="long-word">https://s3.amazonaws.com/codemelon/images/JeffRowleyJaws2012.jpg</code> to access the images--where
+            'codemelon' is my bucket name and 'images' the folder in which the file is located.</dd>
+            <dd>Also noteworthy is that latencies are essentially non-existent for the small
+            image files I am accessing. And I'm just using the free account with the default US Standard
+            location!</dd>
+            
+            <section>
+            <dt>Step 4: Upload source files using Elastic Beanstalk.</dt>
+            <dd>The easiest way to get started seems to be just uploading your source files
+                using <a href="http://aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk</a>.
+                The <a href="">Developer Guide</a> provides straightforward instructions on how
+                to proceed. For a PHP application, you just choose your server type, zip up
+                all your files, and upload them to the server. It doesn't get any easier than that.
+                You can then also configure options for getting emails in case of problems or for
+                transferring your log files to S3.
+            </dd>
+            </section>
+            <dd>Having researched the alternatives, I'm now not sure whether S3 is the best choice
+                for storing images or other static files. <a href="http://aws.amazon.com/ebs/">Elastic Block Store</a>
+                (EBS) appears to be
+                the recommended solution for storing files. And, in comparison to S3, EBS has lower latencies and higher
+                allowances for remaining within the free tier. 
+            </dd>
+            <dd>
+                Next step: Associate my URL, <code>www.codemelon.com</code> with the AWS-hosted application.
+                On upload, I immediately got the URL <code>http://codemelon2012.elasticbeanstalk.com/</code>, but 
+                I prefer to use my own domain name.
+            </dd>
         </dl>
     </div><!-- .normal-columns -->
 </div><!-- #main-content -->
