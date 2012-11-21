@@ -118,6 +118,21 @@ Syntax Highlighter for code blocks: http://alexgorbatchev.com/SyntaxHighlighter/
                 <a href="http://docs.amazonwebservices.com/elasticbeanstalk/latest/dg/customdomains.html">Elastic
                     Beanstalk instructions</a>), but this part was a bit intricate.
             </dd>
+            <dd>The only real problem I had with this step was that I neglected to add a <em>record set</em> not only
+                for <code>codemelon.com</code> but also for <code>www.codemelon.com</code> in the 
+                <a href="https://console.aws.amazon.com/route53/home">Route 53 management console</a>. I needed to add
+                an A Record Set (IPv4) for both domains within the same Hosted Zone (codemelon.com). The
+                same Alias Target (the DNS name of the EC2 load balancer) is used for both. I found all of
+                this a bit confusing on first attempt but got prompt help on the appropriate 
+                <a href="https://forums.aws.amazon.com/index.jspa">AWS forum</a> when I posted my issue.           
+            </dd>
+            <dt>This site is hosted on AWS as of 11-20-2012!</dt>
+            <dt>Step 6: Set up email</dt>
+            <dd>The AWS email service is called <a href="http://aws.amazon.com/ses/">Amazon 
+                Simple Email Service</a>, or SES. The 
+                <a href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide/Welcome.html">Developer
+                Guide</a> explains how to set up email.
+            </dd>
         </dl>
     </div><!-- .normal-columns -->
 </div><!-- #main-content -->
