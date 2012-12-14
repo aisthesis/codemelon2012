@@ -18,7 +18,7 @@ function navigation_home($page) {
     }
 }
 function navigation_documentation($page) {
-    echo '"content/documentation/graph2012/index.html"';
+    echo '"content/documentation/graph2013/index.html"';
 }
 function navigation_sourceCode($page) {
     echo '"https://github.com/aisthesis/"';
