@@ -1,4 +1,5 @@
 com.codemelon.graph.algorithm.search
+com.codemelon.graph.algorithm.spanningtree
 com.codemelon.graph.common
 com.codemelon.graph.edge
 com.codemelon.graph.graph
